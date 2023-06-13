@@ -1,0 +1,5 @@
+# String str="i"与 String str=new String("i")一样吗？
+
+不一样，因为内存的分配方式不一样。String str="i"的方式，Java 虚拟机会将其分配到常量池中；而 String str=new String("i") 则会被分到堆内存中。
+
+‍
