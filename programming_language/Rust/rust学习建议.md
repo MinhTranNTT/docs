@@ -1,5 +1,3 @@
-[参考文档](https://rustwiki.org/zh-CN/book/ch05-03-method-syntax.html)
-
 [学习路线](https://www.bilibili.com/video/BV1hp4y1k7SV?p=39&vd_source=9bfc54d2ed901f1eab04708cc346c2f5)
 
 

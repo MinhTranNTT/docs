@@ -1,4 +1,4 @@
-# Rust加快cargo run的下载速度
+# Rust 加快 cargo run 的下载速度
 
 **加快源速度**
 
