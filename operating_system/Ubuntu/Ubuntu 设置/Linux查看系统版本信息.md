@@ -6,8 +6,6 @@
 
 [查看Linux系统版本信息的几种方法](https://www.cnblogs.com/opensmarty/p/10936315.html)
 
----
-
 ```lua
 uname -a		# 查看Linux内核版本命令
 cat /proc/version 	# 查看Linux内核版本命令

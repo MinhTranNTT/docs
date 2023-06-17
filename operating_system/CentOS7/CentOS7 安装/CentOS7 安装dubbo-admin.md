@@ -8,7 +8,7 @@
 
 修改src\main\resources\application.properties 指定zookeeper地址
 
-​![image](assets/image-20230308163139-bv9fa01.png)​
+![image](assets/image-20230308163139-bv9fa01.png)​
 
 运行dubbo-admin
 
@@ -18,6 +18,6 @@ java -jar dubbo-admin-0.0.1-SNAPSHOT.jar
 
 默认使用root/root 登陆
 
-​​
+
 
 ‍

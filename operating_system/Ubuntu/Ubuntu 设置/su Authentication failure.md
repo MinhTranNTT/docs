@@ -4,7 +4,7 @@
 
 [Ubuntu下postgresql出现Authentication failure（认证失败）](https://www.cnblogs.com/liuyanerfly/p/13427361.html#:~:text=%E5%BD%93%E6%88%91%E4%BB%AC%E6%83%B3%E5%9C%A8%E5%88%9A%E5%AE%89%E8%A3%85,%E5%88%B0root%E7%94%A8%E6%88%B7%E3%80%82)
 
----
+
 
 ```shell
 zonglin@zonglin-virtual-machine:~/Desktop$ su

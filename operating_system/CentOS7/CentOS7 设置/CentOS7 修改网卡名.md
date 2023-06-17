@@ -49,13 +49,13 @@ uuidgen eth1						# 生成uuid
 
 ```
 
-​![image](assets/image-20230208193147-s5ii6nl.png)​
+![image](assets/image-20230208193147-s5ii6nl.png)​
 
 ‍
 
 查看到ens37对应的UUID信息nmcli conn show
 
-​![image](assets/image-20230208193159-21ht3mc.png)​
+![image](assets/image-20230208193159-21ht3mc.png)​
 
 改名策略：
 
@@ -69,7 +69,7 @@ uuidgen eth1						# 生成uuid
 
 …………
 
-​![image](assets/image-20230208193209-ay52kih.png)​
+![image](assets/image-20230208193209-ay52kih.png)​
 
 systemctl restart network.service
 
@@ -82,3 +82,7 @@ systemctl status network.service
 单机模式下相同网段是可以配置多个网卡；避免问题多个网卡最号不要配置相同网段
 
 ‍
+
+参考资料：
+
+[https://www.cnblogs.com/hanshanxiaoheshang/p/9433504.html](https://www.cnblogs.com/hanshanxiaoheshang/p/9433504.html)

@@ -1,10 +1,6 @@
-# CentOS7 安装 Tomcat
+‍Apache Tomcat 官网下载地址：https://tomcat.apache.org/
 
-‍
-
-**下载地址：**​[https://tomcat.apache.org/download-80.cgi](https://tomcat.apache.org/download-80.cgi)
-
-**配置自启脚本**
+`/etc/init.d/tomcat` 配置自启脚本
 
 ```shell
 ~〉cat /etc/init.d/tomcat                                                                                                                                                                                       03/08/2023 04:48:08 下午
@@ -37,22 +33,21 @@ restart)
   echo "Usage: tomcat {start|stop|restart}"
   ;;
 esac
-~〉 
 ```
 
-**tomcat 配置系统服务**
+tomcat 配置系统服务
 
 ```shell
 chkconfig --add /etc/init.d/tomcat		# 注册服务 
 chmod +x /etc/init.d/tomcat			# 添加权限
 ```
 
-**启动服务&amp;访问tomcat测试**
+启动服务&amp;访问tomcat测试
 
 ```shell
 /etc/init.d/tomcat start # 或者 service tomcat start
 ```
 
-​![image](assets/image-20230308163030-w2cngt4.png)​
+![image](assets/image-20230308163030-w2cngt4.png)​
 
 ‍

@@ -1,4 +1,4 @@
-# CentOS 7上安装CMake
+### CentOS 7 上安装 CMake
 
 1. 确保您的系统已更新：
 
@@ -18,7 +18,9 @@ sudo yum install cmake
 cmake --version
 ```
 
-# CMake添加到环境变量中
+
+
+### CMake 添加到环境变量中
 
 1. 打开您的`.bashrc`文件：
 
@@ -32,9 +34,7 @@ nano ~/.bashrc
 export PATH="/usr/bin/cmake/bin:$PATH"
 ```
 
-注意：如果CMake安装到不同的位置，则需要相应地更改上述路径。
-
-
+> 注意：如果CMake安装到不同的位置，则需要相应地更改上述路径。
 
 查看CMake的安装位置
 
@@ -49,7 +49,6 @@ which cmake
 ```
 
 3. 保存并关闭`.bashrc`文件。
-
 4. 要使更改生效，请运行以下命令：
 
 ```sh
@@ -64,7 +63,9 @@ cmake --version
 
 这将输出CMake的版本信息。
 
-# CMake版本不够
+
+
+### CMake 版本不够
 
 ```sh
 [root@localhost p2p]# cargo build
@@ -191,10 +192,6 @@ cmake -DOPENSSL_ROOT_DIR=/usr/lib64/openssl-1.0
 ```
 
 然后再执行 `make` 命令重新编译即可。
-
----
-
-
 
 4. 安装完成后，可以使用以下命令验证 cmake 是否正确安装：
 

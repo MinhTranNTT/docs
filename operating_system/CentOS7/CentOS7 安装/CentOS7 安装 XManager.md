@@ -9,7 +9,7 @@ yum install -y lightdm && yum groupinstall -y xfce        # 安装lightdm和Xfce
 ```
 
 修改lightdm.conf文件
-vim /etc/lightdm/lightdm.conf
+`vim /etc/lightdm/lightdm.conf
 
 ```roboconf
 [XDMCPServer]
@@ -30,6 +30,6 @@ sudo systemctl stop firewalld      # 关闭防火墙
 ```
 
 参考博客：
-[https://blog.csdn.net/lyfqyr/article/details/89041929](https://blog.csdn.net/lyfqyr/article/details/89041929)
+使用X Manager远程CentOS 7服务器（XDMCP）：https://blog.csdn.net/lyfqyr/article/details/89041929
 
 ‍

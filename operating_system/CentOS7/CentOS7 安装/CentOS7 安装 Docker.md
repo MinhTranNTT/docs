@@ -1,38 +1,42 @@
-# CentOS7 安装 Docker
+‍Docker CE 镜像源站：https://developer.aliyun.com/article/110806
 
-‍
+Docker配置阿里云镜像加速 https://blog.csdn.net/m0_46665077/article/details/124248727
 
-[Docker CE 镜像源站-阿里云开发者社区 (aliyun.com)](https://developer.aliyun.com/article/110806)
 
-[(35条消息) Docker配置阿里云镜像加速_阿里云docker镜像加速_@noNo的博客-CSDN博客](https://blog.csdn.net/m0_46665077/article/details/124248727)
 
----
+### 安装必要的一些系统工具
 
-## 安装必要的一些系统工具
-
-```shell
+```sh
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 ```
 
-## 添加软件源信息
+
+
+### 添加软件源信息
 
 ```shell
 sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 ```
 
-## 更新 yum 软件包索引并安装 docker-ce
+
+
+### 更新 yum 软件包索引并安装 docker-ce
 
 ```shell
 sudo yum makecache fast && sudo yum -y install docker-ce
 ```
 
-## 开启Docker服务
+
+
+### 开启Docker服务
 
 ```shell
 sudo service docker start # 或者使用 systemctl start docker
 ```
 
-## 设置 docker 开机自启
+
+
+### 设置 docker 开机自启
 
 ```shell
 sudo systemctl enable docker
@@ -60,9 +64,9 @@ sudo systemctl enable docker
   docker.socket                                 disabled
   [root@localhost init.d]# init 6 # 重启系统
   Connection closing...Socket close.
-
+  
   Connection closed by foreign host.
-
+  
   Disconnected from remote host(192.168.1.100) at 18:21:48.
   [root@localhost ~]#  systemctl status docker # 查看 docker 状态
   ● docker.service - Docker Application Container Engine
@@ -74,7 +78,7 @@ sudo systemctl enable docker
      Memory: 96.2M
      CGroup: /system.slice/docker.service
              └─1319 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
-
+  
   10月 04 18:22:15 localhost.localdomain dockerd[1319]: time="2022-10-04T18:22:15.702633344..."
   10月 04 18:22:15 localhost.localdomain dockerd[1319]: time="2022-10-04T18:22:15.745525782..."
   10月 04 18:22:16 localhost.localdomain dockerd[1319]: time="2022-10-04T18:22:16.055185788..."
@@ -104,9 +108,9 @@ sudo systemctl enable docker
 docker version
 ```
 
-## 卸载 docker
 
-‍
+
+### 卸载 docker
 
 卸载 docker 依赖
 

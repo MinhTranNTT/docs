@@ -16,7 +16,7 @@
 
 查看ssh 版本
 
-​![image](assets/image-20230312165830-zffbjjq.png)​
+![image](assets/image-20230312165830-zffbjjq.png)​
 
 ### 1.1. 上传 openssh 解压安装包
 
@@ -40,7 +40,7 @@ yum -y install pam-devel
 echo $?
 ```
 
-​![image](assets/image-20230312165902-ksgplto.png)​
+![image](assets/image-20230312165902-ksgplto.png)​
 
 以上命令执行完毕，`echo $?`查看下最后的make install是否有报错，0表示没有问题
 
@@ -52,7 +52,7 @@ grep "UseDNS" /etc/ssh/sshd_config
 grep "UsePAM" /etc/ssh/sshd_config
 ```
 
-​![image](assets/image-20230312165913-how1jqa.png)​
+![image](assets/image-20230312165913-how1jqa.png)​
 
 ```
 systemctl restart sshd     # 重启sshd
@@ -131,7 +131,7 @@ tcp6       0      0 :::23                   :::* �
 
 ### 1.10. 测试版本。都正常
 
-​![image](assets/image-20230312165949-naxv6sa.png)​
+![image](assets/image-20230312165949-naxv6sa.png)​
 
 ### 1.11. OpenSSH 启动
 
@@ -141,15 +141,15 @@ tcp6       0      0 :::23                   :::* �
 
 ## 2. 问题报错
 
-​![image](assets/image-20230312165954-yxokq1x.png)​
+![image](assets/image-20230312165954-yxokq1x.png)​
 
 `yum -y install zlib zlib-devel`
 
-​![image](assets/image-20230312165957-c65zbqy.png)​
+![image](assets/image-20230312165957-c65zbqy.png)​
 
 `yum install -y openssl-devel`
 
-​![image](assets/image-20230312170002-3qsmqro.png)​
+![image](assets/image-20230312170002-3qsmqro.png)​
 
 `yum -y install pam-devel`
 
@@ -160,6 +160,15 @@ xshell ssh 协议连接密码连接：SHH服务器拒绝了密码。请再试一
 PermitRootLogin yes
 UsePAM yes
 UseDNS no
+```
+
+‍
+
+### CentOS7 openssh升级后导致旧版本不可用
+
+```
+echo 'PubkeyAcceptedKeyTypes ssh-ed25519,ssh-rsa,rsa-sha2-256,rsa-sha2-512' >> /etc/ssh/sshd_config		# 把旧版本的加密算法让它重新生效
+/etc/init.d/sshd restart	# 重启 ssh服务
 ```
 
 ‍
