@@ -1,26 +1,4 @@
-# Git 基础使用
 
-参考文档：
-
-[(22条消息) cat .git/config查看远端服务器信息（git的配置信息：远端服务器连接信息）_longshenlmj的博客-CSDN博客](https://blog.csdn.net/longshenlmj/article/details/19829389)****
-
-[(22条消息) Git知识总结_lili要努力的博客-CSDN博客](https://blog.csdn.net/m0_52781902/article/details/126621630)
-
-[git命令总结_奔跑在路上的技术博客_51CTO博客](https://blog.51cto.com/qiangsh/1769754)
-
-[Git_03分支 (copyfuture.com)](https://copyfuture.com/blogs-details/202112111616213495)
-
-[(22条消息) 用git进行本地代码版本管理“流程图”_Solomon-Lang的博客-CSDN博客_代码版本控制图](https://blog.csdn.net/solomonlangrui/article/details/47052679)
-
-[(22条消息) Git的下载安装和初始设置_Lum0s！的博客-CSDN博客_git默认安装地址](https://blog.csdn.net/m0_59751822/article/details/125940620)
-
-​![这里写图片描述](assets/20150725080820126-20230113173631-ok5m1jk.png)​
-
-‍
-
-Git 官网：[Git (git-scm.com)](https://git-scm.com/)
-
-Windows 安装 Git：[Git 详细安装教程（详解 Git 安装过程的每一个步骤）](https://blog.csdn.net/mukes/article/details/115693833)
 
 #### 简易的命令行入门教程:
 
@@ -52,9 +30,13 @@ git remote add origin <远程地址>
 git push -u origin "master"
 ```
 
+
+
 #### Git 常用指令
 
-​![git命令总结_gitlab](assets/git-linux-20230113173631-12q3qzn.webp)​
+![git命令总结_gitlab](assets/git-linux-20230113173631-12q3qzn.webp)​
+
+
 
 ##### 设置用户签名
 
@@ -84,6 +66,8 @@ $ cat ~/.gitconfig
         provider = generic
 ```
 
+
+
 ##### 初始化本地库
 
 ```shell
@@ -112,6 +96,8 @@ $ cat .git/config # 每个git库都会有一个配置信息文件
         merge = refs/heads/master
 ```
 
+
+
 ##### 查看本地库状态
 
 ```shell
@@ -131,6 +117,8 @@ nothing added to commit but untracked files present (use "git add" to track)
 liuzonglin@LAPTOP-CGO0UV3J MINGW64 /d/.github/.dome/df (master)
 ```
 
+
+
 ##### 添加到暂存区
 
 ```shell
@@ -147,11 +135,15 @@ Changes to be committed:
 
 ```
 
+
+
 ##### 提交到本地库
 
 ```shell
 git commit -m "日志信息" <文件名> # 将暂存区的文件提交到本地库
 ```
+
+
 
 ##### 查看历史记录
 
@@ -163,15 +155,21 @@ c674444 (origin/master) HEAD@{2}: commit: 修改README.md
 0999e1f HEAD@{3}: commit (initial): 第一次提交
 ```
 
+
+
 ##### 版本穿梭
 
 ```shell
 git reset --hard <版本号>
 ```
 
+
+
 #### Git 分支操作
 
-​![img](assets/git-branch-linux-20230113173631-bn1m6j9.jpg)​
+![img](assets/git-branch-linux-20230113173631-bn1m6j9.jpg)​
+
+
 
 ##### 创建分支
 
@@ -185,6 +183,8 @@ $ git branch -v
 
 ```
 
+
+
 ##### 查看分支
 
 ```shell
@@ -193,6 +193,8 @@ $ git branch -v
 
 ```
 
+
+
 ##### 切换分支
 
 ```shell
@@ -200,6 +202,8 @@ $ git checkout <分支名>
 Switched to branch '<分支名>'
 
 ```
+
+
 
 ##### 把指定的分支合并到当前分支上
 
@@ -254,9 +258,13 @@ liuzonglin@LAPTOP-CGO0UV3J MINGW64 /d/.github/.dome/df (master) # MERGING 消失
 >
 > 合并分支时，两个分支在同一个文件的同一个位置有两套完全不同的修改。Git 无法替 我们决定使用哪一个。必须人为决定新代码内容。
 
+
+
 #### Git 远程仓库操作
 
-​![img](assets/b98b14bbf50dbff292054121b9f36685-20230113173631-svx0z1w.png)​
+![img](assets/b98b14bbf50dbff292054121b9f36685-20230113173631-svx0z1w.png)​
+
+
 
 ##### 查看当前所有远程地址别名
 
@@ -266,6 +274,8 @@ origin  https://gitee.com/liuzonglin1/df.git (fetch)
 origin  https://gitee.com/liuzonglin1/df.git (push)
 
 ```
+
+
 
 ##### 起别名
 
@@ -278,6 +288,8 @@ lzl     https://gitee.com/liuzonglin1/df.git (fetch)
 lzl     https://gitee.com/liuzonglin1/df.git (push)
 
 ```
+
+
 
 ##### 推送本地分支上的内容到远程仓库
 
@@ -338,6 +350,8 @@ liuzonglin@LAPTOP-CGO0UV3J MINGW64 /d/.github/.doc (master)
 
 ```
 
+
+
 ##### 将远程仓库的内容克隆到本地
 
 ```shell
@@ -345,6 +359,8 @@ git clone <远程地址>
 ```
 
 > 小结：clone 会做如下操作。1、拉取代码。2、初始化本地仓库。3、创建别名
+
+
 
 ##### 将远程仓库对于分支最新内容拉下来后与 当前本地分支直接合并
 
@@ -354,6 +370,37 @@ From https://gitee.com/liuzonglin1/df
  * branch            master     -> FETCH_HEAD
 Already up to date.
 ```
+
+
+
+##### 强制覆盖本地文件
+
+git pull 强制覆盖本地的代码方式，下面是正确的方法：
+
+```sh
+git fetch --all
+```
+
+
+然后，你有两个选择：
+
+```sh
+git reset --hard origin/master
+```
+
+或者如果你在其他分支上：
+
+```sh
+git reset --hard origin/<branch_name>
+```
+
+说明：
+
+`git fetch` 从远程下载最新的，而不尝试合并或 `rebase` 任何东西。
+
+然后 `git reset` 将主分支重置为您刚刚获取的内容。 `--hard` 选项更改工作树中的所有文件以匹配`origin/master`中的文件。
+
+
 
 ### 修改文件名案例
 
@@ -437,3 +484,25 @@ $
 ```
 
 ‍
+
+### 参考文档：
+
+[(22条消息) cat .git/config查看远端服务器信息（git的配置信息：远端服务器连接信息）_longshenlmj的博客-CSDN博客](https://blog.csdn.net/longshenlmj/article/details/19829389)****
+
+[(22条消息) Git知识总结_lili要努力的博客-CSDN博客](https://blog.csdn.net/m0_52781902/article/details/126621630)
+
+[git命令总结_奔跑在路上的技术博客_51CTO博客](https://blog.51cto.com/qiangsh/1769754)
+
+[Git_03分支 (copyfuture.com)](https://copyfuture.com/blogs-details/202112111616213495)
+
+[(22条消息) 用git进行本地代码版本管理“流程图”_Solomon-Lang的博客-CSDN博客_代码版本控制图](https://blog.csdn.net/solomonlangrui/article/details/47052679)
+
+[(22条消息) Git的下载安装和初始设置_Lum0s！的博客-CSDN博客_git默认安装地址](https://blog.csdn.net/m0_59751822/article/details/125940620)
+
+![这里写图片描述](assets/20150725080820126-20230113173631-ok5m1jk.png)​
+
+‍
+
+Git 官网：[Git (git-scm.com)](https://git-scm.com/)
+
+Windows 安装 Git：[Git 详细安装教程（详解 Git 安装过程的每一个步骤）](https://blog.csdn.net/mukes/article/details/115693833)

@@ -1,1 +1,0 @@
-[Nushell](https://www.nushell.sh/zh-CN/)

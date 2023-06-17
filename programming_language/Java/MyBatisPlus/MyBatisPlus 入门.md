@@ -1,8 +1,12 @@
 # MyBatisPlus 入门
 
-# MyBatisPlus 入门
+‍MyBatis-Plus官网：https://baomidou.com/
 
-‍
+github仓库：https://github.com/baomidou/mybatis-plus
+
+MyBatis Plus 教程：https://www.hxstrive.com/subject/mybatis_plus/260.htm
+
+
 
 ## 数据库 Schema 脚本
 
@@ -82,11 +86,11 @@ INSERT INTO user (id, name, age, email) VALUES
       id 'io.spring.dependency-management' version '1.0.13.RELEASE'
       id 'java'
   }
-
+  
   group = 'com.example'
   version = '0.0.1-SNAPSHOT'
   sourceCompatibility = '11'
-
+  
   configurations {
       developmentOnly
       runtimeClasspath {
@@ -96,11 +100,11 @@ INSERT INTO user (id, name, age, email) VALUES
           extendsFrom annotationProcessor
       }
   }
-
+  
   repositories {
       mavenCentral()
   }
-
+  
   dependencies {
       implementation 'org.springframework.boot:spring-boot-starter-web'
       compileOnly 'org.projectlombok:lombok'
@@ -108,28 +112,28 @@ INSERT INTO user (id, name, age, email) VALUES
       runtimeOnly 'mysql:mysql-connector-java'
       annotationProcessor 'org.projectlombok:lombok'
       testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
+  
      /* mybatis-plus 启动依赖 */
       implementation group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.3.2'
-
+  
       /* 代码生成器依赖 */
       implementation group: 'com.baomidou', name: 'mybatis-plus-generator', version: '3.3.2'
       /* freemarker 引擎依赖 */
       implementation group: 'org.freemarker', name: 'freemarker', version: '2.3.30'
-
+  
   }
-
+  
   test {
       useJUnitPlatform()
   }
-
+  
   tasks.withType(JavaCompile).configureEach {
       options.encoding = "utf-8"
   }
   tasks.withType(Javadoc).configureEach {
       options.encoding = "utf-8"
   }
-
+  
   ```
 
 ### 创建配置文件
@@ -172,9 +176,9 @@ spring:
 
 1. 这里的 url 使用了 `?serverTimezone=GMT%2B8`​ 后缀，因为Spring Boot 2.1 集成了 8.0版本的jdbc驱动，这个版本的 jdbc 驱动需要添加这个后缀，否则运行测试用例报告如下错误：
 
-    ​`java.sql.SQLException: The server time zone value 'ÖÐ¹ú±ê×¼Ê±¼ä' is unrecognized or represents more`​
+    `java.sql.SQLException: The server time zone value 'ÖÐ¹ú±ê×¼Ê±¼ä' is unrecognized or represents more`​
 
-2. ​`driver-class-name`​ 使用了 `com.mysql.cj.jdbc.Driver`​ ，在 jdbc 8 中 建议使用这个驱动，之前的 `com.mysql.jdbc.Driver`​ 已经被废弃，否则运行测试用例的时候会有 WARN 信息
+2. `driver-class-name`​ 使用了 `com.mysql.cj.jdbc.Driver`​ ，在 jdbc 8 中 建议使用这个驱动，之前的 `com.mysql.jdbc.Driver`​ 已经被废弃，否则运行测试用例的时候会有 WARN 信息
 
 ### 编写代码
 

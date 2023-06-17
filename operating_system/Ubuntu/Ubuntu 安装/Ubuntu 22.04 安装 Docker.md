@@ -1,5 +1,3 @@
-# Ubuntu 22.04 安装 Docker
-
 ## 安装基础工具
 
 ```shell

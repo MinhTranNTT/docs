@@ -15,15 +15,23 @@ docker pull mysql:latest
 ### 创建数据卷
 
 ```shell
-mkdir -p /home/zonglin/mysql/data
-mkdir -p /home/zonglin/mysql/initdb
-mkdir -p /home/zonglin/mysql/log
+mkdir -p ./mysql/data
+mkdir -p ./mysql/initdb
+mkdir -p ./mysql/log
 ```
 
 ### 运行容器设置开机自启
 
 ```shell
-docker run --restart=always --log-opt max-size=100m --log-opt max-file=2 -p 6379:6379 --name lcloud-redis -v /home/zonglin/redis/redis.conf:/etc/redis/redis.conf -v /home/zonglin/redis/data:/data -d redis:latest redis-server /etc/redis/redis.conf --appendonly yes 
+docker run \
+--name mysql \
+-d \
+-p 3306:3306 \
+-v ./mysql/log:/var/log/mysql \
+-v ./mysql/data:/var/lib/mysql \
+-v ./mysql/conf:/etc/mysql \
+-e MYSQL_ROOT_PASSWORD=root \
+mysql:latest
 ```
 
 参数说明：

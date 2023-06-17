@@ -1,14 +1,10 @@
-#  ! [rejected]        master -> master (fetch first)
+### ! [rejected]        master -> master (fetch first)
 
-参考文档：
 
-[git push后出现错误 ![rejected] master -&gt; master(non-fast-forward)](https://www.cnblogs.com/qingheshiguang/p/14777557.html)
 
----
+![image](assets/image-20230310013347-f93y8xg.png)​
 
-‍
 
-​![image](assets/image-20230310013347-f93y8xg.png)​
 
 ### 原因
 
@@ -34,6 +30,8 @@ git pull --rebase origin master  //本地生成ReadMe文件
 git push origin master
 ```
 
+
+
 方法二：强推
 
 即利用强覆盖方式用你本地的代码替代git仓库内的内容
@@ -43,6 +41,9 @@ git push -f origin master
 ```
 
 该命令会强制上传覆盖远程文件，慎用  
+
+
+
 方法三、
 
 先把git的东西fetch到你本地然后merge后再push
@@ -53,3 +54,7 @@ git merge
 ```
 
 ‍
+
+### 参考文档：
+
+[git push后出现错误 ![rejected] master -&gt; master(non-fast-forward)](https://www.cnblogs.com/qingheshiguang/p/14777557.html)
