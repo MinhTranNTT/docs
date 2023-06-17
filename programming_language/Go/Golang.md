@@ -1,6 +1,4 @@
-# Go
-
-常用指令
+### 常用指令
 
 ```sh
 go mod init <项目名称>
@@ -14,11 +12,11 @@ go build -o h.exe ./he.go
 
 
 
-## 1、Hello Golang
+## Hello Golang
 
 
 
-### 1.1、语法特点：
+### 语法特点：
 
 `package main` 程序的包名，使用 `func` 定义函数，函数的{  一定是 和函数名在同一行的，否则编译错误。golang中的表达式，加";", 和不加 都可以，建议是不加
 
