@@ -1,3 +1,13 @@
+### 参考文档：
+
+[VuePress Vue 驱动的静态网站生成器](https://v2.vuepress.vuejs.org/zh/)
+
+[vuepress-theme-hope 一个具有强大功能的 vuepress 主题](https://theme-hope.vuejs.press/zh/)
+
+[vuepress-plugin-md-enhance 为 VuePress2 提供更多 Markdown 增强功能](https://plugin-md-enhance.vuejs.press/zh/)
+
+
+
 ### vuepress 部署文档
 
 ```sh
@@ -5,14 +15,6 @@ yarn create vuepress-theme-hope vuepress.github.io
 
 yarn run docs:dev
 ```
-
-### 参考文档：
-
-[VuePress Vue 驱动的静态网站生成器](https://v2.vuepress.vuejs.org/zh/)
-
-[vuepress-theme-hope 一个具有强大功能的 vuepress 主题](https://theme-hope.vuejs.press/zh/cookbook/)
-
-[vuepress-plugin-md-enhance 为 VuePress2 提供更多 Markdown 增强功能](https://plugin-md-enhance.vuejs.press/zh/)
 
 
 
