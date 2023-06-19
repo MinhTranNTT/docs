@@ -218,3 +218,43 @@ fn main() {
 ```
 
 在上述代码中，我们使用了 `unwrap()` 来解包函数 `divide` 返回的值。在这种情况下，我们确信 `b` 不会为零，所以我们可以用 `unwrap()` 来获取 `divide` 的返回值。然而，如果 `b` 为零，程序将会崩溃并打印 `"Cannot divide by zero!"`。因此，我们需要小心使用 `unwrap()`。
+
+
+
+
+
+### dyn 和 impl 是 Rust 中的关键字，用于定义 trait 对象和泛型实现。
+
+- dyn：用于定义 trait 对象。在 Rust 中，trait 对象是一种不确定类型，可以在运行时确定具体的类型。通过将 trait 指针包装在 Box 中创建 trait 对象。例如，`Box<dyn MyTrait>` 表示一个 MyTrait trait 对象的指针。
+- impl：用于定义泛型实现。在 Rust 中，可以定义泛型类型和泛型函数。通过 impl 关键字，可以为泛型类型或函数实现具体的行为。例如，对于泛型类型 T，可以使用 `impl<T> MyTrait for T {}` 为 T 实现 MyTrait trait。
+
+```rust
+trait Animal {
+    fn make_sound(&self) -> String;
+}
+
+struct Dog {
+    name: String,
+}
+
+impl Animal for Dog {
+    fn make_sound(&self) -> String {
+        return format!("{} barks", self.name);
+    }
+}
+
+fn make_animal_sound(animal: &dyn Animal) {
+    println!("{}", animal.make_sound());
+}
+
+fn main() {
+    let dog = Dog {
+        name: String::from("Rufus")
+    };
+
+    make_animal_sound(&dog);
+}
+
+```
+
+这个例子中，我们定义了一个 `Animal` trait，然后使用 `impl` 为 `Dog` 类型实现了这个 trait。`make_animal_sound` 函数接收一个 `dyn Animal` 类型的参数，这意味着它可以接收任何实现了 `Animal` trait 的类型。在 `main` 函数中，我们创建了一个 `Dog` 实例并将其传递给 `make_animal_sound` 函数。`make_animal_sound` 函数调用了 `Dog` 实例上的 `make_sound` 方法，因为 `Dog` 类型实现了 `Animal` trait。
