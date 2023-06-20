@@ -1,3 +1,5 @@
+失效
+
 ```sh
 zonglin@zonglin-VirtualBox:~$ nslookup github.com
 Server:         127.0.0.53
