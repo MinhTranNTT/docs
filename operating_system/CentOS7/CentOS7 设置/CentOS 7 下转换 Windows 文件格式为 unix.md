@@ -1,4 +1,4 @@
-# Linux 下转换 Windows 文件格式为 unix
+# CentOS 7 下转换 Windows 文件格式为 unix
 
 sed 指令清理文件中的隐藏符号
 

@@ -6,7 +6,7 @@
 
 JVM的类加载是通过ClassLoader及其子类来完成的，类的层次关系和加载顺序可以由下图来描述：
 
-​![image](assets/image-20230217180454-lp8xydo.png)​
+![image](assets/image-20230217180454-lp8xydo.png)​
 
 1. Bootstrap ClassLoader负责加载$JAVA_HOME/jre/lib里所有的类库到内存，Bootstrap ClassLoader是JVM级别的，由C++实现，不是ClassLoader的子类，开发者也无法直接获取到启动类加载器的引用，所以不允许直接通过引用进行操作。
 2. Extension ClassLoader负责加载java平台中扩展功能的一些jar包，主要是由 sun.misc.Launcher$ExtClassLoader实现的，是一个java类，继承自URLClassLoader超类。它将负责%JRE_HOME/lib/ext目录下的jar和class加载到内存，开发者可以直接使用该加载器。
@@ -48,7 +48,3 @@ JVM的类加载是通过ClassLoader及其子类来完成的，类的层次关系
 解析：将常量池内的符号引用替换为直接引用。
 
 初始化：到了初始化阶段，才真正开始执行类中定义的 Java 初始化程序代码。主要是静态变量赋值动作和静态语句块（static{}）中的语句。
-
-‍
-
-‍

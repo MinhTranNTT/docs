@@ -1,17 +1,11 @@
 # echo命令 – 输出字符串或提取后的变量值
 
-参考资料：
 
-[echo命令 – 输出字符串或提取后的变量值 – Linux命令大全(手册) (linuxcool.com)](https://www.linuxcool.com/echo)
-
----
-
-‍
 
 **语法格式：**
 
 	echo [短选项]... [字符串列表]...
-
+	
 	echo 长选项
 
 ‍

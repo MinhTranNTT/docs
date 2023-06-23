@@ -1,4 +1,4 @@
-# Linux shell 批量离线安装rpm
+# CentOS 7 shell 批量离线安装 rpm
 
 ```bash
 #!/bin/bash
