@@ -8,11 +8,9 @@
 
 进程是程序执行的实体，每一个进程都是一个应用程序（比如我们运行QQ、浏览器、LOL、网易云音乐等软件），都有自己的内存空间，CPU一个核心同时只能处理一件事情，当出现多个进程需要同时运行时，CPU一般通过`时间片轮转调度`算法，来实现多个进程的同时运行。
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhiphotos.baidu.com%2Fdoc%2Fpic%2Fitem%2Faec379310a55b3193e6caaf24aa98226cefc179b.jpg&refer=http%3A%2F%2Fhiphotos.baidu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1637499744&t=1df3c2095bc9a8cbe8cd9d0974644b7c)
-
 在早期的计算机中，进程是拥有资源和独立运行的最小单位，也是程序执行的最小单位。但是，如果我希望两个任务同时进行，就必须运行两个进程，由于每个进程都有一个自己的内存空间，进程之间的通信就变得非常麻烦（比如要共享某些数据）而且执行不同进程会产生上下文切换，非常耗时，那么能否实现在一个进程中就能够执行多个任务呢？
 
-![img](assets/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/src=http%253A%252F%252Fs2.51cto.com%252Fwyfs02%252FM00%252F84%252F3A%252FwKiom1eIqY7il2J7AAAyvcssSjs721.gif&refer=http%253A%252F%252Fs2.51cto.gif)
+![img](assets/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/jc.gif)
 
 后来，线程横空出世，一个进程可以有多个线程，线程是程序执行中一个单一的顺序控制流程，现在线程才是程序执行流的最小单元，各个线程之间共享程序的内存空间（也就是所在进程的内存空间），上下文切换速度也高于进程。
 
@@ -185,8 +183,6 @@ public static void main(String[] args) {
 我们可以看到打印实际上是在交替进行的，也证明了他们是在同时运行！
 
 **注意**：我们发现还有一个run方法，也能执行线程里面定义的内容，但是run是直接在当前线程执行，并不是创建一个线程执行！
-
-![img](assets/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/src=http%253A%252F%252Fwww.liuhaihua.cn%252Fwp-content%252Fuploads%252F2019%252F09%252F3AfuQrV.png&refer=http%253A%252F%252Fwww.liuhaihua.jpeg)
 
 实际上，线程和进程差不多，也会等待获取CPU资源，一旦获取到，就开始按顺序执行我们给定的程序，当需要等待外部IO操作（比如Scanner获取输入的文本），就会暂时处于休眠状态，等待通知，或是调用`sleep()`方法来让当前线程休眠一段时间：
 
@@ -501,11 +497,7 @@ public static void main(String[] args) {
 
 在开始讲解线程同步之前，我们需要先了解一下多线程情况下Java的内存管理：
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fvlambda.com%2Fimg%3Furl%3Dhttps%3A%2F%2Fmmbiz.qpic.cn%2Fmmbiz_png%2F2LlmEpiamhyq7hTfsoWa1GMIQlOtRuD8SScvIeB3KD7w4OoGu8wx13lBjMJLhYgYqTHND48X05m901TIEicGg49w%2F640%3Fwx_fmt%3Dpng&refer=http%3A%2F%2Fvlambda.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1637562962&t=830ccc4dbe09f2699660bfcc9a292c63)
-
 线程之间的共享变量（比如之前悬念中的value变量）存储在主内存（main memory）中，每个线程都有一个私有的工作内存（本地内存），工作内存中存储了该线程以读/写共享变量的副本。它类似于我们在`计算机组成原理`中学习的多处理器高速缓存机制：
-
-![img](assets/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/WEBb1fa2c9cd0784fb19f0d8ebeb8e00976)
 
 高速缓存通过保存内存中数据的副本来提供更加快速的数据访问，但是如果多个处理器的运算任务都涉及同一块内存区域，就可能导致各自的高速缓存数据不一致，在写回主内存时就会发生冲突，这就是引入高速缓存引发的新问题，称之为：缓存一致性。
 
@@ -651,7 +643,7 @@ public static void main(String[] args) throws InterruptedException {
 
 其实死锁的概念在`操作系统`中也有提及，它是指两个线程相互持有对方需要的锁，但是又迟迟不释放，导致程序卡住：
 
-![img](assets/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/src=http%253A%252F%252Fpic4.zhimg.com%252Fv2-9852c978350cc5e8641ba778619351bb_b.png&refer=http%253A%252F%252Fpic4.zhimg.jpeg)
+![img](assets/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/死锁.jpeg)
 
 我们发现，线程A和线程B都需要对方的锁，但是又被对方牢牢把握，由于线程被无限期地阻塞，因此程序不可能正常终止。我们来看看以下这段代码会得到什么结果：
 

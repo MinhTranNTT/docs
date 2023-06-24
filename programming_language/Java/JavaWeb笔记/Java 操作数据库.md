@@ -137,8 +137,6 @@ while (set.next()){
 
 我们在移动行数后，就可以通过set中提供的方法，来获取每一列的数据。
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg-blog.csdnimg.cn%2F202005062358238.png%3Fx-oss-process%3Dimage%2Fwatermark%2Ctype_ZmFuZ3poZW5naGVpdGk%2Cshadow_10%2Ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1JlZ2lubw%3D%3D%2Csize_16%2Ccolor_FFFFFF%2Ct_70&refer=http%3A%2F%2Fimg-blog.csdnimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1638091193&t=bf37a5cb988d0a641d00c7e325d06ce7)
-
 ### 执行批处理操作
 
 当我们要执行很多条语句时，可以不用一次一次地提交，而是一口气全部交给数据库处理，这样会节省很多的时间。
@@ -396,8 +394,6 @@ public static void main(String[] args) throws ClassNotFoundException {
 
 通过使用Lombok（小辣椒）就可以解决这样的问题！
 
-![img](assets/Java%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/src=http%253A%252F%252Finews.gtimg.com%252Fnewsapp_bt%252F0%252F14004711543%252F1000&refer=http%253A%252F%252Finews.gtimg.jpeg)
-
 我们来看看，使用原生方式和小辣椒方式编写类的区别，首先是传统方式：
 
 ```java
@@ -498,8 +494,6 @@ Java的编译过程可以分成三个阶段：
 
 **再次强调：**学习厉害的框架或是厉害的技术，并不是为了一定要去使用它，而是它们能够使得我们在不同的开发场景下，合理地使用这些技术，以灵活地应对需要解决的问题。
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fupload-images.jianshu.io%2Fupload_images%2F26720164-60462fc7927f8784.jpg&refer=http%3A%2F%2Fupload-images.jianshu.io&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1638550660&t=a0923b35afbaed1a168b74eb45ad2b4f)
-
 MyBatis 是一款优秀的持久层框架，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Ordinary Java Object,普通的 Java对象)映射成数据库中的记录。
 
 我们依然使用传统的jar依赖方式，从最原始开始讲起，不使用Maven，有关Maven内容我们会在后面统一讲解！全程围绕官方文档讲解！
@@ -543,7 +537,7 @@ XML文件也可以使用注释：
 
 那如果我们的内容中出现了`<`或是`>`字符，那该怎么办呢？我们就可以使用XML的转义字符来代替：
 
-![img](assets/Java%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/src=http%253A%252F%252Fimg.jxdoc.com%252Fpic%252F28d1ff67caaedd3383c4d358%252F1-332-jpg_6_0_______-505-0-0-505.jpg&refer=http%253A%252F%252Fimg.jxdoc.jpeg)
+![img](assets/Java%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/jxdoc.jpeg)
 
 如果嫌一个一个改太麻烦，也可以使用CD来快速创建不解析区域：
 
@@ -1504,7 +1498,7 @@ public interface MyMapper {
 
 在探究动态代理机制之前，我们要先聊聊什么是代理：其实顾名思义，就好比我开了个大棚，里面栽种的西瓜，那么西瓜成熟了是不是得去卖掉赚钱，而我们的西瓜非常多，一个人肯定卖不过来，肯定就要去多找几个开水果摊的帮我们卖，这就是一种代理。实际上是由水果摊老板在帮我们卖瓜，我们只告诉老板卖多少钱，而至于怎么卖的是由水果摊老板决定的。
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg-blog.csdnimg.cn%2F2020112311143434.png%3Fx-oss-process%26%2361%3Bimage%2Fwatermark%2Ctype_ZmFuZ3poZW5naGVpdGk%2Cshadow_10%2Ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hhdHR5MTkyMA%26%2361%3B%26%2361%3B%2Csize_16%2Ccolor_FFFFFF%2Ct_7&refer=http%3A%2F%2Fimg-blog.csdnimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639472394&t=b5590551c75049e91fc497b9920bdb83)
+![image-20230624114714312](assets/Java%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/image-20230624114714312.png)
 
 那么现在我们来尝试实现一下这样的类结构，首先定义一个接口用于规范行为：
 
@@ -1941,7 +1935,7 @@ public static void main(String[] args) throws IOException {
 
 实际上，整个日志的输出流程如下：
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg-blog.csdnimg.cn%2F20210310214730384.png%3Fx-oss-process%3Dimage%2Fwatermark%2Ctype_ZmFuZ3poZW5naGVpdGk%2Cshadow_10%2Ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI4NjIzMzc1%2Csize_16%2Ccolor_FFFFFF%2Ct_70&refer=http%3A%2F%2Fimg-blog.csdnimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639566412&t=aec06446b8338134a3dbddfaba9bde69)
+![image-20230624114757195](assets/Java%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/image-20230624114757195.png)
 
 ### Properties配置文件
 
@@ -2202,7 +2196,7 @@ Maven也需要安装环境，但是IDEA已经自带了Maven环境，因此我们
 
 我们可以来看一下，一个Maven项目和我们普通的项目有什么区别：
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg-blog.csdnimg.cn%2Fimg_convert%2F910235ebc812ba94abb0f762e3914f67.png&refer=http%3A%2F%2Fimg-blog.csdnimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639621411&t=2a62e7ef9b056d8cbe772e34fea0cc6f)
+![image-20230624114821469](assets/Java%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/image-20230624114821469.png)
 
 那么首先，我们需要了解一下POM文件，它相当于是我们整个Maven项目的配置文件，它也是使用XML编写的：
 
@@ -2280,7 +2274,7 @@ public class Student {
 
 项目运行成功，表示成功导入了依赖。那么，Maven是如何进行依赖管理呢，以致于如此便捷的导入依赖，我们来看看Maven项目的依赖管理流程：
 
-![img](assets/Java%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/src=http%253A%252F%252Fimage.bubuko.com%252Finfo%252F201901%252F20190106202802893827.png&refer=http%253A%252F%252Fimage.bubuko.jpeg)
+![image-20230624114835195](assets/Java%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/image-20230624114835195.png)
 
 通过流程图我们得知，一个项目依赖一般是存储在中央仓库中，也有可能存储在一些其他的远程仓库（私服），几乎所有的依赖都被放到了中央仓库中，因此，Maven可以直接从中央仓库中下载大部分的依赖（Maven第一次导入依赖是需要联网的），远程仓库中下载之后 ，会暂时存储在本地仓库，我们会发现我们本地存在一个`.m2`文件夹，这就是Maven本地仓库文件夹，默认建立在C盘，如果你C盘空间不足，会出现问题！
 
