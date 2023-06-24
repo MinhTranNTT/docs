@@ -19,7 +19,7 @@ Beats组成模块如下：
 
 Beat日志采集流程图：
 
-​![image](assets/image-20230211191734-sk6aqy3.png)​
+![image](assets/Filebeat/image-20230211191734-sk6aqy3.png)​
 
 ## 1.2 Filebeat特点
 
@@ -33,7 +33,7 @@ Beat日志采集流程图：
 
 （5）Filebeat带有内部模块（auditd，Apache，Nginx，System和MySQL），可通过一个指定命令来简化通用日志格式的收集，解析和可视化。
 
-​`bin/logstash -e 'input { stdin{} } output { stdout{} }'`​
+`bin/logstash -e 'input { stdin{} } output { stdout{} }'`​
 
 ‍
 
@@ -63,7 +63,7 @@ Filebeat本身对机器性能要求不高，所以对机器性能无需过多关
 
 [https://www.elastic.co/cn/downloads/beats/filebeat](https://www.elastic.co/cn/downloads/beats/filebeat)
 
-​![image](assets/image-20230211191949-ywn02hi.png)​
+![image](assets/Filebeat/image-20230211191949-ywn02hi.png)​
 
 ## 2.2 Filebeat部署安装
 
@@ -164,7 +164,7 @@ output{
 
 ```
 
-​![image](assets/image-20230211192343-8o9brmi.png)​
+![image](assets/Filebeat/image-20230211192343-8o9brmi.png)​
 
 ## 3.2 Filebeat模块使用
 
@@ -172,7 +172,7 @@ output{
 
 拿kafka为例，使用对应的module可以直接实现对kafka日志的监控
 
-​![image](assets/image-20230211192401-ls8jgpr.png)​
+![image](assets/Filebeat/image-20230211192401-ls8jgpr.png)​
 
 （2）修改Filebeat配置文件filebeat.yml
 
@@ -226,7 +226,7 @@ filebeat.config.modules:
 
 ```
 
-​![image](assets/image-20230211192544-cfic3h7.png)​
+![image](assets/Filebeat/image-20230211192544-cfic3h7.png)​
 
 ## 3.3 对接ES
 
@@ -282,7 +282,7 @@ output.elasticsearch:
 [atguigu@hadoop102 elasticsearch]$ curl http://hadoop102:9200/info
 ```
 
-​![image](assets/image-20230211192730-9jcw800.png)​
+![image](assets/Filebeat/image-20230211192730-9jcw800.png)​
 
 ## 3.4 对接kafka
 
@@ -321,6 +321,6 @@ output.kafka:
 
 （4）观察kafka接收到的数据
 
-​![image](assets/image-20230211192832-asq4njz.png)​
+![image](assets/Filebeat/image-20230211192832-asq4njz.png)​
 
 ‍

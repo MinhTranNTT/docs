@@ -34,7 +34,7 @@ git push -u origin "master"
 
 #### Git 常用指令
 
-![git命令总结_gitlab](assets/git-linux-20230113173631-12q3qzn.webp)​
+![git命令总结_gitlab](assets/Git%20%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/git-linux-20230113173631-12q3qzn.webp)​
 
 
 
@@ -167,7 +167,7 @@ git reset --hard <版本号>
 
 #### Git 分支操作
 
-![img](assets/git-branch-linux-20230113173631-bn1m6j9.jpg)​
+![img](assets/Git%20%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/git-branch-linux-20230113173631-bn1m6j9.jpg)​
 
 
 
@@ -262,7 +262,7 @@ liuzonglin@LAPTOP-CGO0UV3J MINGW64 /d/.github/.dome/df (master) # MERGING 消失
 
 #### Git 远程仓库操作
 
-![img](assets/b98b14bbf50dbff292054121b9f36685-20230113173631-svx0z1w.png)​
+![img](assets/Git%20%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/b98b14bbf50dbff292054121b9f36685-20230113173631-svx0z1w.png)​
 
 
 

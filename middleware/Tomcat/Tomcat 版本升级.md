@@ -15,7 +15,7 @@
 3. Tomcat7 进行错误页重定向：`ROOT/WEB-INF/web.xml`​​
 4. Tomcat7 中所有日志进行了重定向：`/usr/local/las/log/tomcat7/`​​
 5. Tomcat7 中 cookie 设置 HttpOnly 属性为 true
-6. ​`jre/lib/security/`​​ 下的 `local_policy.jar`​​ 和 `US_export_policy.jar`​​ 替换为官方网站提供了JCE无限制权限策略文件
+6. `jre/lib/security/`​​ 下的 `local_policy.jar`​​ 和 `US_export_policy.jar`​​ 替换为官方网站提供了JCE无限制权限策略文件
 
 ### 修改Tomcat版本号：
 
@@ -26,19 +26,19 @@
    修改以下参数值：
 
       server.info=Apache Tomcat/7.0.92
-
+    
       server.number=7.0.92.0
-
+    
       server.built=Nov 9 2018 11:07:44 UTC
-
+    
       修改完成之后重新压缩保存，替换原有的文件
 
 查看新的版本号：tomcat/bin/version.sh
 
-  
-​![image](assets/image-20230308212236-uv1n1m5.png)​
 
-​![image](assets/image-20230308212244-mbphgls.png)​
+![image](assets/Tomcat%20%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/image-20230308212236-uv1n1m5.png)​
+
+![image](assets/Tomcat%20%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/image-20230308212244-mbphgls.png)​
 
 ### Tomcat中设置Cookie的HttpOly属性
 
@@ -50,17 +50,17 @@
 
 修改前：
 
-​![image](assets/image-20230308212334-rj7vdwq.png)​
+![image](assets/Tomcat%20%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/image-20230308212334-rj7vdwq.png)​
 
 修改后：
 
-​![image](assets/image-20230308212348-f05pq0i.png)​​
+![image](assets/Tomcat%20%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/image-20230308212348-f05pq0i.png)​​
 
 ### 如何处理tomcat默认错误页面
 
 当Tomcat出现404界面之后跳转到默认页
 
-​![image](assets/image-20230308212445-febymff.png)​
+![image](assets/Tomcat%20%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/image-20230308212445-febymff.png)​
 
 可以将此页重新定位到其他指定界面：
 

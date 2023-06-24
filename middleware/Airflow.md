@@ -42,25 +42,25 @@ conda是一个开源的包、环境管理器，可以用于在同一个机器上
 
 （1）执行以下命令进行安装，并按照提示操作，直到安装完成。
 
-​`[atguigu@hadoop102 lib]$ bash Miniconda3-latest-Linux-x86_64.sh`​
+`[atguigu@hadoop102 lib]$ bash Miniconda3-latest-Linux-x86_64.sh`​
 
 （2）在安装过程中，出现以下提示时，可以指定安装路径
 
-​![](assets/clip_image002-20230211202203-mybm7vb.jpg)​
+![](assets/Airflow/clip_image002-20230211202203-mybm7vb.jpg)​
 
 （3）出现以下字样，即为安装完成
 
-​![](assets/clip_image002-20230211202213-9lk1g4f.jpg)​
+![](assets/Airflow/clip_image002-20230211202213-9lk1g4f.jpg)​
 
 **3）加载环境变量配置文件，使之生效**
 
-​`[atguigu@hadoop102 lib]$ source ~/.bashrc`​
+`[atguigu@hadoop102 lib]$ source ~/.bashrc`​
 
 **4）取消激活base环境**
 
 Miniconda安装完成后，每次打开终端都会激活其默认的base环境，我们可通过以下命令，禁止激活默认base环境。
 
-​`[atguigu@hadoop102 lib]$ conda config --set auto_activate_base false`​
+`[atguigu@hadoop102 lib]$ conda config --set auto_activate_base false`​
 
 ### 2.2.2 创建Python3.8环境
 
@@ -75,7 +75,7 @@ Miniconda安装完成后，每次打开终端都会激活其默认的base环境�
 
 **2）创建Python3.8环境**
 
-​`(base) [atguigu@hadoop102 ~]$ conda create --name airflow python=3.8`​
+`(base) [atguigu@hadoop102 ~]$ conda create --name airflow python=3.8`​
 
 **说明：conda环境管理常用命令**
 
@@ -87,7 +87,7 @@ Miniconda安装完成后，每次打开终端都会激活其默认的base环境�
 
 **3）激活airflow环境**
 
-​`(base) [atguigu@hadoop102 ~]$ conda activate airflow`​
+`(base) [atguigu@hadoop102 ~]$ conda activate airflow`​
 
         激活后效果如下图所示
 
@@ -99,7 +99,7 @@ Miniconda安装完成后，每次打开终端都会激活其默认的base环境�
 
 **说明：退出当前环境。**
 
-​`(superset) [atguigu@hadoop102 ~]$ conda deactivate`​
+`(superset) [atguigu@hadoop102 ~]$ conda deactivate`​
 
 **4）执行python -V命令查看python版本**
 
@@ -128,33 +128,33 @@ trusted-host = https://pypi.tuna.tsinghua.edu.cn
 
 **2）安装airflow**
 
-​`(airflow) [atguigu@hadoop102 software]$  pip install "apache-airflow==2.4.3"`​
+`(airflow) [atguigu@hadoop102 software]$  pip install "apache-airflow==2.4.3"`​
 
 **3）初始化airflow**
 
-​`(airflow) [atguigu@hadoop102 software]$ airflow db init`​
+`(airflow) [atguigu@hadoop102 software]$ airflow db init`​
 
 **4）查看版本**
 
-​`(airflow) [atguigu@hadoop102 software]$ airflow version`​
+`(airflow) [atguigu@hadoop102 software]$ airflow version`​
 
-​`2.4.3`​
+`2.4.3`​
 
 **5）airflow安装好存放路径**
 
-​`(airflow) [atguigu@hadoop102 airflow]$ pwd`​
+`(airflow) [atguigu@hadoop102 airflow]$ pwd`​
 
-​`/home/atguigu/airflow`​
+`/home/atguigu/airflow`​
 
 **6）启动airflow web服务,启动后浏览器访问http://hadoop102:8080**
 
-​`(airflow) [atguigu@hadoop102 airflow]$ airflow webserver -p 8080 -D`​
+`(airflow) [atguigu@hadoop102 airflow]$ airflow webserver -p 8080 -D`​
 
-​![](assets/clip_image002-20230211202453-agai4dw.jpg)​
+![](assets/Airflow/clip_image002-20230211202453-agai4dw.jpg)​
 
 **7）启动airflow调度**
 
-​`(airflow) [atguigu@hadoop102 airflow]$  airflow scheduler -D`​
+`(airflow) [atguigu@hadoop102 airflow]$  airflow scheduler -D`​
 
 **8）创建账号**
 
@@ -190,13 +190,13 @@ esac
 
 添加权限即可使用。
 
-​`atguigu@hadoop102 bin]$ chmod +x af.sh`​
+`atguigu@hadoop102 bin]$ chmod +x af.sh`​
 
 ## 2.4 修改数据库为MySQL
 
 **1）在MySQL中建库**
 
-​`mysql> CREATE DATABASE airflow_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;`​
+`mysql> CREATE DATABASE airflow_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;`​
 
 **2）如果报错Linux error:1425F102:SSL routines:ssl_choose_client_version:unsupported protocol，可以关闭MySQL的SSL证书**
 
@@ -231,9 +231,9 @@ skip_ssl
 
 官网介绍的方法有两种，这里我们选择下面的连接器。
 
-​![](assets/clip_image002-20230211202635-21ctab8.jpg)​
+![](assets/Airflow/clip_image002-20230211202635-21ctab8.jpg)​
 
-​`(airflow) [atguigu@hadoop102 airflow]$ pip install mysql-connector-python`​
+`(airflow) [atguigu@hadoop102 airflow]$ pip install mysql-connector-python`​
 
 **5）修改airflow的配置文件：**
 
@@ -264,11 +264,11 @@ sql_alchemy_conn = mysql+mysqlconnector://root:123456@hadoop102:3306/airflow_db
 
 推荐修改mysql存储时间戳格式：
 
-​`mysql> set GLOBAL sql_mode ='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'`​
+`mysql> set GLOBAL sql_mode ='STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'`​
 
 重启MySQL会造成参数失效，推荐将参数写入到配置文件my.cnf中。
 
-​`sql_mode = STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION`​
+`sql_mode = STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION`​
 
 **8）重新创建账号登录：**
 
@@ -282,15 +282,15 @@ sql_alchemy_conn = mysql+mysqlconnector://root:123456@hadoop102:3306/airflow_db
 
 ```
 
-​![](assets/clip_image002-20230211202755-wqbqnk7.jpg)​
+![](assets/Airflow/clip_image002-20230211202755-wqbqnk7.jpg)​
 
-​![](assets/clip_image002-20230211202759-lrb5ogj.jpg)​
+![](assets/Airflow/clip_image002-20230211202759-lrb5ogj.jpg)​
 
 ## 2.5 修改执行器
 
 官网不推荐在开发中使用顺序执行器，会造成任务调度阻塞。
 
-​![](assets/clip_image002-20230211202813-psor3xk.jpg)​
+![](assets/Airflow/clip_image002-20230211202813-psor3xk.jpg)​
 
 **1）修改airflow的配置文件**
 
@@ -312,15 +312,15 @@ executor = LocalExecutor
 
 本次测试使用的是spark的官方案例，所有需要启动hadoop和spark的历史服务器。
 
-​`[atguigu@hadoop102 bin]$ myhadoop.sh start`​
+`[atguigu@hadoop102 bin]$ myhadoop.sh start`​
 
-​`[atguigu@hadoop102 bin]$ cd /opt/module/spark-yarn/sbin/start-history-server.sh`​
+`[atguigu@hadoop102 bin]$ cd /opt/module/spark-yarn/sbin/start-history-server.sh`​
 
 **2）查看Airflow配置文件**
 
-​`(python3) [root@airflow work-py]# vim ~/airflow/airflow.cfg`​
+`(python3) [root@airflow work-py]# vim ~/airflow/airflow.cfg`​
 
-​![](assets/clip_image002-20230211202906-fxnvycx.jpg)​
+![](assets/Airflow/clip_image002-20230211202906-fxnvycx.jpg)​
 
 **3）编写.py脚本，创建work-py目录用于存放python调度脚本**
 
@@ -445,31 +445,31 @@ tutorial
 
 **5）已出现test任务，刷新页面**
 
-​![](assets/clip_image002-20230211203013-qhhptpn.jpg)​
+![](assets/Airflow/clip_image002-20230211203013-qhhptpn.jpg)​
 
 **6）点击运行**
 
-​![](assets/clip_image002-20230211203021-e4su0ys.jpg)​
+![](assets/Airflow/clip_image002-20230211203021-e4su0ys.jpg)​
 
 **7）点击成功任务，查看日志**
 
-​![](assets/clip_image002-20230211203029-rewyozs.jpg)​
+![](assets/clip_image002-20230211203029-rewyozs.jpg)​
 
-​![](assets/clip_image002-20230211203035-ihc67bz.jpg)​
+![](assets/Airflow/clip_image002-20230211203035-ihc67bz.jpg)​
 
-​![](assets/clip_image002-20230211203041-oapw2mh.jpg)​
+![](assets/Airflow/clip_image002-20230211203041-oapw2mh.jpg)​
 
-​![](assets/clip_image002-20230211203045-ghf19dh.jpg)​
+![](assets/Airflow/clip_image002-20230211203045-ghf19dh.jpg)​
 
 **8）查看dag图、甘特图**
 
-​![](assets/clip_image002-20230211203055-iuqfey2.jpg)​
+![](assets/Airflow/clip_image002-20230211203055-iuqfey2.jpg)​
 
-​![](assets/clip_image004-20230211203055-avdck97.jpg)​
+![](assets/Airflow/clip_image004-20230211203055-avdck97.jpg)​
 
 **9）查看脚本代码**
 
-​![](assets/clip_image006-20230211203055-y4sbf1c.jpg)​
+![](assets/Airflow/clip_image006-20230211203055-y4sbf1c.jpg)​
 
 ## 3.2 Dag任务操作
 
@@ -477,7 +477,7 @@ tutorial
 
 主要删除DAG任务不会删除底层文件，过一会还会自动加载回来。
 
-​![](assets/clip_image008-20230211203055-9nb5pgn.jpg)​
+![](assets/Airflow/clip_image008-20230211203055-9nb5pgn.jpg)​
 
 ### 3.2.2 查看当前所有dag任务
 
@@ -493,9 +493,9 @@ tutorial
 
 **1）保证邮箱已开SMTP服务**
 
-​![](assets/clip_image002-20230211203118-8j3kmn6.jpg)​
+![](assets/Airflow/clip_image002-20230211203118-8j3kmn6.jpg)​
 
-​![](assets/clip_image004-20230211203118-bip0a2e.jpg)​
+![](assets/Airflow/clip_image004-20230211203118-bip0a2e.jpg)​
 
 **2）修改airflow配置文件，用stmps服务对应587端口**
 
@@ -515,15 +515,15 @@ smtp_mail_from = 403627000@qq.com
 
 **3）重启airflow**
 
-​`[atguigu@hadoop102 bin]$ af.sh stop`​
+`[atguigu@hadoop102 bin]$ af.sh stop`​
 
-​`[atguigu@hadoop102 bin]$ af.sh start`​
+`[atguigu@hadoop102 bin]$ af.sh start`​
 
 **4）编辑test.py**脚本，并且替换 
 
-​`[root@airflow ~]# cd /opt/module/work-py/`​
+`[root@airflow ~]# cd /opt/module/work-py/`​
 
-​`[root@airflow work-py]# vim test.py`​
+`[root@airflow work-py]# vim test.py`​
 
 ```bash
 #!/usr/bin/python
@@ -592,12 +592,12 @@ email.set_upstream(t3)
 
 **5）查看页面是否生效**
 
-​![](assets/clip_image002-20230211203231-itg4pm0.jpg)​
+![](assets/Airflow/clip_image002-20230211203231-itg4pm0.jpg)​
 
-​![](assets/clip_image004-20230211203231-czwb49u.jpg)​
+![](assets/Airflow/clip_image004-20230211203231-czwb49u.jpg)​
 
 **6）运行测试**
 
-​![](assets/clip_image006-20230211203231-39lbowz.jpg)​
+![](assets/Airflow/clip_image006-20230211203231-39lbowz.jpg)​
 
-​![](assets/clip_image008-20230211203231-iw0ghd1.jpg)​
+![](assets/clip_image008-20230211203231-iw0ghd1.jpg)​

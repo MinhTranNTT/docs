@@ -6,11 +6,11 @@
 
 MVC 模式，全称为 *<u>Model-View-Controller</u>*（模型-视图-控制器）模式，它是一种软件架构模式，其目标是将软件的用户界面（即前台页面）和业务逻辑分离，使代码具有更高的可扩展性、可复用性、可维护性以及灵活性。
 
-​![image](assets/image-20230222114332-6tgpre8.png "Java Web 应用的结构 ")​
+![image](assets/MVC%E6%A8%A1%E5%BC%8F/image-20230222114332-6tgpre8.png "Java Web 应用的结构 ")​
 
 MVC 模式将应用程序划分成模型（Model）、视图（View）、控制器（Controller）等三层，如下图所示。
 
-​![image](assets/image-20230222114325-7c3q7n4.png "MVC 模式")​
+![image](assets/MVC%E6%A8%A1%E5%BC%8F/image-20230222114325-7c3q7n4.png "MVC 模式")​
 
 ‍
 

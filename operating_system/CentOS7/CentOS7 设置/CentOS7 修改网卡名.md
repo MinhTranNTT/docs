@@ -49,13 +49,13 @@ uuidgen eth1						# 生成uuid
 
 ```
 
-![image](assets/image-20230208193147-s5ii6nl.png)​
+![image](assets/CentOS7%20%E4%BF%AE%E6%94%B9%E7%BD%91%E5%8D%A1%E5%90%8D/image-20230208193147-s5ii6nl.png)​
 
 ‍
 
 查看到ens37对应的UUID信息nmcli conn show
 
-![image](assets/image-20230208193159-21ht3mc.png)​
+![image](assets/CentOS7%20%E4%BF%AE%E6%94%B9%E7%BD%91%E5%8D%A1%E5%90%8D/image-20230208193159-21ht3mc.png)​
 
 改名策略：
 
@@ -69,7 +69,7 @@ uuidgen eth1						# 生成uuid
 
 …………
 
-![image](assets/image-20230208193209-ay52kih.png)​
+![image](assets/CentOS7%20%E4%BF%AE%E6%94%B9%E7%BD%91%E5%8D%A1%E5%90%8D/image-20230208193209-ay52kih.png)​
 
 systemctl restart network.service
 

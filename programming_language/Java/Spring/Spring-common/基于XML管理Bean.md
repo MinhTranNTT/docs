@@ -51,36 +51,36 @@
 
     ```java
     package com.atguigu.spring6.bean;
-
+    
     public class HelloWorld {
-
+    
         public HelloWorld() {
             System.out.println("无参数构造方法执行");
         }
-
+    
         public void sayHello(){
             System.out.println("helloworld");
         }
     }
-
+    
     ```
 
     ```java
     package com.atguigu.spring6.bean;
-
+    
     import org.junit.jupiter.api.Test;
     import org.slf4j.Logger;
     import org.slf4j.LoggerFactory;
     import org.springframework.context.ApplicationContext;
     import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+    
     public class HelloWorldTest {
-
+    
         private Logger logger = LoggerFactory.getLogger(HelloWorldTest.class);
-
+    
         @Test
         public void testHelloWorld(){
-
+    
         }
     }
     ```
@@ -196,7 +196,7 @@ org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying
 
   ```kotlin
   package example.bean
-
+  
   import org.example.HelloWorldTest
   import org.example.bean.UserDao
   import org.junit.jupiter.api.Test
@@ -204,10 +204,10 @@ org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying
   import org.slf4j.LoggerFactory
   import org.springframework.context.ApplicationContext
   import org.springframework.context.support.ClassPathXmlApplicationContext
-
+  
   class UserDaoTest {
       private val logger: Logger = LoggerFactory.getLogger(HelloWorldTest::class.java)
-
+  
       @Test
       fun testHelloWorld() {
           val ac: ApplicationContext = ClassPathXmlApplicationContext("bean.xml")
@@ -221,7 +221,7 @@ org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying
 
   执行结果
 
-  ​![image](assets/image-20230209162213-bju5mur.png)​
+  ![image](assets/%E5%9F%BA%E4%BA%8EXML%E7%AE%A1%E7%90%86Bean/image-20230209162213-bju5mur.png)​
 
 > 可以，前提是bean唯一
 
@@ -384,7 +384,7 @@ spring-di.xml
 
 注意：
 
-​`<constructor-arg>`​ 标签还有两个属性可以进一步描述构造器参数：
+`<constructor-arg>`​ 标签还有两个属性可以进一步描述构造器参数：
 
 * index属性：**指定参数所在位置的索引（从0开始）**​`Book(String bname, String author)`​ 0， 1
 * name属性：指定参数名
@@ -463,32 +463,32 @@ public void testDIByConstructor(){
 
   ```java
   package org.example.ditest;
-
+  
   import java.util.List;
-
+  
   //部门类
   public class Dept {
-
+  
       //一个部门有很多员工
       private List<Emp> empList;
-
+  
       private String dname;
-
+  
       public String getDname() {
           return dname;
       }
       public void setDname(String dname) {
           this.dname = dname;
       }
-
+  
       public List<Emp> getEmpList() {
           return empList;
       }
-
+  
       public void setEmpList(List<Emp> empList) {
           this.empList = empList;
       }
-
+  
       public void info() {
           System.out.println("部门名称："+dname);
           for (Emp emp:empList) {
@@ -502,28 +502,28 @@ public void testDIByConstructor(){
 
   ```java
   package org.example.ditest;
-
+  
   import java.util.Arrays;
-
+  
   //员工类
   public class Emp {
-
+  
       //对象类型属性：员工属于某个部门
       private Dept dept;
       //员工名称
       private String ename;
       //员工年龄
       private Integer age;
-
+  
       //爱好
       private String[] loves;
-
+  
       public void work() {
           System.out.println(ename+"emp work....."+age);
           dept.info();
           System.out.println(Arrays.toString(loves));
       }
-
+  
       public String[] getLoves() {
           return loves;
       }
@@ -592,11 +592,11 @@ public void testDIByConstructor(){
 
 * 错误演示：
 
-  ​![image](assets/image-20230209180945-qpu81u2.png)​
+  ![image](assets/%E5%9F%BA%E4%BA%8EXML%E7%AE%A1%E7%90%86Bean/image-20230209180945-qpu81u2.png)​
 
   如果错把ref属性写成了value属性，会抛出异常：
 
-  ​`Caused by: java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'com.atguigu.spring6.bean.Clazz' for property 'clazz': no matching editors or conversion strategy found`​
+  `Caused by: java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'com.atguigu.spring6.bean.Clazz' for property 'clazz': no matching editors or conversion strategy found`​
 
   意思是不能把 String 类型转换成我们要的Clazz类型，说明我们使用value属性时，Spring只把这个属性看做一个普通的字符串，不会认为这是一个bean的id，更不会根据它去找到bean来赋值
 
@@ -630,7 +630,7 @@ public void testDIByConstructor(){
 
 * **bean 标签 class 路径报错**
 
-​`org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.atguigu.spring6.iocxml.ditest.Emp] for bean with name 'emp2' defined in class path resource [bean-ditest.xml]`​
+`org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.atguigu.spring6.iocxml.ditest.Emp] for bean with name 'emp2' defined in class path resource [bean-ditest.xml]`​
 
 ##### 方式三：级联属性赋值
 
@@ -721,7 +721,7 @@ public void setStudents(List<Student> students) {
 
 若为Set集合类型属性赋值，只需要将其中的list标签改为set标签即可
 
-​![image](assets/image-20230209190900-vm8mr6p.png)`<ref>`​ 引入其他 bean
+![image](assets/%E5%9F%BA%E4%BA%8EXML%E7%AE%A1%E7%90%86Bean/image-20230209190900-vm8mr6p.png)`<ref>`​ 引入其他 bean
 
 ##### 为Map集合类型属性赋值
 
@@ -936,7 +936,7 @@ public void setTeacherMap(Map<String, Teacher> teacherMap) {
 
 **②创建外部属性文件**​**`jdbc.properties`**​
 
-​![images](assets/img010-20230209125530-4b4iebh.png)​
+![images](assets/%E5%9F%BA%E4%BA%8EXML%E7%AE%A1%E7%90%86Bean/img010-20230209125530-4b4iebh.png)​
 
 ```properties
 jdbc.user=root
@@ -1437,10 +1437,10 @@ public class UserDaoImpl implements UserDao {
 
   ```xml
   <bean id="userController" class="com.atguigu.spring6.autowire.controller.UserController" autowire="byName"></bean>
-
+  
   <bean id="userService" class="com.atguigu.spring6.autowire.service.impl.UserServiceImpl" autowire="byName"></bean>
   <bean id="userServiceImpl" class="com.atguigu.spring6.autowire.service.impl.UserServiceImpl" autowire="byName"></bean>
-
+  
   <bean id="userDao" class="com.atguigu.spring6.autowire.dao.impl.UserDaoImpl"></bean>
   <bean id="userDaoImpl" class="com.atguigu.spring6.autowire.dao.impl.UserDaoImpl"></bean>
   ```

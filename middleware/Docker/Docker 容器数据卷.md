@@ -7,7 +7,7 @@
 [root@ home]# docker run -it -v /home/ceshi:/home centos /bin/bash
 ```
 
-​![image](assets/image-20230221223450-r698x3e.png)​
+![image](assets/Docker%20%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B7/image-20230221223450-r698x3e.png)​
 
 总结：容器运行时，挂载目录数据一直同步
 

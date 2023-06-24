@@ -10,13 +10,13 @@
 
 SpringCloud Stream能够做到，它能够屏蔽底层实现，我们使用统一的消息队列操作方式就能操作多种不同类型的消息队列。
 
-​![image](assets/image-20230221232358-jrgsyp1.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232358-jrgsyp1.png)​
 
 它屏蔽了RabbitMQ底层操作，让我们使用统一的Input（输入）和Output（输出）形式，以Binder为中间件，这样就算我们切换了不同的消息队列，也无需修改代码，而具体某种消息队列的底层实现是交给Stream在做的。
 
 这里我们创建一个新的项目来测试一下：
 
-​![image](assets/image-20230221232432-h4rtdp9.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232432-h4rtdp9.png)​
 
 依赖如下：
 
@@ -93,15 +93,15 @@ public class PublishController {
 
 现在我们来将生产者启动一下，访问一下接口：
 
-​![image](assets/image-20230221232639-767yv6d.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232639-767yv6d.png)​
 
 可以看到消息成功发送，我们来看看RabbitMQ这边的情况：
 
-​![image](assets/image-20230221232645-mut7637.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232645-mut7637.png)​
 
 新增了一个`test-in-0`​交换机，并且此交换机是topic类型的：
 
-​![image](assets/image-20230221232650-fzj12yz.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232650-fzj12yz.png)​
 
 但是目前没有任何队列绑定到此交换机上，因此我们刚刚发送的消息实际上是没有给到任何队列的。
 
@@ -135,23 +135,23 @@ spring:
 
 接着我们直接启动就可以了，可以看到启动之后，自动为我们创建了一个新的队列：
 
-​![image](assets/image-20230221232725-dpvn87s.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232725-dpvn87s.png)​
 
 而这个队列实际上就是我们消费者等待数据到达的队列：
 
-​![image](assets/image-20230221232730-9uugo1j.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232730-9uugo1j.png)​
 
 可以看到当前队列直接绑定到了我们刚刚创建的交换机上，并且`routingKey`​是直接写的`#`​，也就是说一会消息会直接过来。
 
 现在我们再来访问一些消息发送接口：
 
-​![image](assets/image-20230221232735-3cykjw3.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232735-3cykjw3.png)​
 
-​![image](assets/image-20230221232740-p5e67gw.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232740-p5e67gw.png)​
 
 可以看到消费者成功地进行消费了：
 
-​![image](assets/image-20230221232745-mv0kzti.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232745-mv0kzti.png)​
 
 这样，我们就通过使用SpringCloud Stream来屏蔽掉底层RabbitMQ来直接进行消息的操作了。
 
@@ -195,21 +195,21 @@ management:
 
 然后启动我们的三个服务器，可以看到在管理面板中：
 
-​![image](assets/image-20230221232808-t2djjhi.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232808-t2djjhi.png)​
 
 新增了springCloudBug这样一个交换机，并且：
 
-​![image](assets/image-20230221232813-7z73o3p.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232813-7z73o3p.png)​
 
 自动生成了各自的消息队列，这样就可以监听并接收到消息了。
 
 现在我们访问一个端口：
 
-​![image](assets/image-20230221232817-x2cs8yu.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232817-x2cs8yu.png)​
 
 此端口是用于通知别人进行刷新，可以看到调用之后，消息队列中成功出现了一次消费：
 
-​![image](assets/image-20230221232822-gw75qk0.png)​
+![image](assets/SpringCloud%20%E6%B6%88%E6%81%AF%E7%BB%84%E4%BB%B6/image-20230221232822-gw75qk0.png)​
 
 现在我们结合之前使用的Config配置中心，来看看是不是可以做到通知之后所有的配置动态刷新了。
 

@@ -35,7 +35,7 @@ chkconfig -add zookeeper
 chkconfig --list
 ```
 
-​![image](assets/image-20230308162730-fa3fb0h.png)​
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20zookeeper/image-20230308162730-fa3fb0h.png)​
 
 **增加权限**
 

@@ -285,7 +285,7 @@ public class UserTest {
 
 测试结果：
 
-​![image-20221101153556681](assets/image-20221101153556681-20230209125530-lpsz6yz.png)​
+![image-20221101153556681](assets/%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%AE%A1%E7%90%86Bean%EF%BC%88%E2%98%86%EF%BC%89/image-20221101153556681-20230209125530-lpsz6yz.png)​
 
 以上构造方法和setter方法都没有提供，经过测试，仍然可以注入成功。
 

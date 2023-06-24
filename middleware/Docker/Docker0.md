@@ -290,7 +290,7 @@ PING tomcat-net-02 (192.168.0.3) 56(84) bytes of data.
 不同的集群使用不同的网络，保证集群时安全和健康的
 
 打通tomcat01 和mynet  
-​![image](assets/image-20230221223645-bpcfhsg.png)​
+​![image](assets/Docker0/image-20230221223645-bpcfhsg.png)​
 
 ```sh
 [root@ ~]# docker network connect  mynet tomcat01

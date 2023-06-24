@@ -18,19 +18,19 @@
 * 通过 ServletRegistrationBean<DispatcherServlet> 把 DispatcherServlet  配置进来。
 * 默认映射的是 / 路径。
 
-​![image](assets/image-20230306165843-nicdyni.png)​
+![image](assets/Web%E5%8E%9F%E7%94%9F%E7%BB%84%E4%BB%B6%E6%B3%A8%E5%85%A5%EF%BC%88Servlet%E3%80%81Filter%E3%80%81Listener%EF%BC%89/image-20230306165843-nicdyni.png)​
 
 **Tomcat-Servlet；**
 
 多个Servlet都能处理到同一层路径，精确优选原则
 
-​A： /my/
+A： /my/
 
 B： /my/1
 
 **使用RegistrationBean**
 
-​`ServletRegistrationBean`​, `FilterRegistrationBean`​, and `ServletListenerRegistrationBean`​
+`ServletRegistrationBean`​, `FilterRegistrationBean`​, and `ServletListenerRegistrationBean`​
 
 ```java
 @Configuration

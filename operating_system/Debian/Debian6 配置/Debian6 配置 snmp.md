@@ -9,11 +9,11 @@ agentAddress udp:127.0.0.1:161
 agentAddress udp:161,udp6:[::1]:161  
 并修改为  
 agentAddress udp:161  
-​![image](assets/image-20230302210019-t60uowa.png)​  
+​![image](assets/Debian6%20%E9%85%8D%E7%BD%AE%20snmp/image-20230302210019-t60uowa.png)​  
 在此处添加一条新的接入指令  
-​​![image](assets/image-20230302210022-a084mcl.png)​  
+​​![image](assets/Debian6%20%E9%85%8D%E7%BD%AE%20snmp/image-20230302210022-a084mcl.png)​  
 查看此处的团体名是否正确，默认为public(此处根据用户要求修改，如过用户没有要求，则默认为public)，将原来的systemonly修改为AllView  
-​​![image](assets/image-20230302210025-81hat96.png)​  
+​​![image](assets/Debian6%20%E9%85%8D%E7%BD%AE%20snmp/image-20230302210025-81hat96.png)​  
 修改完毕后重启SNMP服务 /etc/init.d/snmpd restart
 
 snmpwalk -v 2c -c public localhost     在本机上执行这条命令，查看是否有数据

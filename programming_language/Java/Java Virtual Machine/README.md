@@ -1,4 +1,4 @@
-![image](assets/image-20230113193856-9p0kxes.png)​
+
 
 JVM：<u>*Java Virtual Machine*</u> 的简写，译为“JAVA虚拟机”。JVM 包含两个子系统和两个组件。
 

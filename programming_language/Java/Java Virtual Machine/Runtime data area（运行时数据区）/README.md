@@ -2,7 +2,7 @@
 
 ‍
 
-![image](assets/image-20230216153127-xzve28i.png "Java 运行时数据区")​
+![image](assets/README/image-20230216153127-xzve28i.png "Java 运行时数据区")​
 
 ‍
 

@@ -344,7 +344,7 @@ spring:
 
 ### 2、请求映射原理
 
-​​![image](assets/image-20230226063924-inmvy9x.png)​​
+​![image](assets/image-20230226063924-inmvy9x.png)​​
 
 **SpringMVC功能分析都从 org.springframework.web.servlet.DispatcherServlet-》doDispatch（）**
 
@@ -370,9 +370,9 @@ protected void doDispatch(HttpServletRequest request, HttpServletResponse respon
                 //HandlerMapping：处理器映射。/xxx->>xxxx
 ```
 
-​![image](assets/image-20230226063940-2o77ads.png)​
+![image](assets/image-20230226063940-2o77ads.png)​
 
-​![image](assets/image-20230226063943-4id9wei.png)​
+![image](assets/image-20230226063943-4id9wei.png)​
 
 **所有的请求映射都在HandlerMapping中。**
 
@@ -517,11 +517,11 @@ request.getAttribute();
 
 **mavContainer.getModel(); 获取到值的**
 
-​![image](assets/image-20230226064044-tml1oct.png)​
+![image](assets/image-20230226064044-tml1oct.png)​
 
-​![image](assets/image-20230226064059-1v6q70n.png)​
+![image](assets/image-20230226064059-1v6q70n.png)​
 
-​![image](assets/image-20230226064104-1uh7g60.png)​
+![image](assets/image-20230226064104-1uh7g60.png)​
 
 ### 1.4、自定义对象参数：
 
@@ -568,9 +568,9 @@ result
 
 ### 1、HandlerAdapter
 
-​![image](assets/image-20230226064121-kd5a9vw.png)​
+![image](assets/image-20230226064121-kd5a9vw.png)​
 
-​![image.png](https://cdn.nlark.com/yuque/0/2020/png/1354552/1603262942726-107353bd-f8b7-44f6-93cf-2a3cad4093cf.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_18%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)​
+![image.png](assets/SpringMVC%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%A6%82%E8%A7%88/1603262942726-107353bd-f8b7-44f6-93cf-2a3cad4093cf.png)​
 
 0 - 支持方法上标注@RequestMapping  
 1 - 支持函数式编程的  
@@ -602,16 +602,16 @@ Object[] args = getMethodArgumentValues(request, mavContainer, providedArgs);
 
 **SpringMVC目标方法能写多少种参数类型。取决于参数解析器。**
 
-​![image](assets/image-20230226064145-0496u3m.png)​
+![image](assets/image-20230226064145-0496u3m.png)​
 
-​![image](assets/image-20230226064154-ap86e1w.png)​
+![image](assets/image-20230226064154-ap86e1w.png)​
 
 * **当前解析器是否支持解析这种参数**
 * **支持就调用 resolveArgument**
 
 ### 4、返回值处理器
 
-​![](https://cdn.nlark.com/yuque/0/2020/png/1354552/1603263524227-386da4be-43b1-4b17-a2cc-8cf886346af9.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)​
+![](assets/SpringMVC%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%A6%82%E8%A7%88/1603263524227-386da4be-43b1-4b17-a2cc-8cf886346af9.png)​
 
 ### 5、如何确定目标方法每一个参数的值
 
@@ -771,9 +771,9 @@ public static boolean isSimpleValueType(Class<?> type) {
 
 **@FunctionalInterface  public interface** **Converter&lt;**S**, ​**​****T****​**&gt;**
 
-​![image](assets/image-20230226064235-dswav29.png)​
+![image](assets/image-20230226064235-dswav29.png)​
 
-​![image](assets/image-20230226064248-ka0jblh.png)​
+![image](assets/image-20230226064248-ka0jblh.png)​
 
 **未来我们可以给WebDataBinder里面放自己的Converter；**
 
@@ -820,7 +820,7 @@ public static boolean isSimpleValueType(Class<?> type) {
 
 **将所有的数据都放在 ModelAndViewContainer；包含要去的页面地址View。还包含Model数据。**
 
-​![image](assets/image-20230226064306-mtfdpah.png)​
+![image](assets/image-20230226064306-mtfdpah.png)​
 
 7、处理派发结果  
 processDispatchResult(processedRequest, response, mappedHandler, mv, dispatchException);
@@ -911,13 +911,13 @@ web场景自动引入了json场景
 
 ```
 
-​![image](assets/image-20230226064401-kalyf1c.png)​
+![image](assets/image-20230226064401-kalyf1c.png)​
 
 **给前端自动返回json数据；**
 
 #### 1、返回值解析器
 
-​![image](assets/image-20230226064413-mkh597i.png)​
+![image](assets/image-20230226064413-mkh597i.png)​
 
 ```java
 try {
@@ -958,7 +958,7 @@ RequestResponseBodyMethodProcessor
 
 #### 2、返回值解析器原理
 
-​![image](assets/image-20230226064435-ef03nay.png)​
+![image](assets/image-20230226064435-ef03nay.png)​
 
 *  1、返回值处理器判断是否支持这种类型返回值  supportsReturnType
 * **2、返回值处理器调用 handleReturnValue 进行处理**
@@ -972,7 +972,7 @@ RequestResponseBodyMethodProcessor
   * **1、得到MappingJackson2HttpMessageConverter可以将对象写为json**
   * **2、利用MappingJackson2HttpMessageConverter将对象转为json再写出去。**
 
-​![image](assets/image-20230226064444-byv5efr.png)​
+![image](assets/image-20230226064444-byv5efr.png)​
 
 ### 1.2、SpringMVC到底支持哪些返回值
 
@@ -1000,7 +1000,7 @@ WebAsyncTask
 
 #### 1、MessageConverter规范
 
-​![image](assets/image-20230226064501-b2dyfsh.png)​
+![image](assets/image-20230226064501-b2dyfsh.png)​
 
 **HttpMessageConverter: 看是否支持将 此 Class类型的对象，转为MediaType类型的数据。**
 
@@ -1008,7 +1008,7 @@ WebAsyncTask
 
 #### 2、默认的MessageConverter
 
-​![image](assets/image-20230226064508-s194h8r.png)​
+![image](assets/image-20230226064508-s194h8r.png)​
 
 **0 - 只支持Byte类型的**
 
@@ -1032,7 +1032,7 @@ WebAsyncTask
 
 **最终 MappingJackson2HttpMessageConverter  把对象转为JSON（利用底层的jackson的objectMapper转换的）**
 
-​![image](assets/image-20230226064524-pra7w6m.png)​
+![image](assets/image-20230226064524-pra7w6m.png)​
 
 ## 2、内容协商
 
@@ -1051,7 +1051,7 @@ WebAsyncTask
 
 **只需要改变请求头中Accept字段。Http协议中规定的，告诉服务器本客户端可以接收的数据类型。**
 
-​![image](assets/image-20230226064540-bqufj9j.png)​
+![image](assets/image-20230226064540-bqufj9j.png)​
 
 ### 3、开启浏览器参数方式内容协商功能
 
@@ -1067,13 +1067,13 @@ spring:
 
 [http://localhost:8080/test/person?format=](http://localhost:8080/test/person?format=json)xml
 
-​![image](assets/image-20230226064556-qj46rpq.png)​
+![image](assets/image-20230226064556-qj46rpq.png)​
 
-​![image.png](https://cdn.nlark.com/yuque/0/2020/png/1354552/1605230907471-b0ed34bc-6782-40e7-84b7-615726312f01.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)​
+![image.png](assets/SpringMVC%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%A6%82%E8%A7%88/1605230907471-b0ed34bc-6782-40e7-84b7-615726312f01.png)​
 
 确定客户端接收什么样的内容类型；  
 1、Parameter策略优先确定是要返回json数据（获取请求头中的format的值）  
-​![image.png](https://cdn.nlark.com/yuque/0/2020/png/1354552/1605231074299-25f5b062-2de1-4a09-91bf-11e018d6ec0e.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_18%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)​
+​![image.png](assets/SpringMVC%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%A6%82%E8%A7%88/1605231074299-25f5b062-2de1-4a09-91bf-11e018d6ec0e.png)​
 
 2、最终进行内容协商返回给客户端json即可。
 
@@ -1081,20 +1081,20 @@ spring:
 ●1、判断当前响应头中是否已经有确定的媒体类型。MediaType  
 ●2、获取客户端（PostMan、浏览器）支持接收的内容类型。（获取客户端Accept请求头字段）【application/xml】  
 ○contentNegotiationManager 内容协商管理器 默认使用基于请求头的策略  
-○![image.png](https://cdn.nlark.com/yuque/0/2020/png/1354552/1605230462280-ef98de47-6717-4e27-b4ec-3eb0690b55d0.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_15%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)​
+○![image.png](assets/SpringMVC%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%A6%82%E8%A7%88/1605230462280-ef98de47-6717-4e27-b4ec-3eb0690b55d0.png)​
 
 ○HeaderContentNegotiationStrategy  确定客户端可以接收的内容类型  
-○![image.png](https://cdn.nlark.com/yuque/0/2020/png/1354552/1605230546376-65dcf657-7653-4a58-837a-f5657778201a.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_28%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)​
+○![image.png](assets/SpringMVC%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%A6%82%E8%A7%88/1605230546376-65dcf657-7653-4a58-837a-f5657778201a.png)​
 
 ●3、遍历循环所有当前系统的 MessageConverter，看谁支持操作这个对象（Person）  
 ●4、找到支持操作Person的converter，把converter支持的媒体类型统计出来。  
 ●5、客户端需要【application/xml】。服务端能力【10种、json、xml】  
-●![image.png](https://cdn.nlark.com/yuque/0/2020/png/1354552/1605173876646-f63575e2-50c8-44d5-9603-c2d11a78adae.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_20%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)​
+●![image.png](assets/SpringMVC%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%A6%82%E8%A7%88/1605173876646-f63575e2-50c8-44d5-9603-c2d11a78adae.png)​
 
 ●6、进行内容协商的最佳匹配媒体类型  
 ●7、用 支持 将对象转为 最佳匹配媒体类型 的converter。调用它进行转化 。
 
-​![image.png](https://cdn.nlark.com/yuque/0/2020/png/1354552/1605173657818-73331882-6086-490c-973b-af46ccf07b32.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_18%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)​
+![image.png](assets/SpringMVC%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%A6%82%E8%A7%88/1605173657818-73331882-6086-490c-973b-af46ccf07b32.png)​
 
 导入了jackson处理xml的包，xml的converter就会自动进来
 
@@ -1138,9 +1138,9 @@ if (jackson2XmlPresent) {
     }
 ```
 
-​![image](assets/image-20230226064629-ayzvi2m.png)​
+![image](assets/image-20230226064629-ayzvi2m.png)​
 
-​![image](assets/image-20230226064633-59sggej.png)​
+![image](assets/image-20230226064633-59sggej.png)​
 
 **有可能我们添加的自定义的功能会覆盖默认很多功能，导致一些默认的功能失效。**
 
@@ -1182,13 +1182,13 @@ if (jackson2XmlPresent) {
 
  自定义视图解析器+自定义视图；  **大厂学院。**
 
-​![](https://cdn.nlark.com/yuque/0/2020/png/1354552/1605680247945-088b0f17-185c-490b-8889-103e8b4d8c07.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_16%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)​
+![](assets/SpringMVC%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%A6%82%E8%A7%88/1605680247945-088b0f17-185c-490b-8889-103e8b4d8c07.png)​
 
-​![](https://cdn.nlark.com/yuque/0/2020/png/1354552/1605679959020-54b96fe7-f2fc-4b4d-a392-426e1d5413de.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_23%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)​
+![](assets/SpringMVC%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%A6%82%E8%A7%88/1605679959020-54b96fe7-f2fc-4b4d-a392-426e1d5413de.png)​
 
-​![](https://cdn.nlark.com/yuque/0/2020/png/1354552/1605679471537-7db702dc-b165-4dc6-b64a-26459ee5fd6c.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_17%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)​
+![](assets/SpringMVC%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%A6%82%E8%A7%88/1605679471537-7db702dc-b165-4dc6-b64a-26459ee5fd6c.png)​
 
-​![](https://cdn.nlark.com/yuque/0/2020/png/1354552/1605679913592-151a616a-c754-4da3-a2c1-91dc0230a48d.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)​
+![](assets/SpringMVC%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%A6%82%E8%A7%88/1605679913592-151a616a-c754-4da3-a2c1-91dc0230a48d.png)​
 
 ## 2、模板引擎-Thymeleaf
 
@@ -1316,7 +1316,7 @@ th:if="${not #lists.isEmpty(prod.comments)}">view</a>
 
 ### 6、属性优先级
 
-​![image](assets/image-20230226064805-6po7r2v.png)​
+![image](assets/image-20230226064805-6po7r2v.png)​
 
 3、thymeleaf使用
 
@@ -1555,6 +1555,6 @@ public class AdminWebConfig implements WebMvcConfigurer {
 
 **7、页面成功渲染完成以后，也会倒序触发 **afterCompletion
 
-​![](https://cdn.nlark.com/yuque/0/2020/png/1354552/1605764129365-5b31a748-1541-4bee-9692-1917b3364bc6.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_44%2Ctext_YXRndWlndS5jb20g5bCa56GF6LC3%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)​
+![](assets/SpringMVC%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE%E6%A6%82%E8%A7%88/1605764129365-5b31a748-1541-4bee-9692-1917b3364bc6.png)​
 
-​![image](assets/image-20230226064935-fctnnke.png)​
+![image](assets/image-20230226064935-fctnnke.png)​

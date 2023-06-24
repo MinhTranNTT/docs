@@ -23,7 +23,7 @@
   D:\.github\.dome\java-����\untitled\src\main\java\org\example\Demo.java:4: ����: ���� GBK �Ĳ���ӳ���ַ� (0x80)
    * 通过�?个对象获得完整的包名和类�?
          ^
-  D:\.github\.dome\java-����\untitled\src\main\java\org\example\Demo.java:4: ����: ���� GBK �Ĳ���ӳ���ַ� (0x8D)
+      D:\.github\.dome\java-����\untitled\src\main\java\org\example\Demo.java:4: ����: ���� GBK �Ĳ���ӳ���ַ� (0x8D)
    * 通过�?个对象获得完整的包名和类�?
                              ^
 
@@ -55,16 +55,16 @@
 
   最后效果
 
-  ​![image](assets/image-20230221214804-uzepfnd.png)​
+  ​![image](assets/Gradle%20%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C%20Java%20%E9%A1%B9%E7%9B%AE%E4%B9%B1%E7%A0%81/image-20230221214804-uzepfnd.png)​
 
 * idea 设置文件编码
 * 设置idea编码
 
   效果图：
 
-  ​![image](assets/image-20230221214900-o7o708g.png)​
+  ![image](assets/Gradle%20%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C%20Java%20%E9%A1%B9%E7%9B%AE%E4%B9%B1%E7%A0%81/image-20230221214900-o7o708g.png)​
 
-  ​![image](assets/image-20230221215138-fonnv9v.png)​
+  ![image](assets/Gradle%20%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C%20Java%20%E9%A1%B9%E7%9B%AE%E4%B9%B1%E7%A0%81/image-20230221215138-fonnv9v.png)​
 
   ‍
 

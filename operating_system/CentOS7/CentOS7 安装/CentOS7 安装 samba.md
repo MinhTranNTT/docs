@@ -69,7 +69,7 @@ linux自动启动samba,deepin 安装Samba并设置为开机启动：https://blog
 
 ```
 
-![image](assets/2402369-20211230151120459-1460669807.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20samba/2402369-20211230151120459-1460669807.png)
 
 
 
@@ -85,12 +85,12 @@ linux自动启动samba,deepin 安装Samba并设置为开机启动：https://blog
 ## windows 连接用户
 
 `Win + R` -> `\\ip`
-![image](assets/2402369-20220103004937763-1944901332.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20samba/2402369-20220103004937763-1944901332.png)
 
 
 
 输入设置的samba账户密码，登录
-![image](assets/2402369-20220103005058773-2113177828.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20samba/2402369-20220103005058773-2113177828.png)
 
 
 

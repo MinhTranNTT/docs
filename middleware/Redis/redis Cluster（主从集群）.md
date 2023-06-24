@@ -1,6 +1,6 @@
 # redis Cluster（主从集群）
 
-​
+
 
 ## Redis的主从同步机制
 
@@ -16,7 +16,7 @@
 > info replication # 查看当前库的信息
 ```
 
-![image-20221207210427385](assets/image-20221207210427385-20230113215812-kaaqbyc.png)
+![image-20221207210427385](assets/redis%20Cluster%EF%BC%88%E4%B8%BB%E4%BB%8E%E9%9B%86%E7%BE%A4%EF%BC%89/image-20221207210427385-20230113215812-kaaqbyc.png)
 
 ### 2、 编辑 redis.conf ...
 
@@ -39,17 +39,17 @@ dbfilename dump6380.rdb
 
 ### 3、 重启各服务
 
-![image-20221207210748955](assets/image-20221207210748955-20230113215812-2hlxsrf.png)
+![image-20221207210748955](assets/redis%20Cluster%EF%BC%88%E4%B8%BB%E4%BB%8E%E9%9B%86%E7%BE%A4%EF%BC%89/image-20221207210748955-20230113215812-2hlxsrf.png)
 
 ### 4、 命令配置从机 6380 7381（redis 默认本身是主库）
 
 > 配置从机 `slaveof 127.0.0.1 6379`
 
-![image](assets/2402369-20221007062614252-1424877840-20230113215812-sdowo2g.png)
+![image](assets/redis%20Cluster%EF%BC%88%E4%B8%BB%E4%BB%8E%E9%9B%86%E7%BE%A4%EF%BC%89/2402369-20221007062614252-1424877840-20230113215812-sdowo2g.png)
 
 > 查看主机是否配置成功
 
-![image](assets/2402369-20221007062652929-1630139140-20230113215812-39y9rt6.png)
+![image](assets/redis%20Cluster%EF%BC%88%E4%B8%BB%E4%BB%8E%E9%9B%86%E7%BE%A4%EF%BC%89/2402369-20221007062652929-1630139140-20230113215812-39y9rt6.png)
 
 ### 5、 文件配置
 
@@ -70,7 +70,7 @@ replicaof 192.168.31.1 6379
 
 ### 6、主机断了 `slaveo no one`​ 从换主
 
-![image](assets/2402369-20221007062744477-909902638-20230113215812-pn8alih.png)
+![image](assets/redis%20Cluster%EF%BC%88%E4%B8%BB%E4%BB%8E%E9%9B%86%E7%BE%A4%EF%BC%89/2402369-20221007062744477-909902638-20230113215812-pn8alih.png)
 
 ### 7、高可用之 Sentinel(哨兵模式)
 
@@ -90,11 +90,11 @@ replicaof 192.168.31.1 6379
 
 单哨兵
 
-![image](assets/2402369-20221007062759926-630840522-20230113215812-f49pyh2.png)
+![image](assets/redis%20Cluster%EF%BC%88%E4%B8%BB%E4%BB%8E%E9%9B%86%E7%BE%A4%EF%BC%89/2402369-20221007062759926-630840522-20230113215812-f49pyh2.png)
 
 > 多哨兵
 
-![image](assets/2402369-20221007062816847-1673470608-20230113215812-49e61nk.png)
+![image](assets/redis%20Cluster%EF%BC%88%E4%B8%BB%E4%BB%8E%E9%9B%86%E7%BE%A4%EF%BC%89/2402369-20221007062816847-1673470608-20230113215812-49e61nk.png)
 
 > 配置哨兵模式
 
@@ -113,11 +113,11 @@ sentinel monitor myredis 127.0.0.1 6379 1
 redis-sentinel /usr/local/config/sentinel.conf
 ```
 
-![image](assets/2402369-20221007062841902-504497802-20230113215812-4km8wsq.png)
+![image](assets/redis%20Cluster%EF%BC%88%E4%B8%BB%E4%BB%8E%E9%9B%86%E7%BE%A4%EF%BC%89/2402369-20221007062841902-504497802-20230113215812-4km8wsq.png)
 
-![image](assets/2402369-20221007062853736-2107662983-20230113215812-wjw0nyi.png)
+![image](assets/redis%20Cluster%EF%BC%88%E4%B8%BB%E4%BB%8E%E9%9B%86%E7%BE%A4%EF%BC%89/2402369-20221007062853736-2107662983-20230113215812-wjw0nyi.png)
 
-![image](assets/2402369-20221007062903496-540983137-20230113215812-fpk9avz.png)
+![image](assets/redis%20Cluster%EF%BC%88%E4%B8%BB%E4%BB%8E%E9%9B%86%E7%BE%A4%EF%BC%89/2402369-20221007062903496-540983137-20230113215812-fpk9avz.png)
 
 > 完整的哨兵模式配置文件 sentinel.conf
 

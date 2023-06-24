@@ -14,7 +14,7 @@ ThreadLocal 里面使用了一个存在弱引用的 Map, 当释放掉 ThreadLoca
 
 在 ThreadLocal 的生命周期中，都存在这些引用看下图：
 
-​![image](assets/image-20230211214909-sa9v02f.png)​
+![image](assets/ThreadLocal%20%E4%BC%9A%E5%87%BA%E7%8E%B0%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E5%90%97%EF%BC%9F/image-20230211214909-sa9v02f.png)​
 
 每个thread中都存在一个map, map的类型是`ThreadLocal.ThreadLocalMap`​​。
 

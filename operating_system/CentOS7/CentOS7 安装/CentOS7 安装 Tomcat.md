@@ -48,6 +48,6 @@ chmod +x /etc/init.d/tomcat			# 添加权限
 /etc/init.d/tomcat start # 或者 service tomcat start
 ```
 
-![image](assets/image-20230308163030-w2cngt4.png)​
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20Tomcat/image-20230308163030-w2cngt4.png)​
 
 ‍

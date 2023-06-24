@@ -2,7 +2,7 @@
 
 ### 不安全的http协议
 
-​![image](assets/image-20230302132903-lhzr1cu.png)​
+![image](assets/Https%E8%AF%81%E4%B9%A6%E9%85%8D%E7%BD%AE/image-20230302132903-lhzr1cu.png)​
 
 ### openssl
 

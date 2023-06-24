@@ -16,7 +16,7 @@ Bean的生命周期主要包括：Bean定义，Bean初始化，Bean生存期，B
 
 ‍
 
-​![image](assets/image-20230207174701-xoiby6p.png)​
+![image](assets/%E8%AF%B4%E8%AF%B4%20Bean%20%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/image-20230207174701-xoiby6p.png)​
 
 ‍
 
@@ -43,16 +43,16 @@ Bean的生命周期主要包括：Bean定义，Bean初始化，Bean生存期，B
 
     ```java
     package org.springframework.beans.factory;
-
+    
     import org.springframework.beans.BeansException;
     import org.springframework.beans.factory.BeanFactory;
     import org.springframework.beans.factory.BeanFactoryAware;
     import org.springframework.beans.factory.SmartInitializingSingleton;
     import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
-
+    
     @Configuration
     public class CanalGlueAutoConfiguration implements SmartInitializingSingleton, BeanFactoryAware {
-
+    
         private ConfigurableListableBeanFactory configurableListableBeanFactory;
 
 
@@ -60,16 +60,16 @@ Bean的生命周期主要包括：Bean定义，Bean初始化，Bean生存期，B
         public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
             this.configurableListableBeanFactory = (ConfigurableListableBeanFactory) beanFactory;
         }
-
+    
     }
-
+    
     ```
 
 5. 如果 Bean 实现了ApplicationContextAware 接口的话，Spring 将调用 Bean 的 setApplicationContext() 方法，将 bean 所在应用上下文引用传入进来。
 
     ```java
     package com.mall4j.cloud.common.util;
-
+    
     import org.springframework.beans.BeansException;
     import org.springframework.context.ApplicationContext;
     import org.springframework.context.ApplicationContextAware;
@@ -78,49 +78,49 @@ Bean的生命周期主要包括：Bean定义，Bean初始化，Bean生存期，B
 
     @Component
     public class SpringContextUtils implements ApplicationContextAware {
-
+    
     	public static ApplicationContext applicationContext;
-
+    
     	@SuppressWarnings("NullableProblems")
     	@Override
     	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
     		SpringContextUtils.applicationContext = applicationContext;
     	}
-
+    
     }
-
+    
     ```
 
 6. 如果Bean实现了 BeanPostProcessor 接口，Spring 就将调用他们的 postProcessBeforeInitialization() 方法。
 
     ```java
     package org.springframework.beans.factory.config;
-
+    
     import org.springframework.beans.BeansException;
     import org.springframework.lang.Nullable;
 
 
     public interface BeanPostProcessor {
-
+    
     	@Nullable
     	default Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
     		return bean;
     	}
-
+    
     	@Nullable
     	default Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
     		return bean;
     	}
-
+    
     }
-
+    
     ```
 
 7. 如果 Bean 实现了 InitializingBean 接口,Spring将调用他们的afterPropertiesSet()方法。类似的,如果bean使用init-method声明了初始化方法,该方法也会被调用
 
     ```java
     package com.mall4j.cloud.biz.config;
-
+    
     import org.springframework.beans.factory.InitializingBean;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.stereotype.Component;
@@ -128,48 +128,48 @@ Bean的生命周期主要包括：Bean定义，Bean初始化，Bean生存期，B
 
     @Component
     public class MinioTemplate implements InitializingBean {
-
+    
         @Autowired
         private OssConfig ossConfig;
-
+    
         private MinioClient minioClient;
-
+    
         static  final Logger logger = LoggerFactory.getLogger(MinioTemplate.class);
-
+    
         @Override
         public void afterPropertiesSet() throws Exception {
             this.minioClient =  MinioClient.builder().endpoint(ossConfig.getEndpoint())
                     .credentials(ossConfig.getAccessKeyId(), ossConfig.getAccessKeySecret())
                     .build();
         }
-
+    
     }
-
+    
     ```
 
 8. 如果 Bean 实现了BeanPostProcessor接口,Spring就将调用他们的postProcessAfterInitialization()方法。
 
     ```java
     package org.springframework.beans.factory.config;
-
+    
     import org.springframework.beans.BeansException;
     import org.springframework.lang.Nullable;
 
 
     public interface BeanPostProcessor {
-
+    
     	@Nullable
     	default Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
     		return bean;
     	}
-
+    
     	@Nullable
     	default Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
     		return bean;
     	}
-
+    
     }
-
+    
     ```
 
 9. 此时，Bean已经准备就绪,可以被应用程序使用了。他们将一直驻留在应用上下文中,直到应用上下文被销毁。
@@ -178,13 +178,13 @@ Bean的生命周期主要包括：Bean定义，Bean初始化，Bean生存期，B
 
      ```java
      package org.springframework.beans.factory;
-
+    
      public interface DisposableBean {
-
+    
      	void destroy() throws Exception;
-
+    
      }
-
+    
      ```
 
 ‍

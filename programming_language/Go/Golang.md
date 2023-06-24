@@ -167,7 +167,7 @@ func foo4(a string, b int) (r1, r2 int) {
 
 ## init函数与import导包
 
-![image-20221231101621213](assets/image-20221231101621213-20230114165834-6xj89r6.png)
+![image-20221231101621213](assets/Golang/image-20221231101621213-20230114165834-6xj89r6.png)
 
 ```go
 package main

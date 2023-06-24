@@ -4,9 +4,9 @@
 
 ### 8.1、Spring Resources概述
 
-​![image-20221218154945878](assets/image-20221218154945878-20230209125530-4y3vxf3.png)​
+![image-20221218154945878](assets/%E8%B5%84%E6%BA%90%E6%93%8D%E4%BD%9C%EF%BC%9AResources/image-20221218154945878-20230209125530-4y3vxf3.png)​
 
-​![image-20221206231535991](assets/image-20221206231535991-20230209125530-vvmueki.png)​
+![image-20221206231535991](assets/%E8%B5%84%E6%BA%90%E6%93%8D%E4%BD%9C%EF%BC%9AResources/image-20221206231535991-20230209125530-vvmueki.png)​
 
 Java的标准 `java.net.URL`​ 类和各种URL前缀的标准处理程序无法满足所有对 low-level 资源的访问，比如：没有标准化的 URL 实现可用于访问需要从类路径或相对于 ServletContext 获取的资源。并且缺少某些Spring所需要的功能，例如检测某资源是否存在等。**而Spring 的 Resource 声明了访问 low-level 资源的能力。**
 
@@ -57,21 +57,21 @@ public interface InputStreamSource {
 
 **其中一些重要的方法：**
 
-* ​`getInputStream()`​: 找到并打开资源，返回一个InputStream以从资源中读取。预计每次调用都会返回一个新的InputStream()，调用者有责任关闭每个流
-* ​`exists()`​: 返回一个布尔值，表明某个资源是否以物理形式存在
-* ​`isOpen()`​: 返回一个布尔值，指示此资源是否具有开放流的句柄。如果为true，InputStream就不能够多次读取，只能够读取一次并且及时关闭以避免内存泄漏。对于所有常规资源实现，返回false，但是InputStreamResource除外。
-* ​`getDescription()`​: 返回资源的描述，用来输出错误的日志。这通常是完全限定的文件名或资源的实际URL。
+* `getInputStream()`: 找到并打开资源，返回一个InputStream以从资源中读取。预计每次调用都会返回一个新的InputStream()，调用者有责任关闭每个流
+* `exists()`: 返回一个布尔值，表明某个资源是否以物理形式存在
+* `isOpen()`: 返回一个布尔值，指示此资源是否具有开放流的句柄。如果为true，InputStream就不能够多次读取，只能够读取一次并且及时关闭以避免内存泄漏。对于所有常规资源实现，返回false，但是InputStreamResource除外。
+* `getDescription()`: 返回资源的描述，用来输出错误的日志。这通常是完全限定的文件名或资源的实际URL。
 
 **其他方法：**
 
-* ​`isReadable()`​: 表明资源的目录读取是否通过getInputStream()进行读取。
-* ​`isFile()`​: 表明这个资源是否代表了一个文件系统的文件。
-* ​`getURL()`​: 返回一个URL句柄，如果资源不能够被解析为URL，将抛出IOException
-* ​`getURI()`​: 返回一个资源的URI句柄
-* ​`getFile()`​: 返回某个文件，如果资源不能够被解析称为绝对路径，将会抛出FileNotFoundException
-* ​`lastModified()`​: 资源最后一次修改的时间戳
-* ​`createRelative()`​: 创建此资源的相关资源
-* ​`getFilename()`​: 资源的文件名是什么 例如：最后一部分的文件名 myfile.txt
+* `isReadable()`: 表明资源的目录读取是否通过getInputStream()进行读取。
+* `isFile()`: 表明这个资源是否代表了一个文件系统的文件。
+* `getURL()`: 返回一个URL句柄，如果资源不能够被解析为URL，将抛出IOException
+* `getURI()`: 返回一个资源的URI句柄
+* `getFile()`: 返回某个文件，如果资源不能够被解析称为绝对路径，将会抛出FileNotFoundException
+* `lastModified()`: 资源最后一次修改的时间戳
+* `createRelative()`: 创建此资源的相关资源
+* `getFilename()`: 资源的文件名是什么 例如：最后一部分的文件名 myfile.txt
 
 ### 8.3、Resource的实现类
 
@@ -91,7 +91,7 @@ file: ------该前缀用于从文件系统中读取资源
 
 **创建一个maven子模块spring6-resources，配置Spring依赖（参考前面）**
 
-​![image-20221207102315185](assets/image-20221207102315185-20230209125530-wehyccp.png)​
+![image-20221207102315185](assets/%E8%B5%84%E6%BA%90%E6%93%8D%E4%BD%9C%EF%BC%9AResources/image-20221207102315185-20230209125530-wehyccp.png)​
 
 ```java
 package com.atguigu.spring6.resources;
@@ -144,7 +144,7 @@ ClassPathResource 用来访问类加载路径下的资源，相对于其他的 R
 
 **实验：在类路径下创建文件atguigu.txt，使用ClassPathResource 访问**
 
-​![image-20221207103020854](assets/image-20221207103020854-20230209125530-uoz2af3.png)​
+![image-20221207103020854](assets/%E8%B5%84%E6%BA%90%E6%93%8D%E4%BD%9C%EF%BC%9AResources/image-20221207103020854-20230209125530-uoz2af3.png)​
 
 ```java
 package com.atguigu.spring6.resources;
@@ -233,7 +233,7 @@ InputStreamResource 是给定的输入流(InputStream)的Resource实现。它的
 
 上述Resource实现类与Resource顶级接口之间的关系可以用下面的UML关系模型来表示
 
-​![image-20221206232920494](assets/image-20221206232920494-20230209125530-m0qb7do.png)​
+![image-20221206232920494](assets/%E8%B5%84%E6%BA%90%E6%93%8D%E4%BD%9C%EF%BC%9AResources/image-20221206232920494-20230209125530-m0qb7do.png)​
 
 ### 8.5、ResourceLoader 接口
 

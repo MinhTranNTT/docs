@@ -14,21 +14,21 @@
 
   在idea中，依次单击 File -> New -> Project -> New Project
 
-  ​![image](assets/image-20230209131607-wky89sk.png)​
+  ![image](assets/%E6%9E%84%E5%BB%BASpring%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/image-20230209131607-wky89sk.png)​
 
   点击“Create”
 
-  ​![image](assets/image-20230209131830-3yvm8cm.png)​
+  ![image](assets/%E6%9E%84%E5%BB%BASpring%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/image-20230209131830-3yvm8cm.png)​
 
   删除src目录
 
 * **构建子模块 spring6-first**
 
-  ​![image](assets/image-20230209132021-ddgzepz.png)​
+  ![image](assets/%E6%9E%84%E5%BB%BASpring%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/image-20230209132021-ddgzepz.png)​
 
   点击 Create 完成
 
-  ​![image](assets/image-20230209132143-0bnoy95.png)​
+  ![image](assets/%E6%9E%84%E5%BB%BASpring%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/image-20230209132143-0bnoy95.png)​
 
   父工厂 自动加载依赖
 
@@ -116,7 +116,7 @@
 
 * **查看依赖：**
 
-  ​![image](assets/image-20230209132721-pypc7r3.png)​
+  ![image](assets/%E6%9E%84%E5%BB%BASpring%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/image-20230209132721-pypc7r3.png)​
 
 * 创建java类
 
@@ -135,7 +135,7 @@
 
   在resources目录创建一个 Spring 配置文件 beans.xml（配置文件名称可随意命名，如：springs.xml）
 
-  ​![img007](assets/img007-20230209125529-83cjuqh.png)​
+  ![img007](assets/%E6%9E%84%E5%BB%BASpring%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/img007-20230209125529-83cjuqh.png)​
 
 * **bean.xml 初始格式**
 
@@ -181,7 +181,7 @@
 
   ```kotlin
   package org.example
-
+  
   import org.junit.jupiter.api.Test
   import org.springframework.context.ApplicationContext
   import org.springframework.context.support.ClassPathXmlApplicationContext
@@ -191,13 +191,13 @@
 
       @Test
       fun testHelloWorld() {
-  	// ClassPathXmlApplicationContext 加载 spring 配置文件，对象创建
+    // ClassPathXmlApplicationContext 加载 spring 配置文件，对象创建
           val ac: ApplicationContext = ClassPathXmlApplicationContext("bean.xml")
-
-  	// 获取创建的对象
+    
+    // 获取创建的对象
           val bean = ac.getBean("helloWorld") as HelloWorld
-
-  	// 使用对象调用方法进行测试
+    
+    // 使用对象调用方法进行测试
           bean.sayHello()
       }
   }
@@ -226,17 +226,17 @@
             System.out.println("helloworld");
         }
     }
-    ```
+  ```
 
     执行结果：
-
+    
     ​![image-20221031181430720](assets/image-20221031181430720-20230209125529-ihgrajo.png)​
-
+    
     **测试得知：创建对象时确实调用了无参数构造方法。**
 
 2. **Spring是如何创建对象的呢？原理是什么？**
 
-    ​![01-入门案例分析](assets/01-入门案例分析-20230209142636-2u0mcsk.png)​
+    ![01-入门案例分析](assets/%E6%9E%84%E5%BB%BASpring%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/01-%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90-20230209142636-2u0mcsk.png)​
 
     ‍
 
@@ -259,11 +259,11 @@
 
     ```java
     package org.springframework.beans.factory.support;
-
+    
     @SuppressWarnings("serial")
     public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory
     		implements ConfigurableListableBeanFactory, BeanDefinitionRegistry, Serializable {
-
+    
     	/** Map of bean definition objects, keyed by bean name. */
     	// key: 唯一标识， bean-id
     	// value: Bean 的描述信息

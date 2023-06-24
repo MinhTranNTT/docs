@@ -40,8 +40,8 @@ docker-compose up -d
 
 ### 登录webSSH页面 [http://127.0.0.1/](http://127.0.0.1:2222/)
 
-​![1](assets/1-20230113232542-pjmnycm.png)​
+![1](assets/docker-compose%20%E9%83%A8%E7%BD%B2%20WebSSH%E5%B7%A5%E5%85%B7%E6%94%AF%E6%8C%81%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/1-20230113232542-pjmnycm.png)​
 
-![2](assets/2-20230113232542-0cmjgxb.png)
+![2](assets/docker-compose%20%E9%83%A8%E7%BD%B2%20WebSSH%E5%B7%A5%E5%85%B7%E6%94%AF%E6%8C%81%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/2-20230113232542-0cmjgxb.png)
 
 ‍

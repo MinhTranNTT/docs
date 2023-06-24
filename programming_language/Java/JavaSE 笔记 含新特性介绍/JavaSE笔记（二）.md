@@ -576,7 +576,7 @@ class Test{   //不能添加权限修饰符！只能是default
 
 假设出现一种情况，我想记录100个数字，定义100个变量还可行吗？
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimgs.itxueyuan.com%2FCgq2xl329g-Adz0uAACwgSFkMho326.png&refer=http%3A%2F%2Fimgs.itxueyuan.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1632192902&t=7a6d67fc01d0e3ea7816adf951c49605)
+![img](assets/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/src=http%253A%252F%252Fimgs.itxueyuan.com%252FCgq2xl329g-Adz0uAACwgSFkMho326.png&refer=http%253A%252F%252Fimgs.itxueyuan.jpeg)
 
 我们可以使用到数组，数组是相同类型数据的有序集合。数组可以代表任何相同类型的一组内容（包括引用类型和基本类型）其中存放的每一个数据称为数组的一个元素，数组的下标是从0开始，也就是第一个元素的索引是0！
 
@@ -1250,7 +1250,7 @@ Java并不是纯面向对象的语言，虽然Java语言是一个面向对象的
 
 我们的基本类型，如果想通过对象的形式去使用他们，Java提供的基本类型包装类，使得Java能够更好的体现面向对象的思想，同时也使得基本类型能够支持对象操作！
 
-![img](https://img2018.cnblogs.com/blog/1504650/201901/1504650-20190122173636211-1359168032.png)
+![img](assets/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/1504650-20190122173636211-1359168032.png)
 
 * byte  ->  Byte
 * boolean  ->  Boolean

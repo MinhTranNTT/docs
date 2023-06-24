@@ -79,21 +79,21 @@ MySQL Replication是MySQL非常出色的一个功能，该功能将一个MySQL�
 2. slave 将 master 的 binary log events 拷贝到它的中继日志(relay log)；
 3. slave 重做中继日志中的事件，将改变反映它自己的数据。
 
-​​![image](assets/image-20230301123247-5xzudh3.png)​​
+![image](assets/MySQL%20%E5%8F%8C%E4%B8%BB%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/image-20230301123247-5xzudh3.png)​​
 
 ‍
 
 实现mysql主主模式，采用互为主从即可既是 master，又是另一台服务器的 slave
 
-​![image](assets/image-20230301123622-b2ocoyq.png)​
+![image](assets/MySQL%20%E5%8F%8C%E4%B8%BB%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/image-20230301123622-b2ocoyq.png)​
 
-​​
+​
 
 1. 修改配置文件
 
     修改 MySQL 的配置文件 my.cnf
 
-    ​![image](assets/image-20230208190508-2tgthnk.png)​
+    ![image](assets/MySQL%20%E5%8F%8C%E4%B8%BB%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/image-20230208190508-2tgthnk.png)​
 
     server-id   可以为任意自然数，必须保证两台mysql主机不重复
 
@@ -120,15 +120,15 @@ MySQL Replication是MySQL非常出色的一个功能，该功能将一个MySQL�
 
     192.168.56.103 数据库1：
 
-    ​`grant replication slave, replication client on ​`​*`.`*​`​ to 'fort'@'192.168.56.105' identified by 'xxxxxxxx';`​
+    `grant replication slave, replication client on ​`​*`.`*​`​ to 'fort'@'192.168.56.105' identified by 'xxxxxxxx';`​
 
-    ​`flush privileges;`​ // 刷新MySQL的系统权限相关表，否则会无法用账号链接
+    `flush privileges;`​ // 刷新MySQL的系统权限相关表，否则会无法用账号链接
 
     192.168.56.105 数据库2：
 
-    ​`grant replication slave, replication client on *.* to 'fort'@'192.168.56.103' identified by 'xxxxxxx';`​
+    `grant replication slave, replication client on *.* to 'fort'@'192.168.56.103' identified by 'xxxxxxx';`​
 
-    ​`flush privileges;`​ // 刷新MySQL的系统权限相关表，否则会无法用账号链接
+    `flush privileges;`​ // 刷新MySQL的系统权限相关表，否则会无法用账号链接
 
     ‍
 
@@ -138,7 +138,7 @@ MySQL Replication是MySQL非常出色的一个功能，该功能将一个MySQL�
 
     在 master 上执行 `show master status;`​查看日志位置
 
-    ​![image](assets/image-20230208190830-woq74mr.png)
+    ![image](assets/MySQL%20%E5%8F%8C%E4%B8%BB%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/image-20230208190830-woq74mr.png)
 
     ‍
 
@@ -160,7 +160,7 @@ MySQL Replication是MySQL非常出色的一个功能，该功能将一个MySQL�
 
     执行show slave status\G 查看服务状态
 
-    ​![image](assets/image-20230208191015-n31tcwc.png)​
+    ![image](assets/MySQL%20%E5%8F%8C%E4%B8%BB%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/image-20230208191015-n31tcwc.png)​
 
     主主模式下，两台机器做同样的操作即可实现双 MASTER
 

@@ -25,7 +25,7 @@ Redis 与其他 key - value 缓存产品有以下三个特点：
 
 ```
 
-​![image](assets/image-20230307205620-o4zlrds.png)​
+![image](assets/MybatisPlus%20Redis/image-20230307205620-o4zlrds.png)​
 
 2.在启动类上添加注解：@EnableCaching
 
@@ -114,23 +114,23 @@ public class RedisConfig extends CachingConfigurerSupport {
 
 3.Mapper.xml添加执行Sql
 
-​![image](assets/image-20230307205644-pq6cpbz.png)​
+![image](assets/MybatisPlus%20Redis/image-20230307205644-pq6cpbz.png)​
 
 4.在service层配置Cache
 
-​![image](assets/image-20230307205651-25qvrnw.png)​
+![image](assets/MybatisPlus%20Redis/image-20230307205651-25qvrnw.png)​
 
 5.controller调试
 
-​![image](assets/image-20230307205700-zm7win4.png)​
+![image](assets/MybatisPlus%20Redis/image-20230307205700-zm7win4.png)​
 
 第一次请求时候，因为redis一开始没有数据，所以会从数据库中获取数据并写入到redis中，之后就一直会从缓存中获取数据
 
-​![image](assets/image-20230307205710-8mgo1b1.png)​
+![image](assets/MybatisPlus%20Redis/image-20230307205710-8mgo1b1.png)​
 
 当执行了更新操作之后就会去清空redis对应key的数据
 
-​![image](assets/image-20230307205719-g1ksnbx.png)​
+![image](assets/MybatisPlus%20Redis/image-20230307205719-g1ksnbx.png)​
 
 在此执行获取数据时，就会再去数据库中获取数据并存入到redis中
 

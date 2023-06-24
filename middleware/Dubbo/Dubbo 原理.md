@@ -10,7 +10,7 @@ Dubbo 简介：Apache Dubbo 是一款 RPC 服务开发框架，用于解决微�
 
 ## RPC原理
 
-![image](assets/image-20230308180623-hgidwld.png)​
+![image](assets/Dubbo%20%E5%8E%9F%E7%90%86/image-20230308180623-hgidwld.png)​
 
 一次完整的RPC调用流程（同步调用，异步另说）如下：
 
@@ -42,7 +42,7 @@ Netty是一个异步事件驱动的网络应用程序框架，用于快速开发
 
 * dubbo原理     -框架设计
 
-  ![image](assets/image-20230308181004-xyyk2u7.png)​
+  ![image](assets/Dubbo%20%E5%8E%9F%E7%90%86/image-20230308181004-xyyk2u7.png)​
 
   ‍
 
@@ -65,15 +65,15 @@ Netty是一个异步事件驱动的网络应用程序框架，用于快速开发
   * serialize 数据序列化层：可复用的一些工具，扩展接口为 Serialization, ObjectInput, ObjectOutput, ThreadPool
 * dubbo原理  -启动解析、加载配置信息
 
-  ![image](assets/image-20230308181135-4bb7gcq.png)​
+  ![image](assets/Dubbo%20%E5%8E%9F%E7%90%86/image-20230308181135-4bb7gcq.png)​
 * dubbo原理     -服务暴露
 
-  ![image](assets/image-20230308181150-ki4up0s.png)​
+  ![image](assets/Dubbo%20%E5%8E%9F%E7%90%86/image-20230308181150-ki4up0s.png)​
 * dubbo原理  -服务引用
 
-  ![image](assets/image-20230308181208-ilkmgu2.png)​
+  ![image](assets/Dubbo%20%E5%8E%9F%E7%90%86/image-20230308181208-ilkmgu2.png)​
 * dubbo原理  -服务调用
 
-  ![image](assets/image-20230308181229-e1b3n0q.png)​
+  ![image](assets/Dubbo%20%E5%8E%9F%E7%90%86/image-20230308181229-e1b3n0q.png)​
 
 ‍

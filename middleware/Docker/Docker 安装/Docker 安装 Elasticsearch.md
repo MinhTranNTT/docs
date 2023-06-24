@@ -183,7 +183,7 @@ i18n.locale: "zh-CN"
 
 `systemctl stop firewalld.service # 关闭防火墙`
 
-![image](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221008090548309-87994082.png)
+![image](assets/Docker%20%E5%AE%89%E8%A3%85%20Elasticsearch/2402369-20221008090548309-87994082.png)
 
 `web访问：http://192.168.1.102:5601`
 

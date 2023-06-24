@@ -22,11 +22,11 @@ windows安装以下软件
 Xming 6.9 Xming下载地址：https://sourceforge.net/projects/xming/
 Putty下载地址：https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
-![image](assets/2402369-20211230131800620-2036003566.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20x11/2402369-20211230131800620-2036003566.png)
 
 以上软件安装好
 
-![image](assets/2402369-20211230140741652-834941515.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20x11/2402369-20211230140741652-834941515.png)
 
 记录一下，一会会用到
 
@@ -34,10 +34,10 @@ Putty下载地址：https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.ht
 
 ### 打开xshell > 文件 > 默认会话属性
 
-![image](assets/2402369-20211230141004966-859117087.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20x11/2402369-20211230141004966-859117087.png)
 
 点击“隧道”- 勾选“转发X11连接到（X）”，选择“X DISPLAY(D)”，后面输入的内容就是之前桌面右下角显示的数字。
-![image](assets/2402369-20211230141227865-161861354.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20x11/2402369-20211230141227865-161861354.png)
 
 用xshell 连接 centos 并安装 xorg-x11-xauth
 
@@ -54,20 +54,20 @@ firefox &   # 使用软件包测试一下
 ```
 
 执行后会在桌面弹出两个图形框
-![image](assets/2402369-20211230141950088-1245834073.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20x11/2402369-20211230141950088-1245834073.png)
 
 使用 putty
 
-![image](assets/2402369-20211230142119043-426433567.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20x11/2402369-20211230142119043-426433567.png)
 
-![image](assets/2402369-20211230142323192-525618146.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20x11/2402369-20211230142323192-525618146.png)
 返回上面的session选项卡，输入服务器地址，远程连接服务器。
 
-![image](assets/2402369-20211230142458232-2092017181.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20x11/2402369-20211230142458232-2092017181.png)
 
 Open 连接 > 输入用户名 > 输入密码
 
-![image](assets/2402369-20211230142706309-28544498.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20x11/2402369-20211230142706309-28544498.png)
 
 完成！
 

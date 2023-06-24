@@ -4,7 +4,7 @@
 
 ---
 
-​![image](assets/image-20230221222722-is48gf3.png)​
+![image](assets/Dockerfile%20%E6%8C%87%E4%BB%A4/image-20230221222722-is48gf3.png)​
 
 ## 基础知识：
 

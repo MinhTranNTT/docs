@@ -4,8 +4,6 @@
 
 其实版本控制在我们的生活中无处不在，比如你的期末或是毕业答辩论文，由于你写得不规范或是老师不满意，你的老师可能会让你改了又改，于是就会出现下面这种情况：
 
-![点击查看源网页](https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20200417%2F1e63ac0f4d8442cb8c9ab1cb73f510c4.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1644370473&t=fa8742db0b4f8db635ec003e37bca76c)
-
 我们手里的论文可能会经过多次版本迭代，最终我们会选取一个最好的版本作为最终提交的论文。使用版本控制不仅仅是为了去记录版本迭代历史，更是为了能够随时回退到之前的版本，实现时间回溯。同时，可能我们的论文是多个人一同完成，那么多个人如何去实现同步，如何保证每个人提交的更改都能够正常汇总，如何解决冲突，这些问题都需要一个优秀的版本控制系统来解决。
 
 ## 走进Git
@@ -14,7 +12,7 @@
 
 首先我们来了解一下Git是如何工作的：
 
-![点击查看源网页](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2020.cnblogs.com%2Fblog%2F932856%2F202004%2F932856-20200423143251346-796113044.jpg&refer=http%3A%2F%2Fimg2020.cnblogs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1644374894&t=7c2044128f7851ecd92de3c01f0187ca)
+![点击查看源网页](assets/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/src=http%253A%252F%252Fimg2020.cnblogs.com%252Fblog%252F932856%252F202004%252F932856-20200423143251346-796113044.jpg&refer=http%253A%252F%252Fimg2020.cnblogs.jpeg)
 
 可以看到，它大致分为4个板块：
 

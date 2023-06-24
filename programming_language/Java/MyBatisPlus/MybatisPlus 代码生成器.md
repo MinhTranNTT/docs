@@ -49,11 +49,11 @@ spring:
       id 'io.spring.dependency-management' version '1.0.13.RELEASE'
       id 'java'
   }
-
+  
   group = 'com.example'
   version = '0.0.1-SNAPSHOT'
   sourceCompatibility = '11'
-
+  
   configurations {
       developmentOnly
       runtimeClasspath {
@@ -63,11 +63,11 @@ spring:
           extendsFrom annotationProcessor
       }
   }
-
+  
   repositories {
       mavenCentral()
   }
-
+  
   dependencies {
       implementation 'org.springframework.boot:spring-boot-starter-web'
       compileOnly 'org.projectlombok:lombok'
@@ -75,28 +75,28 @@ spring:
       runtimeOnly 'mysql:mysql-connector-java'
       annotationProcessor 'org.projectlombok:lombok'
       testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
+  
      /* mybatis-plus 启动依赖 */
       implementation group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.3.2'
-
+  
       /* 代码生成器依赖 */
       implementation group: 'com.baomidou', name: 'mybatis-plus-generator', version: '3.3.2'
       /* freemarker 引擎依赖 */
       implementation group: 'org.freemarker', name: 'freemarker', version: '2.3.30'
-
+  
   }
-
+  
   test {
       useJUnitPlatform()
   }
-
+  
   tasks.withType(JavaCompile).configureEach {
       options.encoding = "utf-8"
   }
   tasks.withType(Javadoc).configureEach {
       options.encoding = "utf-8"
   }
-
+  
   ```
 
 ‍
@@ -305,17 +305,17 @@ Caused by: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
 
   ```gradle
   package com.zonglin.lcloud.generator;
-
+  
   import com.baomidou.mybatisplus.generator.FastAutoGenerator;
   import com.baomidou.mybatisplus.generator.config.*;
   import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-
+  
   import java.util.Collections;
-
+  
   public class Gen {
-
+  
       public static void main(String[] args) {
-
+  
           FastAutoGenerator.create("jdbc:mysql://192.168.1.102:3306/lcloud",
                           "root", "root")
                   .globalConfig(builder -> {
@@ -338,8 +338,4 @@ Caused by: java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
       }
 
 
-  }
-
-  ```
-
-‍
+ 

@@ -77,7 +77,7 @@ Running transaction
 
 
 3. 修改vsftpd配置 `vim /etc/vsftpd/vsftpd.conf`
-   ![image](assets/2402369-20211229173018533-949094984.png)
+   ![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20ftp/2402369-20211229173018533-949094984.png)
 
    
 
@@ -128,7 +128,7 @@ service iptables restart
 
 
 7. 在浏览器测试是否成功
-   ![image](https://img2020.cnblogs.com/blog/2402369/202112/2402369-20211229174654377-2035879970.png)
+   ![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20ftp/2402369-20211229174654377-2035879970.png)
 
    
 
@@ -187,11 +187,11 @@ Subsystem sftp internal-sftp
 
 ## 报错
 
-![image](assets/2402369-20220103143959330-617575353.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20ftp/2402369-20220103143959330-617575353.png)
 https://blog.csdn.net/china_skag/article/details/7278923
 
-![image](assets/2402369-20220103144413977-2098771522.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20ftp/2402369-20220103144413977-2098771522.png)
 https://blog.csdn.net/jiangshuanshuan/article/details/84846611
 
-![image](assets/2402369-20220103145254740-1036715787.png)
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85%20ftp/2402369-20220103145254740-1036715787.png)
 

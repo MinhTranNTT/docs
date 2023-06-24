@@ -70,7 +70,7 @@
 
 * 测试
 
-  ​![image-20221031214305224](assets/image-20221031214305224-20230209125529-30ggh4j.png)​
+  ![image-20221031214305224](assets/Spring%E6%95%B4%E5%90%88Log4j2%E6%A1%88%E4%BE%8B/image-20221031214305224-20230209125529-30ggh4j.png)​
 
   运行原测试程序，多了spring打印日志
 
@@ -95,7 +95,7 @@
 
   ```kotlin
   package org.example
-
+  
   import org.junit.jupiter.api.Test
   import org.slf4j.Logger
   import org.slf4j.LoggerFactory
@@ -106,7 +106,7 @@
   class HelloWorldTest {
 
       private val logger: Logger = LoggerFactory.getLogger(HelloWorldTest::class.java)
-
+    
       @Test
       fun testHelloWorld() {
           val ac: ApplicationContext = ClassPathXmlApplicationContext("bean.xml")

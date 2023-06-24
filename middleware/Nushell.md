@@ -1,1 +1,0 @@
-nushell：https://github.com/nushell/nushell

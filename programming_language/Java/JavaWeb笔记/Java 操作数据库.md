@@ -396,7 +396,7 @@ public static void main(String[] args) throws ClassNotFoundException {
 
 通过使用Lombok（小辣椒）就可以解决这样的问题！
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F14004711543%2F1000&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1638080575&t=91a3937a42d14fe8129b3761bbdef82c)
+![img](assets/Java%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/src=http%253A%252F%252Finews.gtimg.com%252Fnewsapp_bt%252F0%252F14004711543%252F1000&refer=http%253A%252F%252Finews.gtimg.jpeg)
 
 我们来看看，使用原生方式和小辣椒方式编写类的区别，首先是传统方式：
 
@@ -463,7 +463,7 @@ Lombok是一种插件化注解API，是通过添加注解来实现的，然后�
 
 Java的编译过程可以分成三个阶段：
 
-![img](https://imgconvert.csdnimg.cn/aHR0cDovL29wZW5qZGsuamF2YS5uZXQvZ3JvdXBzL2NvbXBpbGVyL2RvYy9jb21waWxhdGlvbi1vdmVydmlldy9qYXZhYy1mbG93LnBuZw?x-oss-process=image/format,png)
+![img](assets/Java%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/format,png.png)
 
 1. 所有源文件会被解析成语法树。
 2. 调用注解处理器。如果注解处理器产生了新的源文件，新文件也要进行编译。
@@ -543,7 +543,7 @@ XML文件也可以使用注释：
 
 那如果我们的内容中出现了`<`或是`>`字符，那该怎么办呢？我们就可以使用XML的转义字符来代替：
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jxdoc.com%2Fpic%2F28d1ff67caaedd3383c4d358%2F1-332-jpg_6_0_______-505-0-0-505.jpg&refer=http%3A%2F%2Fimg.jxdoc.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639322216&t=88d1ea1adb9cbf1611eaf4c9fa16b8b0)
+![img](assets/Java%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/src=http%253A%252F%252Fimg.jxdoc.com%252Fpic%252F28d1ff67caaedd3383c4d358%252F1-332-jpg_6_0_______-505-0-0-505.jpg&refer=http%253A%252F%252Fimg.jxdoc.jpeg)
 
 如果嫌一个一个改太麻烦，也可以使用CD来快速创建不解析区域：
 
@@ -2280,7 +2280,7 @@ public class Student {
 
 项目运行成功，表示成功导入了依赖。那么，Maven是如何进行依赖管理呢，以致于如此便捷的导入依赖，我们来看看Maven项目的依赖管理流程：
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage.bubuko.com%2Finfo%2F201901%2F20190106202802893827.png&refer=http%3A%2F%2Fimage.bubuko.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639624645&t=75fdf146baa915fbba88918895f92b81)
+![img](assets/Java%20%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93/src=http%253A%252F%252Fimage.bubuko.com%252Finfo%252F201901%252F20190106202802893827.png&refer=http%253A%252F%252Fimage.bubuko.jpeg)
 
 通过流程图我们得知，一个项目依赖一般是存储在中央仓库中，也有可能存储在一些其他的远程仓库（私服），几乎所有的依赖都被放到了中央仓库中，因此，Maven可以直接从中央仓库中下载大部分的依赖（Maven第一次导入依赖是需要联网的），远程仓库中下载之后 ，会暂时存储在本地仓库，我们会发现我们本地存在一个`.m2`文件夹，这就是Maven本地仓库文件夹，默认建立在C盘，如果你C盘空间不足，会出现问题！
 

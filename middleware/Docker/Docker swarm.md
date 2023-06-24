@@ -124,9 +124,9 @@ To add a manager to this swarm, run the following command:
 
 ## 4. 加入一个节点 `docker swarm join`​（docker-2）
 
-​![image](assets/image-20230221223557-gcjv38i.png)  
-​![image](assets/image-20230221223603-52gqcek.png)  
-​![image](assets/image-20230221223607-vgfc6av.png)​
+![image](assets/Docker%20swarm/image-20230221223557-gcjv38i.png)  
+​![image](assets/Docker%20swarm/image-20230221223603-52gqcek.png)  
+​![image](assets/Docker%20swarm/image-20230221223607-vgfc6av.png)​
 
 ‍
 

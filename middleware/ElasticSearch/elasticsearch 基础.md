@@ -112,7 +112,7 @@ http.cors.allow-origin: "*"
 [root@localhost config]# 
 ```
 
-![image](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221008125621315-1053577461.png)
+![image](assets/elasticsearch%20%E5%9F%BA%E7%A1%80/2402369-20221008125621315-1053577461.png)
 
 ## 2. 重启 elasticsearch
 
@@ -120,8 +120,8 @@ docker 容器重启会报错，重启 docker 服务
 
 **索引操作（Restful风格）**
 
-​![image](assets/image-20230302142345-b0a138x.png)​  
-​![image](assets/image-20230302142342-5axrt1j.png)​
+![image](assets/elasticsearch%20%E5%9F%BA%E7%A1%80/image-20230302142345-b0a138x.png)​  
+​![image](assets/elasticsearch%20%E5%9F%BA%E7%A1%80/image-20230302142342-5axrt1j.png)​
 
 ik_smart 最少切分
 
@@ -540,7 +540,7 @@ GET liuzonglin/_search
 
 **6. term 精确查询**
 
-![img](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221009124320282-944259033.png)
+![img](assets/elasticsearch%20%E5%9F%BA%E7%A1%80/2402369-20221009124320282-944259033.png)
 
 **关于分词：**
 
@@ -591,7 +591,7 @@ GET liuzonglin/_search
 }
 ```
 
-![img](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221009130634993-805532018.png)
+![img](assets/elasticsearch%20%E5%9F%BA%E7%A1%80/2402369-20221009130634993-805532018.png)
 
 # elasticsearch 集群搭建
 

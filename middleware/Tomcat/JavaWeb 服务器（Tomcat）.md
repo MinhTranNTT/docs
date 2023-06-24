@@ -54,13 +54,13 @@ TCP协议实际上是经历了三次握手再进行通信，也就是说保证�
 
 而HTTP和TCP并不是一个层次的通信协议，TCP是传输层协议，而HTTP是应用层协议，因此，实际上HTTP的内容会作为TCP协议的报文被封装，并继续向下一层进行传递，而传输到客户端时，会依次进行解包，还原为最开始的HTTP数据。
 
-​![image](assets/image-20230221224832-dlvnpv7.png)​
+![image](assets/JavaWeb%20%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88Tomcat%EF%BC%89/image-20230221224832-dlvnpv7.png)​
 
 HTTP使用TCP协议是为了使得数据传输更加可靠，既然它是依靠TCP协议进行数据传输，那么为什么说它本身是无连接的呢？我们来看一下HTTP的传输过程：
 
 > 用户在点击鼠标链接某个万维网文档时，HTTP协议首先要和服务器建立TCP连接。这需要使用三报文握手。当建立TCP连接的三报文握手的前两部分完成后（即经过了一个RTT时间后），万维网客户就把HTTP请求报文作为建立TCP连接的三报文握手中的第三个报文的数据，发送给万维网服务器。服务器收到HTTP请求报文后，就把所请求的文档作为响应报文返回给客户。
 
-​![image](assets/image-20230221225134-i5lmxwq.png)​
+![image](assets/JavaWeb%20%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88Tomcat%EF%BC%89/image-20230221225134-i5lmxwq.png)​
 
 因此，我们的浏览器请求一个页面，需要两倍的往返时间。
 
@@ -70,7 +70,7 @@ HTTP使用TCP协议是为了使得数据传输更加可靠，既然它是依靠T
 
 ## 认识Tomcat服务器
 
-​[http://tomcat.apache.org/](http://tomcat.apache.org/)
+[http://tomcat.apache.org/](http://tomcat.apache.org/)
 
 Tomcat（汤姆猫）就是一个典型的Web应用服务器软件，通过运行Tomcat服务器，我们就可以快速部署我们的Web项目，并交由Tomcat进行管理，我们只需要直接通过浏览器访问我们的项目即可。
 
@@ -346,7 +346,7 @@ response.getWriter().write("我是响应内容！");
 
 现在我们在浏览器中打开此页面，就能够收到服务器发来的响应内容了。其中，响应头部分，是由Tomcat帮助我们生成的一个默认响应头。
 
-​​![image](assets/image-20230221230119-rveuwip.png)​​
+![image](assets/JavaWeb%20%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88Tomcat%EF%BC%89/image-20230221230119-rveuwip.png)​​
 
 因此，实际上整个流程就已经很清晰明了了。
 
@@ -871,7 +871,7 @@ for (Cookie cookie : req.getCookies()) {
 
 我们可以观察一下，在`HttpServletResponse`中添加Cookie之后，浏览器的响应头中会包含一个`Set-Cookie`属性，同时，在重定向之后，我们的请求头中，会携带此Cookie作为一个属性，同时，我们可以直接通过`HttpServletRequest`来快速获取有哪些Cookie信息。
 
-​![image](assets/image-20230221230100-1fyq2nh.png)​
+![image](assets/JavaWeb%20%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88Tomcat%EF%BC%89/image-20230221230100-1fyq2nh.png)​
 
 还有这么神奇的事情吗？那么我们来看看，一个Cookie包含哪些信息：
 
@@ -963,7 +963,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 
 Session也利用了这一点，它会给浏览器设定一个叫做`JSESSIONID`的Cookie，值是一个随机的排列组合，而此Cookie就对应了你属于哪一个对话，只要我们的浏览器携带此Cookie访问服务器，服务器就会通过Cookie的值进行辨别，得到对应的Session对象，因此，这样就可以追踪到底是哪一个浏览器在访问服务器。
 
-​![image](assets/image-20230221230049-8h8cghd.png)​
+![image](assets/JavaWeb%20%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88Tomcat%EF%BC%89/image-20230221230049-8h8cghd.png)​
 
 那么现在，我们在用户登录成功之后，将用户对象添加到Session中，只要是此用户发起的请求，我们都可以从`HttpSession`中读取到存储在会话中的数据：
 
@@ -1007,7 +1007,7 @@ session.invalidate();
 
 过滤器相当于在所有访问前加了一堵墙，来自浏览器的所有访问请求都会首先经过过滤器，只有过滤器允许通过的请求，才可以顺利地到达对应的Servlet，而过滤器不允许的通过的请求，我们可以自由地进行控制是否进行重定向或是请求转发。并且过滤器可以添加很多个，就相当于添加了很多堵墙，我们的请求只有穿过层层阻碍，才能与Servlet相拥，像极了爱情。
 
-​![image](assets/image-20230221230043-ur7fz56.png)​
+![image](assets/JavaWeb%20%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88Tomcat%EF%BC%89/image-20230221230043-ur7fz56.png)​
 
 添加一个过滤器非常简单，只需要实现Filter接口，并添加`@WebFilter`注解即可：
 
@@ -1055,7 +1055,7 @@ public class TestFilter2 implements Filter {
 
 我们发现，在经过第一个过滤器之后，会继续前往第二个过滤器，只有两个过滤器全部经过之后，才会到达我们的Servlet中。
 
-​![image](assets/image-20230221230038-xrb7nim.png)​
+![image](assets/JavaWeb%20%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88Tomcat%EF%BC%89/image-20230221230038-xrb7nim.png)​
 
 实际上，当`doFilter`方法调用时，就会一直向下直到Servlet，在Servlet处理完成之后，又依次返回到最前面的Filter，类似于递归的结构，我们添加几个输出语句来判断一下：
 
@@ -1138,7 +1138,7 @@ public class MainFilter extends HttpFilter {
 
 如果我们希望，在应用程序加载的时候，或是Session创建的时候，亦或是在Request对象创建的时候进行一些操作，那么这个时候，我们就可以使用监听器来实现。
 
-​​![image](assets/image-20230221230031-wzp8c2s.png)​​
+![image](assets/JavaWeb%20%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88Tomcat%EF%BC%89/image-20230221230031-wzp8c2s.png)​​
 
 默认为我们提供了很多类型的监听器，我们这里就演示一下监听Session的创建即可：
 
@@ -1789,7 +1789,7 @@ public class HelloServlet2 extends HttpServlet {
 
 Tomcat服务器既然要同时运行多个Web应用程序，那么就必须要实现不同应用程序之间的隔离，也就是说，Tomcat需要分别去加载不同应用程序的类以及依赖，还必须保证应用程序之间的类无法相互访问，而传统的类加载机制无法做到这一点，同时每个应用程序都有自己的依赖，如果两个应用程序使用了同一个版本的同一个依赖，那么还有必要去重新加载吗，带着诸多问题，Tomcat服务器编写了一套自己的类加载机制。
 
-​![image](assets/image-20230221225931-vsadxhy.png)​
+![image](assets/JavaWeb%20%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88Tomcat%EF%BC%89/image-20230221225931-vsadxhy.png)​
 
 首先我们要知道，Tomcat本身也是一个Java程序，它要做的是去动态加载我们编写的Web应用程序中的类，而要解决以上提到的一些问题，就出现了几个新的类加载器，我们来看看各个加载器的不同之处：
 
@@ -1803,6 +1803,6 @@ Tomcat服务器既然要同时运行多个Web应用程序，那么就必须要�
 
 难道Tomcat的开发团队没有考虑到这个问题吗？
 
-​![image](assets/image-20230221225954-gtmtksc.png)​
+![image](assets/JavaWeb%20%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%88Tomcat%EF%BC%89/image-20230221225954-gtmtksc.png)​
 
 实际上，WebAppClassLoader的加载机制是这样的：WebAppClassLoader 加载类的时候，绕开了 AppClassLoader，直接先使用 ExtClassLoader 来加载类。这样的话，如果定义了同包同名的类，就不会被加载，而如果是自己定义 的类，由于该类并不是JDK内部或是扩展类，所有不会被加载，而是再次回到WebAppClassLoader进行加载，如果还失败，再使用AppClassloader进行加载。

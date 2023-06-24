@@ -29,7 +29,7 @@
 
 * 编写测试：接口
 
-  ​![image](assets/image-20230307184242-12s0skh.png)​
+  ![image](assets/%E4%BD%BF%E7%94%A8%E8%84%9A%E6%89%8B%E6%9E%B6Java%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/image-20230307184242-12s0skh.png)​
 
 * 修改 Maven 核心配置文件
 
@@ -47,10 +47,10 @@
   java -jar demo-0.0.1-SNAPSHOT.jar
   ```
 
-  ​![image](assets/image-20230307184841-fx67uuk.png)​
+  ![image](assets/%E4%BD%BF%E7%94%A8%E8%84%9A%E6%89%8B%E6%9E%B6Java%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/image-20230307184841-fx67uuk.png)​
 
 * 利用 curl命令 – 文件传输工具 测试
 
-  ​![image](assets/image-20230307184941-3ko4a1y.png)​
+  ![image](assets/%E4%BD%BF%E7%94%A8%E8%84%9A%E6%89%8B%E6%9E%B6Java%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/image-20230307184941-3ko4a1y.png)​
 
 ‍

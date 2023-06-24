@@ -147,7 +147,7 @@ public class MyConfig {
 
 **条件装配：满足Conditional指定的条件，则进行组件注入**
 
-​![image](assets/image-20230212124130-r8q9v3f.png)​
+![image](assets/Spring%20Boot%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/image-20230212124130-r8q9v3f.png)​
 
 ```java
 =====================测试条件装配==========================

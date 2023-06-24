@@ -1,6 +1,6 @@
 # Docker 部署 redis 网络集群
 
-​![image](assets/image-20230221223656-vaq32g5.png)​
+![image](assets/Docker%20%E9%83%A8%E7%BD%B2%20redis%20%E7%BD%91%E7%BB%9C%E9%9B%86%E7%BE%A4/image-20230221223656-vaq32g5.png)​
 
 ```sh
 ## 1. 创建网卡

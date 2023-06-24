@@ -2,11 +2,11 @@
 
 ## 10、数据校验：Validation
 
-​![image-20221218154808754](assets/image-20221218154808754-20230209125530-lfnnpsf.png)​
+![image-20221218154808754](assets/%E6%95%B0%E6%8D%AE%E6%A0%A1%E9%AA%8C%EF%BC%9AValidation/image-20221218154808754-20230209125530-lfnnpsf.png)​
 
 ### 10.1、Spring Validation概述
 
-​![image-20221206220207266](assets/image-20221206220207266-20230209125530-kajbajj.png)​
+![image-20221206220207266](assets/%E6%95%B0%E6%8D%AE%E6%A0%A1%E9%AA%8C%EF%BC%9AValidation/image-20221206220207266-20230209125530-kajbajj.png)​
 
 在开发中，我们经常遇到参数校验的需求，比如用户注册的时候，要校验用户名不能为空、用户名长度不超过20个字符、手机号是合法的手机号格式等等。如果使用普通方式，我们会把校验的代码和真正的业务处理逻辑耦合在一起，而且如果未来要新增一种校验逻辑也需要在修改多个地方。而spring validation允许通过注解的方式来定义对象校验规则，把校验和业务逻辑分离开，让代码编写更加方便。Spring Validation其实就是对Hibernate Validator进一步的封装，方便在Spring中使用。
 
@@ -24,7 +24,7 @@
 
 **第一步 创建子模块 spring6-validator**
 
-​![image-20221206221002615](assets/image-20221206221002615-20230209125530-jcfv860.png)​
+![image-20221206221002615](assets/%E6%95%B0%E6%8D%AE%E6%A0%A1%E9%AA%8C%EF%BC%9AValidation/image-20221206221002615-20230209125530-jcfv860.png)​
 
 **第二步 引入相关依赖**
 

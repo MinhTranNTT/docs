@@ -10,7 +10,7 @@
 
 ### Windows Git 乱码
 
-![img](assets/922b11d24c184ff6b58ca993938ffdd7-20230113191333-hf5023e.png)
+![img](assets/Git%20%E4%B9%B1%E7%A0%81/922b11d24c184ff6b58ca993938ffdd7-20230113191333-hf5023e.png)
 
 ### git status 中文文件名乱
 

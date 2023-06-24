@@ -50,7 +50,7 @@
 
   让`优先级高`的线程以`较大的概率`优先使用 CPU。如果线程的优先级相同，那么会随机选择一个(线程随机性)，Java使用的为抢占式调度。
 
-  ![抢占式调度](assets/抢占式调度-20230304120129-ylme301.bmp)
+  ![抢占式调度](assets/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E6%8A%A2%E5%8D%A0%E5%BC%8F%E8%B0%83%E5%BA%A6-20230304120129-ylme301.bmp)
 
 ### 1.4 多线程程序的优点
 
@@ -79,14 +79,14 @@
 
 * **并行（parallel）**：指两个或多个事件在`同一时刻`发生（同时发生）。指在同一时刻，有`多条指令`在`多个CPU`上`同时`执行。比如：多个人同时做不同的事。
 
-  ![image-20220401000804242](assets/image-20220401000804242-20230304120129-02s3kyv.png)
+  ![image-20220401000804242](assets/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/image-20220401000804242-20230304120129-02s3kyv.png)
 
   <div>
   <img src="images/image-20220513181758585.png" alt="image-20220513181758585" style="zoom: 50%;" />
   </div>
 * **并发（concurrency）**：指两个或多个事件在`同一个时间段内`发生。即在一段时间内，有`多条指令`在`单个CPU`上`快速轮换、交替`执行，使得在宏观上具有多个进程同时执行的效果。
 
-  ![image-20220401000515678](assets/image-20220401000515678-20230304120129-ga30xix.png)
+  ![image-20220401000515678](assets/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/image-20220401000515678-20230304120129-ga30xix.png)
 
   <div>
   <img src="images/image-20220513181815978.png" alt="image-20220513181815978" style="zoom:50%;" />
@@ -444,7 +444,7 @@ Java语言使用Thread类及其子类的对象来表示线程，在它的一个�
 
 线程的生命周期有五种状态：新建（New）、就绪（Runnable）、运行（Running）、阻塞（Blocked）、死亡（Dead）。CPU需要在多条线程之间切换，于是线程状态会多次在运行、阻塞、就绪之间切换。
 
-​![image-20220524203355448](assets/image-20220524203355448-20230304120129-5k68imw.png)​
+![image-20220524203355448](assets/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/image-20220524203355448-20230304120129-5k68imw.png)​
 
 **1.新建**
 
@@ -512,13 +512,13 @@ public enum State {
 - `Teminated（被终止）`：表明此线程已经结束生命周期，终止运行。
 - 重点说明，根据Thread.State的定义，**阻塞状态分为三种**：`BLOCKED`、`WAITING`、`TIMED_WAITING`。
 
-  * ​`BLOCKED（锁阻塞）`​：在API中的介绍为：一个正在阻塞、等待一个监视器锁（锁对象）的线程处于这一状态。只有获得锁对象的线程才能有执行机会。
+  * `BLOCKED（锁阻塞）`​：在API中的介绍为：一个正在阻塞、等待一个监视器锁（锁对象）的线程处于这一状态。只有获得锁对象的线程才能有执行机会。
 
     比如，线程A与线程B代码中使用同一锁，如果线程A获取到锁，线程A进入到Runnable状态，那么线程B就进入到Blocked锁阻塞状态。
-  * ​`TIMED_WAITING（计时等待）`​：在API中的介绍为：一个正在限时等待另一个线程执行一个（唤醒）动作的线程处于这一状态。
+  * `TIMED_WAITING（计时等待）`​：在API中的介绍为：一个正在限时等待另一个线程执行一个（唤醒）动作的线程处于这一状态。
 
     当前线程执行过程中遇到Thread类的`sleep`​或`join`​，Object类的`wait`​，LockSupport类的`park`​方法，并且在调用这些方法时，`设置了时间`​，那么当前线程会进入TIMED_WAITING，直到时间到，或被中断。
-  * ​`WAITING（无限等待）`​：在API中介绍为：一个正在无限期等待另一个线程执行一个特别的（唤醒）动作的线程处于这一状态。
+  * `WAITING（无限等待）`​：在API中介绍为：一个正在无限期等待另一个线程执行一个特别的（唤醒）动作的线程处于这一状态。
 
     当前线程执行过程中遇到遇到Object类的`wait`​，Thread类的`join`​，LockSupport类的`park`​方法，并且在调用这些方法时，`没有指定时间`​，那么当前线程会进入WAITING状态，直到被唤醒。
 
@@ -529,7 +529,7 @@ public enum State {
 
 说明：当从WAITING或TIMED_WAITING恢复到Runnable状态时，如果发现当前线程没有得到监视器锁，那么会立刻转入BLOCKED状态。
 
-![线程的生命周期Thread.State](assets/线程的生命周期Thread.State-20230304120129-u2481fu.jpg)
+![线程的生命周期Thread.State](assets/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9FThread.State-20230304120129-u2481fu.jpg)
 
 > 我们在翻阅API的时候会发现Timed Waiting（计时等待） 与 Waiting（无限等待） 状态联系还是很紧密的，
 > 比如Waiting（无限等待） 状态中wait方法是空参的，而timed waiting（计时等待） 中wait方法是带参的。
@@ -941,7 +941,7 @@ public class SaleTicketDemo5 {
 要解决上述多线程并发访问一个资源的安全性问题:也就是解决重复票与不存在票问题，Java中提供了同步机制
 (synchronized)来解决。
 
-![1563372934332](assets/1563372934332-20230304120129-hylvpqp.png)
+![1563372934332](assets/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/1563372934332-20230304120129-hylvpqp.png)
 
 根据案例简述：
 
@@ -1426,7 +1426,7 @@ public class TestLazy {
 
 不同的线程分别占用对方需要的同步资源不放弃，都在等待对方放弃自己需要的同步资源，就形成了线程的死锁。
 
-![thread-lock](assets/thread-lock-20230304120129-n4zry1e.png)
+![thread-lock](assets/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/thread-lock-20230304120129-n4zry1e.png)
 
 > 【小故事】
 >
@@ -2039,7 +2039,7 @@ public class CallableTest {
 
 **思路：**提前创建好多个线程，放入线程池中，使用时直接获取，使用完放回池中。可以避免频繁创建销毁、实现重复利用。类似生活中的公共交通工具。
 
-![线程池的理解](assets/线程池的理解-20230304120129-hiyr5jb.jpg)
+![线程池的理解](assets/Java_%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E7%90%86%E8%A7%A3-20230304120129-hiyr5jb.jpg)
 
 **好处：**
 

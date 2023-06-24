@@ -2,7 +2,7 @@
 
 ## **配置原则：**
 
-​![image](assets/image-20230308173407-7ywixht.png)​
+![image](assets/Dubbo%E9%85%8D%E7%BD%AE/image-20230308173407-7ywixht.png)​
 
 * JVM 启动 -D 参数优先，这样可以使用户在部署和启动时进行参数重写，比如在启动时需改变协议的端口。
 
@@ -36,7 +36,7 @@
     ```shell
     全局超时配置
     <dubbo:consumer timeout="5000" />
-
+    
     指定接口以及特定方法超时配置
     <dubbo:reference interface="com.foo.BarService" timeout="2000">
         <dubbo:method name="sayHello" timeout="3000" />
@@ -47,7 +47,7 @@
     ```shell
     全局超时配置
     <dubbo:provider timeout="5000" />
-
+    
     指定接口以及特定方法超时配置
     <dubbo:provider interface="com.foo.BarService" timeout="2000">
         <dubbo:method name="sayHello" timeout="3000" />
@@ -67,7 +67,7 @@
     2. Consumer端配置优于 Provider配置优于全局配置，
     3. 最后是Dubbo Hard Code的配置值（见配置文档）
 
-    ​![image](assets/image-20230308174036-zqp6kvy.png)​
+    ![image](assets/Dubbo%E9%85%8D%E7%BD%AE/image-20230308174036-zqp6kvy.png)​
 
 ‍
 

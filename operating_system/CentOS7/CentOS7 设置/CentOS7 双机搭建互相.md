@@ -83,8 +83,8 @@ keep 做负载浮动IP keep在A B定时器检测Akeep是否正常，如果不正
 
 问题一：rsync 推数据的时候，被推送的机器上必须要有rsync指令
 
-​![image](assets/image-20230312165510-4m80d0e.png)
+![image](assets/CentOS7%20%E5%8F%8C%E6%9C%BA%E6%90%AD%E5%BB%BA%E4%BA%92%E7%9B%B8/image-20230312165510-4m80d0e.png)
 
 问题二：rsync推送清理原本缓存数据​
 
-​![image](assets/image-20230312165516-0dqjmks.png)​
+![image](assets/CentOS7%20%E5%8F%8C%E6%9C%BA%E6%90%AD%E5%BB%BA%E4%BA%92%E7%9B%B8/image-20230312165516-0dqjmks.png)​

@@ -15,15 +15,15 @@
 
     * A 如果出现：
 
-    ​![image](assets/image-20230208184130-vbv8uyj.png)​
+    ![image](assets/MySQL%20%E5%8F%8C%E6%9C%BA%E5%B8%B8%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98/image-20230208184130-vbv8uyj.png)​
 
     没有添加同步信息，双机没有组合成功。
 
     * B 如果出现：
 
-    ​![image](assets/image-20230208184500-xse6en0.png)​
+    ![image](assets/MySQL%20%E5%8F%8C%E6%9C%BA%E5%B8%B8%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98/image-20230208184500-xse6en0.png)​
 
-    ​`Slave_IO_Running`​ 与 `Slave_SQL_Running`​ 状态都要为 `Yes`​
+    `Slave_IO_Running`​ 与 `Slave_SQL_Running`​ 状态都要为 `Yes`​
 
 #### 不正常
 
@@ -31,7 +31,7 @@
     可能是主库是的master的信息有变化，  
     查看主库 `show master status;`​
 
-    ​![image](assets/image-20230208184304-z2oghv9.png)​
+    ![image](assets/MySQL%20%E5%8F%8C%E6%9C%BA%E5%B8%B8%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98/image-20230208184304-z2oghv9.png)​
 
      记录下`File, Position`​字段，假设为‘mysql-bin.000004’,98;  
      在从库执行：
@@ -46,7 +46,7 @@
 
 
     ```
-
+    
     ‍
 
 ‍

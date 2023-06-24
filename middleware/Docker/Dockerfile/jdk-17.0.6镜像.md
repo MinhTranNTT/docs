@@ -10,7 +10,7 @@
 
 **((20230307193521-hke61kh 'JDK 官网下载'))**
 
-​![image](assets/image-20230307194239-438lzaj.png)​
+![image](assets/jdk-17.0.6%E9%95%9C%E5%83%8F/image-20230307194239-438lzaj.png)​
 
 **编写 Dockerfile**
 
@@ -32,7 +32,7 @@ CMD ["java","-version"]
 docker build -t jdk17:v1.0 .  
 ```
 
-​​​![image](assets/image-20230307202327-hmkw318.png)​​​
+​![image](assets/jdk-17.0.6%E9%95%9C%E5%83%8F/image-20230307202327-hmkw318.png)​​​
 
 **运行容器**
 

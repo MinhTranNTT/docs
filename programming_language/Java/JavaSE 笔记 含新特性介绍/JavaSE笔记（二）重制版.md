@@ -1,6 +1,6 @@
 # JavaSE笔记（二）重制版
 
-![image-20220916174714019](https://s2.loli.net/2022/09/16/ymtrNQlPu9Loh27.png)
+![image-20220916174714019](assets/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E9%87%8D%E5%88%B6%E7%89%88/ymtrNQlPu9Loh27.png)
 
 # 面向过程篇
 
@@ -34,7 +34,7 @@ public class Main {
 
 注意需要区分大小写，Java语言严格区分大小写，如果我们没有按照规则来编写，那么就会出现红色波浪线报错：
 
-![image-20220916213529426](https://s2.loli.net/2022/09/16/5mpBD1JyjCMGgnO.png)
+![image-20220916213529426](assets/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E9%87%8D%E5%88%B6%E7%89%88/5mpBD1JyjCMGgnO.png)
 
 只要源代码中存在报错的地方，就无法正常完成编译得到二进制文件，会提示构建失败：
 

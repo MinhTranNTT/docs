@@ -8,7 +8,7 @@
 
 修改src\main\resources\application.properties 指定zookeeper地址
 
-![image](assets/image-20230308163139-bv9fa01.png)​
+![image](assets/CentOS7%20%E5%AE%89%E8%A3%85dubbo-admin/image-20230308163139-bv9fa01.png)​
 
 运行dubbo-admin
 

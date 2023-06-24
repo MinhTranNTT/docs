@@ -32,11 +32,11 @@
 
   未开启sendfile
 
-  ​![image](assets/image-20230302124710-7ac3kko.png)​
+  ![image](assets/Nginx%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0/image-20230302124710-7ac3kko.png)​
 
   开启后sendfile
 
-  ​![image](assets/image-20230302124755-zljtes5.png)​
+  ![image](assets/Nginx%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0/image-20230302124755-zljtes5.png)​
 
   ‍
 
@@ -50,7 +50,7 @@
 
 * server
 
-  ​![image](assets/image-20230302125123-rb0q9jm.png)​
+  ![image](assets/Nginx%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0/image-20230302125123-rb0q9jm.png)​
 
   虚拟主机配置
 

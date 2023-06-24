@@ -41,19 +41,19 @@ systemctl restart network
 问题：
 
 linux 本身浏览器可以上网但 ping 不通  
-​![image](assets/image-20230308145347-lrz5hww.png)​
+​![image](assets/CentOS7%20%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip/image-20230308145347-lrz5hww.png)​
 
 ```
 echo "nameserver 114.114.114.114" >> /etc/resolv.conf    # 电信的DNS
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf    # googel的DNS
 ```
 
-​​![image](assets/image-20230308145350-fm5uzu3.png)​​
+![image](assets/CentOS7%20%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip/image-20230308145350-fm5uzu3.png)​​
 
 如果还是无法 ping 外网 `netstat -rn`​ 查看路由中的网卡设置
 
-​`route add  default gw 192.168.1.1`​ 添加网络路由效果如下如：
+`route add  default gw 192.168.1.1`​ 添加网络路由效果如下如：
 
-​​![image](assets/image-20230308145353-sa5yha6.png)​​
+![image](assets/CentOS7%20%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81ip/image-20230308145353-sa5yha6.png)​​
 
 ‍

@@ -35,17 +35,17 @@ mybatis:
 
 2.在启动类上添加：@EnableCaching
 
-​![image](assets/image-20230307205251-ys7tc3s.png)​
+![image](assets/MybatisPlus%20%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98/image-20230307205251-ys7tc3s.png)​
 
  3.在xml文件中添加标签，并添加相应的sql执行语句
 
  **mybatis-plus版本必须低于2.0.9才可以使用二级缓存，否则MP自带的一些方法就算配置了二级缓存也不起作用。**
 
-​![image](assets/image-20230307205301-ci3ow8d.png)​
+![image](assets/MybatisPlus%20%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98/image-20230307205301-ci3ow8d.png)​
 
 4.在Mapper、Service层添加相应方法之后，在Service的方法上配置缓存，key应该是不同的，不同id的对应不同的数据。
 
-​![image](assets/image-20230307205315-1db80oc.png)​
+![image](assets/MybatisPlus%20%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98/image-20230307205315-1db80oc.png)​
 
  ①Cacheable：根据方法的请求参数对其结果进行缓存，多用于查询
 
@@ -58,25 +58,25 @@ mybatis:
  ⑤CacheConfig：用于抽取缓存的公共配置（类级别）
 
  5.我这里添加了3个接口用来做测试  
-​![image](assets/image-20230307205350-pb7n9gf.png)
+​![image](assets/MybatisPlus%20%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98/image-20230307205350-pb7n9gf.png)
 
 运行第一个接口时，控制台输出只有一次去打开数据库去获取数据，其他几次都是去缓存中获取。
 
 ‍
 
-​![image](assets/image-20230307205431-ryvnsla.png)​
+![image](assets/MybatisPlus%20%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98/image-20230307205431-ryvnsla.png)​
 
 同理第二个接口也是跟第一个接口一样
 
-​​![image](assets/image-20230307205444-0c453ps.png)​
+![image](assets/MybatisPlus%20%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98/image-20230307205444-0c453ps.png)​
 
 当我执行更新方法之后，控制台会打印输出：
 
-​![image](assets/image-20230307205451-lrt894i.png)​
+![image](assets/MybatisPlus%20%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98/image-20230307205451-lrt894i.png)​
 
 此时我们再去执行第一个接口时，又会去打开数据库取获取数据，并且数据更新了（key的关键作用就是指定那条数据）
 
-​![image](assets/image-20230307205500-p7vknag.png)​
+![image](assets/MybatisPlus%20%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98/image-20230307205500-p7vknag.png)​
 
 ‍
 

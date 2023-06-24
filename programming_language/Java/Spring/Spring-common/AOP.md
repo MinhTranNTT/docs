@@ -34,7 +34,7 @@ public interface Calculator {
 
 #### 5.1.2、创建实现类
 
-​![images](assets/img014-20230209125530-65k48fj.png)​
+![images](assets/AOP/img014-20230209125530-65k48fj.png)​
 
 ```java
 public class CalculatorImpl implements Calculator {
@@ -83,7 +83,7 @@ public class CalculatorImpl implements Calculator {
 
 #### 5.1.3、创建带日志功能的实现类
 
-​![images](assets/img015-20230209125530-2u6vjbr.png)​
+![images](assets/AOP/img015-20230209125530-2u6vjbr.png)​
 
 ```java
 public class CalculatorLogImpl implements Calculator {
@@ -171,11 +171,11 @@ public class CalculatorLogImpl implements Calculator {
 
 二十三种设计模式中的一种，属于结构型模式。它的作用就是通过提供一个代理类，让我们在调用目标方法的时候，不再是直接对目标方法进行调用，而是通过代理类**间接**调用。让不属于目标方法核心逻辑的代码从目标方法中剥离出来——**解耦**。调用目标方法时先调用代理对象的方法，减少对目标方法的调用和打扰，同时让附加功能能够集中在一起也有利于统一维护。
 
-​![images](assets/img016-20230209125530-rsgw6ft.png)​
+![images](assets/AOP/img016-20230209125530-rsgw6ft.png)​
 
 使用代理后：
 
-​![images](assets/img017-20230209125530-35442ek.png)​
+![images](assets/AOP/img017-20230209125530-35442ek.png)​
 
 **②生活中的代理**
 
@@ -224,7 +224,7 @@ public class CalculatorStaticProxy implements Calculator {
 
 #### 5.2.3、动态代理
 
-​![images](assets/img018-20230209125530-yisnb3z.png)​
+![images](assets/AOP/img018-20230209125530-yisnb3z.png)​
 
 生产代理对象的工厂类：
 
@@ -304,7 +304,7 @@ AOP（Aspect Oriented Programming）是一种设计思想，是软件设计领�
 
 这个概念不是语法层面的，而是根据附加功能的逻辑上的需要：有十个附加功能，就有十个横切关注点。
 
-​![images](assets/img019-20230209125530-xybfhgv.png)​
+![images](assets/AOP/img019-20230209125530-xybfhgv.png)​
 
 ##### ②通知（增强）
 
@@ -318,13 +318,13 @@ AOP（Aspect Oriented Programming）是一种设计思想，是软件设计领�
 * 后置通知：在被代理的目标方法**最终结束**后执行（**盖棺定论**）
 * 环绕通知：使用try...catch...finally结构围绕**整个**被代理的目标方法，包括上面四种通知对应的所有位置
 
-​![images](assets/img020-20230209125530-zx3tvqe.png)​
+![images](assets/AOP/img020-20230209125530-zx3tvqe.png)​
 
 ##### ③切面
 
 封装通知方法的类。
 
-​![images](assets/img021-20230209125530-f7ryxc1.png)​
+![images](assets/AOP/img021-20230209125530-f7ryxc1.png)​
 
 ##### ④目标
 
@@ -340,7 +340,7 @@ AOP（Aspect Oriented Programming）是一种设计思想，是软件设计领�
 
 把方法排成一排，每一个横切位置看成x轴方向，把方法从上到下执行的顺序看成y轴，x轴和y轴的交叉点就是连接点。**通俗说，就是spring允许你使用通知的地方**
 
-​![images](assets/img022-20230209125530-uoz4ogz.png)​
+![images](assets/AOP/img022-20230209125530-uoz4ogz.png)​
 
 ##### ⑦切入点
 
@@ -363,9 +363,9 @@ AOP（Aspect Oriented Programming）是一种设计思想，是软件设计领�
 
 #### 5.4.1、技术说明
 
-​![images](assets/img023-20230209125530-bi0uj0w.png)​
+![images](assets/AOP/img023-20230209125530-bi0uj0w.png)​
 
-​![14-动态代理分类](assets/14-动态代理分类-20230210180021-z8h5njv.png)​
+![14-动态代理分类](assets/AOP/14-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E5%88%86%E7%B1%BB-20230210180021-z8h5njv.png)​
 
 * 动态代理分为JDK动态代理和cglib动态代理
 * 当目标类有接口的情况使用JDK动态代理和cglib动态代理，没有接口时只能使用cglib动态代理
@@ -491,7 +491,7 @@ public class CalculatorImpl implements Calculator {
 }
 ```
 
-​`org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.example.annoaop.Calculator' available`​ 没有添加 `@Component`​ 注解类没有被 IoC 加载到
+`org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.example.annoaop.Calculator' available`​ 没有添加 `@Component`​ 注解类没有被 IoC 加载到
 
 #### 5.4.3、创建切面类并配置
 
@@ -596,7 +596,7 @@ public class CalculatorTest {
 
 执行结果：
 
-​![image-20221102155523983](assets/image-20221102155523983-20230209125530-5mpyaib.png)​
+![image-20221102155523983](assets/AOP/image-20221102155523983-20230209125530-5mpyaib.png)​
 
 #### 5.4.4、各种通知
 
@@ -625,7 +625,7 @@ public class CalculatorTest {
 
 **①作用**
 
-​![images](assets/img024-20230209125530-xmegisk.png)​
+![images](assets/AOP/img024-20230209125530-xmegisk.png)​
 
 **②语法细节**
 
@@ -651,7 +651,7 @@ public class CalculatorTest {
 
   * 例如：execution(public int *..*​**Service.**​*(.., int))	正确例如：execution(* int *..*Service.*(.., int))	错误
 
-​![images](assets/img025-20230209125530-w8zqdrp.png)​
+![images](assets/AOP/img025-20230209125530-w8zqdrp.png)​
 
 #### 5.4.6、重用切入点表达式
 
@@ -760,7 +760,7 @@ public Object aroundMethod(ProceedingJoinPoint joinPoint){
 * @Order(较小的数)：优先级高
 * @Order(较大的数)：优先级低
 
-​![images](assets/img026-20230209125530-ws7f2f8.png)​
+![images](assets/AOP/img026-20230209125530-ws7f2f8.png)​
 
 ### 5.5、基于XML的AOP
 

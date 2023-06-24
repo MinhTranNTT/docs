@@ -8,30 +8,30 @@
 
 官网地址api文档地址：[https://www.elastic.co/guide/en/elasticsearch/client/index.html](https://www.elastic.co/guide/en/elasticsearch/client/index.html)
 
-![img](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221009143553314-1978524853.png)
+![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221009143553314-1978524853.png)
 
 **1. 依赖引入**
 
-![img](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221009144428713-712918718.png)
+![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221009144428713-712918718.png)
 
 **2. 初始化对象**
 
-![img](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221009144545010-411497571.png)
+![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221009144545010-411497571.png)
 
 **3. 创建项目导入依赖**
 
-![img](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221009150057029-23054127.png)
+![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221009150057029-23054127.png)
 
 **导入依赖版本和实际使用版本不一致（ES 版本必须一致）**
 
-![img](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221009150454833-574821360.png)
+![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221009150454833-574821360.png)
 
 **自定义版本**
-![img](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221009152412599-2006939674.png)
+![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221009152412599-2006939674.png)
 
 **源码**
-![img](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221009155049526-1244278333.png)
-![img](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221009155708230-399251058.png)
+![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221009155049526-1244278333.png)
+![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221009155708230-399251058.png)
 
 ## ES api 测试
 
@@ -366,7 +366,7 @@ class EsApplicationTests {
 
 > 导入依赖
 
-![img](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221010054916981-1326200322.png)
+![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221010054916981-1326200322.png)
 
 > 导入 fastjson 数据
 
@@ -521,8 +521,8 @@ public class Content {
 
 ```
 
-![img](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221010070052644-1518107587.png)
-![img](https://img2022.cnblogs.com/blog/2402369/202210/2402369-20221010064637863-1222952285.png)
+![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221010070052644-1518107587.png)
+![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221010064637863-1222952285.png)
 
 ```java
 package com.example.elasticsearch.config;

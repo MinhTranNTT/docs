@@ -12,7 +12,7 @@
 
 在早期的计算机中，进程是拥有资源和独立运行的最小单位，也是程序执行的最小单位。但是，如果我希望两个任务同时进行，就必须运行两个进程，由于每个进程都有一个自己的内存空间，进程之间的通信就变得非常麻烦（比如要共享某些数据）而且执行不同进程会产生上下文切换，非常耗时，那么能否实现在一个进程中就能够执行多个任务呢？
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fs2.51cto.com%2Fwyfs02%2FM00%2F84%2F3A%2FwKiom1eIqY7il2J7AAAyvcssSjs721.gif&refer=http%3A%2F%2Fs2.51cto.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1637474421&t=aef9a39ea3a09d6d67e8d4b769036446)
+![img](assets/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/src=http%253A%252F%252Fs2.51cto.com%252Fwyfs02%252FM00%252F84%252F3A%252FwKiom1eIqY7il2J7AAAyvcssSjs721.gif&refer=http%253A%252F%252Fs2.51cto.gif)
 
 后来，线程横空出世，一个进程可以有多个线程，线程是程序执行中一个单一的顺序控制流程，现在线程才是程序执行流的最小单元，各个线程之间共享程序的内存空间（也就是所在进程的内存空间），上下文切换速度也高于进程。
 
@@ -186,7 +186,7 @@ public static void main(String[] args) {
 
 **注意**：我们发现还有一个run方法，也能执行线程里面定义的内容，但是run是直接在当前线程执行，并不是创建一个线程执行！
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.liuhaihua.cn%2Fwp-content%2Fuploads%2F2019%2F09%2F3AfuQrV.png&refer=http%3A%2F%2Fwww.liuhaihua.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1637477978&t=d986b270854b3d7c54f816f9103084bc)
+![img](assets/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/src=http%253A%252F%252Fwww.liuhaihua.cn%252Fwp-content%252Fuploads%252F2019%252F09%252F3AfuQrV.png&refer=http%253A%252F%252Fwww.liuhaihua.jpeg)
 
 实际上，线程和进程差不多，也会等待获取CPU资源，一旦获取到，就开始按顺序执行我们给定的程序，当需要等待外部IO操作（比如Scanner获取输入的文本），就会暂时处于休眠状态，等待通知，或是调用`sleep()`方法来让当前线程休眠一段时间：
 
@@ -505,7 +505,7 @@ public static void main(String[] args) {
 
 线程之间的共享变量（比如之前悬念中的value变量）存储在主内存（main memory）中，每个线程都有一个私有的工作内存（本地内存），工作内存中存储了该线程以读/写共享变量的副本。它类似于我们在`计算机组成原理`中学习的多处理器高速缓存机制：
 
-![img](https://note.youdao.com/yws/api/personal/file/WEBb1fa2c9cd0784fb19f0d8ebeb8e00976?method=download&shareKey=8d48a5816e60b026adfa21e6735b5e31)
+![img](assets/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/WEBb1fa2c9cd0784fb19f0d8ebeb8e00976)
 
 高速缓存通过保存内存中数据的副本来提供更加快速的数据访问，但是如果多个处理器的运算任务都涉及同一块内存区域，就可能导致各自的高速缓存数据不一致，在写回主内存时就会发生冲突，这就是引入高速缓存引发的新问题，称之为：缓存一致性。
 
@@ -651,7 +651,7 @@ public static void main(String[] args) throws InterruptedException {
 
 其实死锁的概念在`操作系统`中也有提及，它是指两个线程相互持有对方需要的锁，但是又迟迟不释放，导致程序卡住：
 
-![img](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic4.zhimg.com%2Fv2-9852c978350cc5e8641ba778619351bb_b.png&refer=http%3A%2F%2Fpic4.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1637568214&t=7740dd98b8e1c4a3bfbd94a30e7f9ff8)
+![img](assets/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/src=http%253A%252F%252Fpic4.zhimg.com%252Fv2-9852c978350cc5e8641ba778619351bb_b.png&refer=http%253A%252F%252Fpic4.zhimg.jpeg)
 
 我们发现，线程A和线程B都需要对方的锁，但是又被对方牢牢把握，由于线程被无限期地阻塞，因此程序不可能正常终止。我们来看看以下这段代码会得到什么结果：
 
@@ -762,7 +762,7 @@ notifyAll其实和notify一样，也是用于唤醒，但是前者是唤醒所�
 
 既然每个线程都有一个自己的工作内存，那么能否只在自己的工作内存中创建变量仅供线程自己使用呢？
 
-![img](https://img2018.cnblogs.com/blog/1368768/201906/1368768-20190613220434628-1803630402.png)
+![img](assets/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/1368768-20190613220434628-1803630402.png)
 
 我们可以是ThreadLocal类，来创建工作内存中的变量，它将我们的变量值存储在内部（只能存储一个变量），不同的变量访问到ThreadLocal对象时，都只能获取到自己线程所属的变量。
 
