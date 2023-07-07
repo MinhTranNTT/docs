@@ -1,5 +1,3 @@
-# Java_多线程
-
 [尚硅谷【官网】谷粉与老学员力挺的Java培训|大数据培训|前端培训 (atguigu.com)](http://www.atguigu.com/)
 
 [JAVA面试题 线程的生命周期包括哪几个阶段？ - Java蚂蚁 - 博客园 (cnblogs.com)](https://www.cnblogs.com/marsitman/p/11228684.html)
