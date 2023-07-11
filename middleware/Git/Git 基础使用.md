@@ -1,5 +1,7 @@
 
 
+![git命令总结_gitlab](assets/Git%20%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/git-linux-20230113173631-12q3qzn.webp)
+
 #### 简易的命令行入门教程:
 
 Git 全局设置:
@@ -32,9 +34,9 @@ git push -u origin "master"
 
 
 
-#### Git 常用指令
 
-![git命令总结_gitlab](assets/Git%20%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/git-linux-20230113173631-12q3qzn.webp)​
+
+
 
 
 
