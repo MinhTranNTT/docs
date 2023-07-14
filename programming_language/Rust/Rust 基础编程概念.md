@@ -80,6 +80,37 @@ if let Some(&ref first_element) = vec.first() {
 
 
 
+
+
+### `dyn` 简介
+
+`dyn` 是 Rust 中的一个关键字，用于指定 trait 对象中的动态分发机制。
+
+在 Rust 中，trait 是一种用于定义接口的机制，它类似于 Java 或 C# 中的接口。通过定义 trait，我们可以指定一个类型所必须实现的方法或属性，从而使得这个类型具有某些特定的行为或能力。但是，和其他面向对象语言不同的是，在 Rust 中，trait 并不支持运行时的动态分发，也就是说，我们在编译时并不知道使用哪个具体的方法或实现。
+
+为了解决这个问题，Rust 引入了 trait 对象的概念。一个 trait 对象是一个实现了特定 trait 的类型的实例，但是它是在运行时确定的。trait 对象可以使用 `dyn` 关键字来标记，例如：
+
+```rust
+trait Foo {
+    fn foo(&self);
+}
+
+struct Bar;
+
+impl Foo for Bar {
+    fn foo(&self) { println!("Bar"); }
+}
+
+fn main() {
+    let b: Box<dyn Foo> = Box::new(Bar);
+    b.foo(); // 调用 Bar::foo 方法
+}
+```
+
+在上面的例子中，`Box<dyn Foo>` 表示一个 trait 对象，它是一个 `Foo` trait 的实例。当我们使用 `Box::new(Bar)` 创建它时，实际上是将 `Bar` 实例包装在一个 `Box` 中，并将其转换为一个 `Foo` trait 对象。然后我们可以通过 `b.foo()` 调用 `Foo` trait 中的 `foo` 方法，并最终调用到 `Bar` 的 `foo` 方法。当我们调用方法时，Rust 会使用动态分发机制来查找正确的方法实现，以此实现运行时的多态性。
+
+
+
 ### `?` 简介
 
 `?`是一个语法糖，用于在函数返回值类型为 `Result` 的情况下，简化错误处理的写法。当我们使用 `?` 语法糖来处理 `Result` 类型时，它会默认执行一次 `match` 语句，若返回了 `Err`，则直接将该 `Err` 作为整个函数的返回值。若返回了 `Ok`，则取出 `Ok` 中的值，并将其返回。这样，我们便可以省去不必要的 `match` 语句，节省了时间和代码量。但是需要注意的是，使用 `?` 只能在返回值类型为 `Result` 的函数中使用。
