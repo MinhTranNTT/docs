@@ -54,7 +54,7 @@ gcc version 8.1.0 (x86_64-win32-seh-rev0, Built by MinGW-W64 project)
 
 
 
-### 4、Rust 加快 cargo run 的下载速度
+### 4、配置 cargo 国内源
 
 找到当前用户目录下 .cargo文件夹，建立config文件：
 
@@ -68,13 +68,33 @@ vim ~/.cargo/config
 ```toml
 [source.crates-io]
 registry = "https://github.com/rust-lang/crates.io-index"
+# 指定镜像
+replace-with = '镜像源名' # 如：tuna、sjtu、ustc，或者 rustcc
 
-replace-with = 'tuna'
+# 注：以下源配置一个即可，无需全部
+
+# 中国科学技术大学
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+
+# 上海交通大学
+[source.sjtu]
+registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index"
+
+# 清华大学
 [source.tuna]
 registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
 
-[net]
-git-fetch-with-cli = true
+# rustcc社区
+[source.rustcc]
+registry = "https://code.aliyun.com/rustcc/crates.io-index.git"
+```
+
+删除 `.package-cache`
+
+```sh
+~/.cargo> rm -rf registry
+~/.cargo> rm -rf .package-cache
 ```
 
 
@@ -145,3 +165,16 @@ C/C++ Extension Pack
 }
 ```
 
+
+
+### 参考文档
+
+https://learnblockchain.cn/article/1069
+
+https://mirrors.tuna.tsinghua.edu.cn/help/crates.io-index.git/
+
+https://rsproxy.cn/
+
+[安装 Rust - Rust 程序设计语言 (rust-lang.org)](https://www.rust-lang.org/zh-CN/tools/install)
+
+[Windows安装Rust指南 - 哔哩哔哩 (bilibili.com)](https://www.bilibili.com/read/cv17841257)
