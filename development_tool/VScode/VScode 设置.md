@@ -2,7 +2,7 @@
 
 使用 `Ctrl + ,` 打开设置
 
-![image-20230615080913215](assets/vscode-settings/image-20230615080913215.png)
+![image-20230615080913215](assets/VScode%20设置/image-20230615080913215.png)
 
 
 
@@ -22,7 +22,7 @@
 
 ### 文件夹里只有一个文件折叠问题，文件折叠问题解决
 
-![image-20230615082047450](assets/vscode-settings/image-20230615082047450.png)
+![image-20230615082047450](assets/VScode%20设置/image-20230615082047450.png)
 
 
 
@@ -30,7 +30,7 @@
 
 文件 -> 打开最近的文件 -> `Ctrl + 鼠标左键`​ 即可打开新窗口
 
-![image](assets/vscode-settings/image-20230221221932-2mzz88y.png)​
+![image](assets/VScode%20设置/image-20230221221932-2mzz88y.png)​
 
 ‍
 
@@ -52,11 +52,11 @@ Host 192.168.1.100
     User root
 ```
 
-![image-20230521103940576](assets/vscode-settings/image-20230521103940576.png)
+![image-20230521103940576](assets/VScode%20设置/image-20230521103940576.png)
 
-![image-20230521104053407](assets/vscode-settings/image-20230521104053407.png)
+![image-20230521104053407](assets/VScode%20设置/image-20230521104053407.png)
 
-![image-20230521104116740](assets/vscode-settings/image-20230521104116740.png)
+![image-20230521104116740](assets/VScode%20设置/image-20230521104116740.png)
 
 
 
