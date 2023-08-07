@@ -1,8 +1,8 @@
 # CentOS7 安装 zookeeper
 
-**安装JDK 环境：**CentOS7 安装 JDK
+安装JDK 环境：CentOS7 安装 JDK
 
-**下载地址：**​[Index of /dist/zookeeper/zookeeper-3.4.11 (apache.org)](https://archive.apache.org/dist/zookeeper/zookeeper-3.4.11/)
+下载地址：​[Index of /dist/zookeeper/zookeeper-3.4.11 (apache.org)](https://archive.apache.org/dist/zookeeper/zookeeper-3.4.11/)
 
 ```shell
 wget https://archive.apache.org/dist/zookeeper/zookeeper-3.4.11/zookeeper-3.4.11.tar.gz
@@ -11,7 +11,7 @@ wget https://archive.apache.org/dist/zookeeper/zookeeper-3.4.11/zookeeper-3.4.11
 **配置启动文件**
 
 ```shell
-~〉cat /etc/rc.d/init.d/zookeeper                                                                                                                                                                                           03/08/2023 04:48:08 下午
+~> cat /etc/rc.d/init.d/zookeeper                                                                                                                                                                                           03/08/2023 04:48:08 下午
 #!/bin/bash
 #chkconfig:2345 20 90
 #description:zookeeper
@@ -25,7 +25,6 @@ case $1 in
          restart) sh $ZK_PATH/bin/zkServer.sh restart;;
          *)  echo "require start|stop|status|restart"  ;;
 esac
-~〉 
 ```
 
 **把脚本注册为Service**

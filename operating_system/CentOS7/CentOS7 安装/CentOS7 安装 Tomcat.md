@@ -3,7 +3,7 @@
 `/etc/init.d/tomcat` 配置自启脚本
 
 ```shell
-~〉cat /etc/init.d/tomcat                                                                                                                                                                                       03/08/2023 04:48:08 下午
+~> cat /etc/init.d/tomcat                                                                                                                                                                                       03/08/2023 04:48:08 下午
 #!/bin/bash
 #chkconfig:2345 21 90
 #description:apache-tomcat-8

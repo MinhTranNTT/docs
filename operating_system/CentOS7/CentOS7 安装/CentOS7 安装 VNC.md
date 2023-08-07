@@ -1,5 +1,9 @@
-Linux下vnc的安装、使用以及设置开机启动：https://blog.csdn.net/muslim377287976/article/details/103820434
+# Linux下vnc的安装、
+
+使用以及设置开机启动：https://blog.csdn.net/muslim377287976/article/details/103820434
+
 Centos7安装VNCserver，并设置为开机自启动服务的方法：https://www.cnblogs.com/zgq123456/articles/15023213.html
+
 VNC客户端下载地址：http://yczm.iis7.net/
 
 1. 关闭防火墙

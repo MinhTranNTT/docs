@@ -1,8 +1,6 @@
 # CentOS7 安装dubbo-admin
 
-‍
-
-**下载dubbo-admin：**​[https://github.com/apache/incubator-dubbo-ops](https://github.com/apache/incubator-dubbo-ops)
+‍下载dubbo-admin：​[https://github.com/apache/incubator-dubbo-ops](https://github.com/apache/incubator-dubbo-ops)
 
 **进入目录，修改dubbo-admin配置**
 
