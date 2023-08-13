@@ -1,3 +1,50 @@
+```powershell
+D:/github/deno_core_live> cargo check
+warning: version requirement `0.12.3+zstd.1.5.2` for dependency `zstd` includes semver metadata which will be ignored, removing the metadata is recommended to avoid confusion
+warning: version requirement `0.12.3+zstd.1.5.2` for dependency `zstd` includes semver metadata which will be ignored, removing the metadata is recommended to avoid confusion
+   Compiling v8 v0.73.0
+error: failed to run custom build command for `v8 v0.73.0`
+
+Caused by:
+  process didn't exit successfully: `D:\github\deno_core_live\target\debug\build\v8-0f1318cc13004c3a\build-script-build` (exit code: 101)
+  --- stdout
+  cargo:rerun-if-changed=.gn
+  cargo:rerun-if-changed=BUILD.gn
+  cargo:rerun-if-changed=src/binding.cc
+  cargo:rerun-if-env-changed=CCACHE
+  cargo:rerun-if-env-changed=CLANG_BASE_PATH
+  cargo:rerun-if-env-changed=DENO_TRYBUILD
+  cargo:rerun-if-env-changed=DOCS_RS
+  cargo:rerun-if-env-changed=GN
+  cargo:rerun-if-env-changed=GN_ARGS
+  cargo:rerun-if-env-changed=HOST
+  cargo:rerun-if-env-changed=NINJA
+  cargo:rerun-if-env-changed=OUT_DIR
+  cargo:rerun-if-env-changed=RUSTY_V8_ARCHIVE
+  cargo:rerun-if-env-changed=RUSTY_V8_MIRROR
+  cargo:rerun-if-env-changed=SCCACHE
+  cargo:rerun-if-env-changed=V8_FORCE_DEBUG
+  cargo:rerun-if-env-changed=V8_FROM_SOURCE
+  cargo:rerun-if-env-changed=PYTHON
+  cargo:rerun-if-env-changed=DISABLE_CLANG
+  cargo:rerun-if-env-changed=EXTRA_GN_ARGS
+  cargo:rerun-if-env-changed=NO_PRINT_GN_ARGS
+  cargo:rustc-link-lib=static=rusty_v8
+  cargo:rustc-link-lib=dylib=winmm
+  cargo:rustc-link-lib=dylib=dbghelp
+  cargo:rustc-link-lib=dylib=msvcprt
+  download lockfile: "D:\\github\\deno_core_live\\target\\debug\\build\\lib_download.fslock"
+  static lib URL: https://github.com/denoland/rusty_v8/releases/download/v0.73.0/rusty_v8_release_x86_64-pc-windows-msvc.lib
+  cargo:rustc-link-search=D:\github\deno_core_live\target\debug\gn_out\obj
+  Downloading https://github.com/denoland/rusty_v8/releases/download/v0.73.0/rusty_v8_release_x86_64-pc-windows-msvc.lib
+  Python downloader failed, trying with curl.
+
+  --- stderr
+  thread 'main' panicked at 'assertion failed: status.success()', C:\Users\liuzonglin\.cargo\registry\src\mirrors.ustc.edu.cn-61ef6e0cd06fb9b8\v8-0.73.0\build.rs:431:3
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+D:/github/deno_core_live>  
+```
+
 如果您不确定 curl 是否已经安装，可以尝试使用以下命令来检查 PowerShell 中可用的命令：
 
 ```powershell
@@ -32,7 +79,15 @@ notepad $PROFILE
 2. 运行以下命令：
 
 ```powershell
-New-Item -ItemType File -Path $PROFILE -Force
+PS C:\Users\liuzonglin\Desktop> New-Item -ItemType File -Path $PROFILE -Force
+
+
+    目录: C:\Users\liuzonglin\Documents\WindowsPowerShell
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         2023/8/13     21:49              0 Microsoft.PowerShell_profile.ps1
 ```
 
 3. 使用文本编辑器（例如 Notepad）打开该文件：

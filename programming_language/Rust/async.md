@@ -84,9 +84,6 @@
     - block_on 阻塞当前线程，直到提供的 Future 运行完成
     - 其它执行者提供更复杂的行为，例如将多个 Future 安排到同一个线程上
 
-
-示例：[async_example_01_.rs](./async_example_01_.rs)
-
 ```rust
 use futures::executor::block_on;
 use std::future::Future;
