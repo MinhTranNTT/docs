@@ -19,6 +19,6 @@ touch ./nacos/init.d/custom.properties
 docker run -d -p 8848:8848 -e MODE=standalone -e PREFER_HOST_MODE=hostname -v ./nacos/init.d/custom.properties:/home/nacos/init.d/custom.properties -v ./nacos/logs:/home/nacos/logs --restart always --name nacos nacos/nacos-server
 ```
 
-[RabbitMQ Management](http://192.168.1.102:15672/#/)
+访问路径：http://192.168.1.102:15672/#/
 
 ‍

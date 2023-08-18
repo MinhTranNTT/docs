@@ -64,7 +64,7 @@ docker restart elasticsearch   重启
 docker exec -it elasticsearch bash 进入
 ```
 
-**操作明细**
+<details><summary><b>操作明细：</b></summary>
 
 ```bash
 [root@localhost ~]# docker pull elasticsearch:7.12.0
@@ -122,9 +122,12 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED          
 }
 ```
 
+</details>
+
+
 # 安装 elasticsearch-ik 分词器
 
-==elasticsearch-ik 分词器版本和 elasticsearch 版本必须一致==
+**elasticsearch-ik 分词器版本和 elasticsearch 版本必须一致**
 
 ## 1. 拉取安装包
 

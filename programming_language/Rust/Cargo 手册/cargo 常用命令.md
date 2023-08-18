@@ -1,12 +1,10 @@
-# rust 指令参考
-
 ## rustc 参数指令
 
-|指令|解释|
-| --------------------| ---------------------|
-|rustc runoob.rs|编译 runoob.rs 文件|
-|rustc --version|查看版本|
-|​​​./runoob​​|执行 runoob|
+| 指令            | 解释                |
+| --------------- | ------------------- |
+| rustc runoob.rs | 编译 runoob.rs 文件 |
+| rustc --version | 查看版本            |
+| ​​​./runoob​​   | 执行 runoob         |
 
 ## cargo 指令说明
 
@@ -109,14 +107,14 @@ PS D:\.github\hello_rust>
 
 常用指令
 
-|指令|解释|
-| ------| ----------------------------------------------------|
-|​`cargo --version`​|cargo 版本|
-|​`cargo new greeting`​|cargo 创建项目|
-|​`cargo build`​|构建|
-|​`cargo run`​|运行|
-|​`cargo check`​|检查代码，确保能通过编译，但是不产生任何可执行文件|
-|​`cargo build --release`​|为发布构建|
+| 指令                      | 解释                                               |
+| ------------------------- | -------------------------------------------------- |
+| ​`cargo --version`​       | cargo 版本                                         |
+| ​`cargo new greeting`​    | cargo 创建项目                                     |
+| ​`cargo build`​           | 构建                                               |
+| ​`cargo run`​             | 运行                                               |
+| ​`cargo check`​           | 检查代码，确保能通过编译，但是不产生任何可执行文件 |
+| ​`cargo build --release`​ | 为发布构建                                         |
 
 ## Cargo.toml
 

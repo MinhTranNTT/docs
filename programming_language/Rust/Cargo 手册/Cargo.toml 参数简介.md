@@ -1,34 +1,48 @@
-- [`cargo-features`] — 只能用于 `nightly`版本的 `feature`
 
-- `[package]` — 定义项目(package)的元信息
-  
-  `[name]` — 名称
-  `[version]` — 版本
-  `[authors]` — 开发作者
-  `[edition]` — Rust edition.
-  `[rust-version]` — 支持的最小化 Rust 版本
-  `[description]` — 描述
-  `[documentation]` — 文档 URL
-  `[readme]` — README 文件的路径
-  `[homepage]` - 主页 URL
-  `[repository]` — 源代码仓库的 URL
-  `[license]` — 开源协议 License.
-  `[license-file]` — License 文件的路径.
-  `[keywords]` — 项目的关键词
-  `[categories]` — 项目分类
-  `[workspace]` — 工作空间 workspace 的路径
-  `[build]` — 构建脚本的路径
-  `[links]` — 本地链接库的名称
-  `[exclude]` — 发布时排除的文件
-  `[include]` — 发布时包含的文件
-  `[publish]` — 用于阻止项目的发布
-  `[metadata]` — 额外的配置信息，用于提供给外部工具
-  `[default-run]` — `[cargo run]` 所使用的默认可执行文件( binary )
-  `[autobins]` — 禁止可执行文件的自动发现
-  `[autoexamples]` — 禁止示例文件的自动发现
-  `[autotests]` — 禁止测试文件的自动发现
-  `[autobenches]` — 禁止 bench 文件的自动发现
-  `[resolver]` — 设置依赖解析器( dependency resolver)
+```toml
+[package] # 定义项目(package)的元信息
+name = "async"  # 项目名称
+version = "0.1.0" # 版本号
+authors = ["Your Name <you@example.com>"] # 项目作者
+edition = "2021"  # 项目使用的 Rust 版本；支持的最小化 Rust 版本
+description = "A simple example of a Rust library" # 项目描述
+documentation = "https://docs.rs/async" # 项目文档地址
+readme = "README.md" # 项目 README 文件
+homepage = "https://github.com/rust-lang/rust-cookbook" # 项目主页
+repository = "https://github.com/rust-lang/rust-cookbook" # 项目仓库地址
+license = "MIT OR Apache-2.0" # 项目使用的开源协议
+license-file = "LICENSE-APACHE" # 项目使用的开源协议文件
+keywords = ["example", "cookbook", "library"] # 项目关键字
+categories = ["development-tools", "web-programming"] # 项目类别
+workspace = "./" # 项目工作空间
+build = "build.rs" # 项目构建脚本
+links = "async" # 项目库链接名称
+exclude = ["/doc", "tests/*", "tests"] # 发布时排除的文件
+include = ["src/*"] # 发布时包含的文件
+publish = false # 发布时是否发布
+metadata = true # 是否生成 crate 信息
+default-run = "main" # `[cargo run]` 所使用的默认可执行文件( binary )
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libp2p = "0.46.1"
+tokio = { version = "1.19.2", features = ["full"] }
+async-std = { version = "1.12.0", features = ["attributes"] }
+futures = "0.3"
+mini-redis = "0.4"
+bytes = "1"
+
+[workspace]
+members = [
+    "examples/my_redis",
+    "examples/rust-hyper-ex",
+    "examples/p2p",
+    
+]
+```
+
   
 - Cargo Target 列表: (查看 `Target 配置` 获取详细设置)
 
@@ -58,34 +72,3 @@
 - `[profile]` — 编译器设置和优化
 
 - `[workspace]` — 工作空间的定义
-
-
-
-### toml 参考
-
-```toml
-[package]
-name = "hello_world" # the name of the package
-version = "0.1.0"    # the current version, obeying semver
-authors = ["Alice <a@example.com>", "Bob <b@example.com>"]
-edition = '2021'
-rust-version = "1.56"
-description = "A short description of my package"
-documentation = "https://docs.rs/bitflags"
-readme = "README.md"
-homepage = "https://serde.rs/"
-repository = "https://github.com/rust-lang/cargo/"
-license = "MIT OR Apache-2.0"
-license-file = "LICENSE.txt"
-keywords = ["gamedev", "graphics"]
-categories = ["command-line-utilities", "development-tools::cargo-plugins"]
-workspace = "path/to/workspace/root"
-build = "build.rs"
-links = "foo"
-exclude = ["/ci", "images/", ".*"]
-include = ["/src", "COPYRIGHT", "/examples", "!/examples/big_example"]
-
-
-
-```
-

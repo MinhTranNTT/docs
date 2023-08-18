@@ -1,7 +1,5 @@
 # Nginx 安装
 
-‍
-
 ## 版本区别
 
 ### 常用版本分为四大阵营
@@ -14,11 +12,7 @@
 
 * Tengine：[简介 - The Tengine Web Server (taobao.org)](http://tengine.taobao.org/)
 
-‍
-
 ## 安装 Nginx
-
-‍
 
 ### 安装环境
 
@@ -28,19 +22,13 @@ yum install -y pcre pcre-devel
 yum install -y zlib zlib-devel
 ```
 
-‍
-
 ### 编译安装
 
 ```shell
 ./configure --prefix=/usr/local/nginx && make && make install
 ```
 
-‍
-
 ### 安装成系统服务
-
-‍
 
 创建服务脚本
 
@@ -85,12 +73,6 @@ systemctl start nginx.service
 systemctl enable nginx.service
 ```
 
-‍
-
-‍
-
-‍
-
 ## 启动 Nginx
 
 ‍
@@ -132,26 +114,6 @@ firewall-cmd --zone=public --add-port=80/tcp --permanent
 firewall-cmd --reload
 ```
 
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
 ## 如果出现警告或报错
 
 提示
@@ -165,8 +127,6 @@ checking for C compiler ... not found
 
 安装 gcc
 
-‍
-
 提示
 
 ```shell
@@ -177,8 +137,6 @@ statically from the source with nginx by using --with-pcre=<path> option.
 ```
 
 安装perl库
-
-‍
 
 提示：
 

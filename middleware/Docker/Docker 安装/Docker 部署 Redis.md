@@ -24,27 +24,7 @@ mkdir -p /home/zonglin/redis/data
 docker run --restart=always --log-opt max-size=100m --log-opt max-file=2 -p 6379:6379 --name lcloud-redis -v /home/zonglin/redis/redis.conf:/etc/redis/redis.conf -v /home/zonglin/redis/data:/data -d redis:latest redis-server /etc/redis/redis.conf --appendonly yes
 ```
 
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
+<details><summary><b>操作明细：</b></summary>
 
 ```bash
 [root@localhost ~]# docker pull redis:latest # 最新版本的镜像
@@ -70,6 +50,7 @@ OK
 "1"
 127.0.0.1:6379> 
 ```
+</details>
 
 参数说明：
 

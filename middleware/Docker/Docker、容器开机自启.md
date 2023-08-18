@@ -4,19 +4,25 @@
 
 ## 1、设置 Docker 开机自启
 
-​`systemctl enable docker`​
+```
+systemctl enable docker
+```
 
 ## 2、设置 Docker 容器开机自启
 
 ### 2.1、方案一：创建 Docker 容器时设置开机自启
 
 在使用 <u>docker run</u> 启动容器时，使用 <u>--restart</u> 参数来设置：  
-​`docker run --restart=always --name imagesName`​
+
+```
+docker run --restart=always --name imagesName
+```
 
 ### 2.2、方案二：修改已创建的 Docker 容器开机自启
 
 如果创建时未指定 <u>--restart=always</u>，可通过 update 命令  
-​`docker update --restart=always imagesName`​
+
+`docker update --restart=always imagesName`
 
 参数说明
 

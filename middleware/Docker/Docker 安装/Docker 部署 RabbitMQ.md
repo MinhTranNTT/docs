@@ -22,34 +22,7 @@ docker run --restart=always -d -p 15672:15672 -p 5672:5672 -e RABBITMQ_DEFAULT_U
 
 [RabbitMQ Management](http://192.168.1.102:15672/#/)
 
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
-‍
-
+### docker-compose 配置文件
 ```yaml
 version: '3.5'
 services:
@@ -70,20 +43,15 @@ services:
       - ./conf:/etc/rabbitmq
 ```
 
+
 ```yaml
 docker-compose up -d
 ```
 
-‍
-
-‍
 
 ```shell
 curl localhost:5672 --output run.log |cat run.log
-
 ```
-
-​![image](assets/image-20230225123022-vjdrg1b.png)​
 
 ```shell
 docker exec -it rabbitmq /bin/bash
