@@ -1,6 +1,6 @@
 # Java 整合 Redis
 
-## 1、依赖导入
+## 依赖导入
 
 ```xml
 <dependency>
@@ -20,13 +20,13 @@
 </dependency>
 ```
 
-### 1.2、创建Jedis对象
+## 创建Jedis对象
 
 ```java
 Jedis jedis = new Jedis("192.168.1.102",6379);
 ```
 
-### 1.3、基础API测试
+## 基础API测试
 
 ```java
     @Test
@@ -74,5 +74,3 @@ Jedis jedis = new Jedis("192.168.1.102",6379);
     }
 
 ```
-
-‍

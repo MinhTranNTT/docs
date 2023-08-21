@@ -19,9 +19,6 @@ insert into rel_rule_resourcegroup select * from x_user2;
 DROP TABLE x_user2;
 ```
 
-‍
-
-‍
 
 ```bash
 #!/bin/bash
@@ -51,5 +48,3 @@ else
 fi
 
 ```
-
-‍

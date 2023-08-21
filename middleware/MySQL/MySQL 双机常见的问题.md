@@ -14,7 +14,7 @@
 2. 查看同步是否正常：`show slave status\G;`​
 
     * A 如果出现：
-
+  
     ![image](assets/MySQL%20%E5%8F%8C%E6%9C%BA%E5%B8%B8%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98/image-20230208184130-vbv8uyj.png)​
 
     没有添加同步信息，双机没有组合成功。
@@ -33,33 +33,20 @@
 
     ![image](assets/MySQL%20%E5%8F%8C%E6%9C%BA%E5%B8%B8%E8%A7%81%E7%9A%84%E9%97%AE%E9%A2%98/image-20230208184304-z2oghv9.png)​
 
-     记录下`File, Position`​字段，假设为‘mysql-bin.000004’,98;  
-     在从库执行：
+    记录下`File, Position`​字段，假设为‘mysql-bin.000004’,98;  
 
+    在从库执行：
     ```sql
     mysql> stop slave;
     mysql> change master to master_log_file='binlog.000004',master_log_pos=98;
     mysql> start slave;
-
-
-
-
-
     ```
-    
-    ‍
-
-‍
-
 2. 如果从库的 `slave_sql_running`​ 为 NO。  
     Err文件中记录：  
     ​`Slave:Error "Duplicate entry '1' for key 1" on query.....`​  
     可能是 master 未向 slave 同步成功，但 slave 中已经有了记录。造成的冲突可以在从库上执行 `set global sql_slave_skip_counter=n;`​（n代表同步不成功数据条数）  
     跳过几步。再 `restart slave`​ 就可以了。
 
-    ‍
-
-‍
 
 ### TO 语句连接 master
 
