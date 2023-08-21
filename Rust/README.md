@@ -1,4 +1,4 @@
-# rust
+# 🦀 Rust
 
 Rust 资源导航，附加一些语法 `Dome`
 - [Rust 编程语言官网](https://www.rust-lang.org/zh-CN/)
