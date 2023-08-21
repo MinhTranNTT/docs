@@ -24,7 +24,7 @@
 [root@localhost config]# 
 ```
 
-![image](assets/elasticsearch%20%E5%9F%BA%E7%A1%80/2402369-20221008125621315-1053577461.png)
+![image](assets/Elasticsearch%20自定义字典//2402369-20221008125621315-1053577461.png)
 
 ## 2. 重启 elasticsearch
 
@@ -32,8 +32,8 @@ docker 容器重启会报错，重启 docker 服务
 
 **索引操作（Restful风格）**
 
-![image](assets/elasticsearch%20%E5%9F%BA%E7%A1%80/image-20230302142345-b0a138x.png)​  
-​![image](assets/elasticsearch%20%E5%9F%BA%E7%A1%80/image-20230302142342-5axrt1j.png)​
+![image](assets/Elasticsearch%20自定义字典/image-20230302142345-b0a138x.png)​  
+​![image](assets/Elasticsearch%20自定义字典/image-20230302142342-5axrt1j.png)​
 
 ik_smart 最少切分
 

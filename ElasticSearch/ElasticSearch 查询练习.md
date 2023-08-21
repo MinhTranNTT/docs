@@ -268,7 +268,7 @@ GET liuzonglin/_search
 
 **6. term 精确查询**
 
-![img](assets/elasticsearch%20%E5%9F%BA%E7%A1%80/2402369-20221009124320282-944259033.png)
+![img](assets/ElasticSearch%20查询练习/2402369-20221009124320282-944259033.png)
 
 **关于分词：**
 
@@ -319,5 +319,5 @@ GET liuzonglin/_search
 }
 ```
 
-![img](assets/elasticsearch%20%E5%9F%BA%E7%A1%80/2402369-20221009130634993-805532018.png)
+![img](assets/ElasticSearch%20查询练习/2402369-20221009130634993-805532018.png)
 
