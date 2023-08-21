@@ -1,24 +1,22 @@
-# spring boot 整合 ES
+# SpringBoot 整合 ElasticSearch
 
-[Installation | Elasticsearch Java API Client [8.6] | Elastic](https://www.elastic.co/guide/en/elasticsearch/client/java-api-client/8.6/installation.html#maven)
+文档参考：
+- [Installation | Elasticsearch Java API Client [8.6] | Elastic](https://www.elastic.co/guide/en/elasticsearch/client/java-api-client/8.6/installation.html#maven)
+- [SpringBoot整合ES(8.0版本)(一) - 我心如雷 - 博客园 (cnblogs.com)](https://www.cnblogs.com/TamAlan/p/16193590.html)
+- 官网地址api文档地址：[https://www.elastic.co/guide/en/elasticsearch/client/index.html](https://www.elastic.co/guide/en/elasticsearch/client/index.html)
 
-[SpringBoot整合ES(8.0版本)(一) - 我心如雷 - 博客园 (cnblogs.com)](https://www.cnblogs.com/TamAlan/p/16193590.html)
-
----
-
-官网地址api文档地址：[https://www.elastic.co/guide/en/elasticsearch/client/index.html](https://www.elastic.co/guide/en/elasticsearch/client/index.html)
 
 ![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221009143553314-1978524853.png)
 
-**1. 依赖引入**
+## 依赖引入
 
 ![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221009144428713-712918718.png)
 
-**2. 初始化对象**
+## 初始化对象
 
 ![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221009144545010-411497571.png)
 
-**3. 创建项目导入依赖**
+## 创建项目导入依赖
 
 ![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221009150057029-23054127.png)
 
@@ -72,7 +70,6 @@ public class ElasticsearchConfig {
                         new HttpHost("192.168.1.102", 9200, "http")));
     }
 }
-
 ```
 
 ### 2. 创建 查询 删除 （索引 文档）
@@ -105,7 +102,6 @@ public class User {
     private String name;
     private Integer age;
 }
-
 ```
 
 ```java
@@ -121,7 +117,6 @@ public class ElasticsearchUtils {
     public final static String ES_INDEX = "liuzonglin_index";
 
 }
-
 ```
 
 ```java
@@ -358,371 +353,4 @@ class EsApplicationTests {
         }
     }
 }
-
-
 ```
-
-## 实战案例
-
-> 导入依赖
-
-![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221010054916981-1326200322.png)
-
-> 导入 fastjson 数据
-
-```xml
-<dependency>
-    <groupId>com.alibaba</groupId>
-    <artifactId>fastjson</artifactId>
-    <version>1.2.83</version>
-</dependency>
-```
-
-注意导入的 ES 版本
-
-> 导入静态文件
-
-> 测试
-
-```java
-package com.example.elasticsearch.controller;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-
-/**
- * 指数控制器
- *
- * @author liuzonglin
- * @date 2022/10/10
- */
-@Controller
-public class IndexController {
-
-    /**
-     * 指数
-     * getMapping 需要返回一个页面 index ({})
-     * @return {@link String}
-     */
-    @GetMapping({"/", "index"})
-    public String index() {
-        return "index";
-    }
-}
-
-```
-
-> 导入 jsoup（获取请求返回的页面信息，帅选出想要的数据）
-
-```xml
-<!-- tika 爬取视频音乐-->
-<!-- 解析网页 jsoup 爬取网页-->
-<dependency>
-    <groupId>org.jsoup</groupId>
-    <artifactId>jsoup</artifactId>
-    <version>1.11.3</version>
-</dependency>
-```
-
-> 爬取数据
-
-```java
-package com.example.elasticsearch.utils;
-
-import com.example.elasticsearch.pojo.Content;
-import lombok.SneakyThrows;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * 解析网页
- *
- * @author liuzonglin
- * @date 2022/10/10
- */
-public class HtmlParseUtil {
-
-    public static void main(String[] args) {
-        new HtmlParseUtil().parsingPage("java").forEach(System.out::println);
-    }
-
-
-    /**
-     * 解析页面
-     */
-    @SneakyThrows
-    public List<Content> parsingPage(String keywords) {
-        // 联网 获取请求
-        String url = "https://search.jd.com/Search?keyword=" + keywords;
-        // 解析网页 Jsoup 返回 document(整个文档页面) 浏览器对象
-        Document document = Jsoup.parse(new URL(url), 3000);
-        // 根据 id 查找 页面中所需信息
-        Element element = document.getElementById("J_goodsList");
-        // System.out.println(element.html());
-        // 获取所有元素
-        Elements li = element.getElementsByTag("li");
-
-        ArrayList<Content> contents = new ArrayList<>();
-
-
-        // 或取元素中内容
-        for (Element l : li) {
-            // 获取图片 无法获取图片 source-data-lazy-img
-            String img = l.getElementsByTag("img").eq(0).attr("data-lazy-img");
-            // 商品价格
-            String price = l.getElementsByClass("p-price").eq(0).text();
-            // 商品名称
-            String title = l.getElementsByClass("p-name").eq(0).text();
-
-            Content content = new Content();
-            content.setImg(img);
-            content.setTitle(title);
-            content.setPrice(price);
-            contents.add(content);
-        }
-        return contents;
-    }
-
-}
-
-```
-
-> 封装数据
-
-```java
-package com.example.elasticsearch.pojo;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
-
-/**
- * 内容
- *
- * @author liuzonglin
- * @date 2022/10/10
- */
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Component
-public class Content {
-    private String title;
-    private String img;
-    private String price;
-}
-
-```
-
-![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221010070052644-1518107587.png)
-![img](assets/spring%20boot%20%E6%95%B4%E5%90%88%20ES/2402369-20221010064637863-1222952285.png)
-
-```java
-package com.example.elasticsearch.config;
-
-import org.apache.http.HttpHost;
-import org.elasticsearch.client.RestClient;
-import org.elasticsearch.client.RestHighLevelClient;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-/*
-  ES配置
-
-  @author liuzonglin
- * @date 2022/10/09
- */
-
-/**
- * 配置配置类注解
- * @author liuzonglin
- */
-@Configuration
-public class ElasticsearchConfig {
-
-    /**
-     * 配置 Bean
-     * spring <beans id="restHighLevelClient" class="RestHighLevelClient"/>
-     */
-    @Bean
-    public RestHighLevelClient restHighLevelClient() {
-        return new RestHighLevelClient(
-                RestClient.builder(
-                        new HttpHost("192.168.1.103", 9200, "http")));
-    }
-}
-
-```
-
-```java
-package com.example.elasticsearch.controller;
-
-import com.example.elasticsearch.service.ContentService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Map;
-
-/**
- * 内容控制器
- *
- * @author liuzonglin
- * @date 2022/10/10
- */
-@RestController
-public class ContentController {
-
-    @Autowired
-    private ContentService contentService;
-
-
-    /**
-     * ES 批量创建文档
-     *
-     * @param keywords 关键字
-     * @return {@link Boolean}
-     */
-    @GetMapping("/parse/{keywords}")
-    public Boolean parse(@PathVariable("keywords") String keywords) {
-        return contentService.parseContent(keywords);
-    }
-
-
-    /**
-     * 搜索
-     *
-     * @param pageNo   页面没有
-     * @param pageSize 页面大小
-     * @param keyword  关键字
-     * @return {@link List}<{@link Map}<{@link String}, {@link Object}>>
-     */
-    @GetMapping("/search/{keyword}/{pageNo}/{pageSize}")
-    public List<Map<String, Object>> search(@PathVariable String keyword,
-                                            @PathVariable int pageNo,
-                                            @PathVariable int pageSize) {
-        return contentService.searchPage(keyword, pageNo, pageSize);
-    }
-}
-
-```
-
-```java
-package com.example.elasticsearch.service;
-
-import com.example.elasticsearch.pojo.Content;
-import com.example.elasticsearch.utils.HtmlParseUtil;
-import lombok.SneakyThrows;
-import org.elasticsearch.action.bulk.BulkRequest;
-import org.elasticsearch.action.bulk.BulkResponse;
-import org.elasticsearch.action.index.IndexRequest;
-import org.elasticsearch.action.search.SearchRequest;
-import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.client.RequestOptions;
-import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.common.unit.TimeValue;
-import org.elasticsearch.common.xcontent.XContentType;
-import org.elasticsearch.index.query.QueryBuilders;
-import org.elasticsearch.index.query.TermQueryBuilder;
-import org.elasticsearch.search.SearchHit;
-import org.elasticsearch.search.builder.SearchSourceBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
-/**
- * 内容服务
- *
- * @author liuzonglin
- * @date 2022/10/10
- */
-@Service
-public class ContentService {
-
-    /**
-     * 客户端
-     */
-    @Autowired
-    private RestHighLevelClient client;
-
-
-
-    /**
-     * 解析内容
-     * 解析数据放入 ES 当中
-     *
-     * @param keywords 关键字
-     * @return {@link Boolean}
-     */
-    @SneakyThrows
-    public Boolean parseContent(String keywords) {
-        // 爬取数据
-        List<Content> contents = new HtmlParseUtil().parsingPage(keywords);
-        // 数据放入 ES 当中
-        BulkRequest bulkRequest = new BulkRequest();
-        bulkRequest.timeout("2m");
-        for (Content content : contents) {
-            bulkRequest.add(new IndexRequest("liuzonglin_jd")
-                    .source(content, XContentType.JSON));
-        }
-        // 批量创建文档
-        BulkResponse bulk = client.bulk(bulkRequest, RequestOptions.DEFAULT);
-        // 是否成功
-        return !bulk.hasFailures();
-
-    }
-
-    /**
-     * 搜索页面
-     * 搜索数据分页
-     *
-     * @param keyword  关键字
-     * @param pageNo   页面没有
-     * @param pageSize 页面大小
-     * @return {@link List}<{@link Map}<{@link String}, {@link Object}>>
-     */
-    @SneakyThrows
-    public List<Map<String, Object>> searchPage(String keyword, int pageNo, int pageSize) {
-        // 如果页面数量小于等于 1
-        if (pageNo <= 1) {
-            pageNo = 1;
-        }
-        // 条件查询
-        SearchRequest searchRequest = new SearchRequest("liuzonglin_jd");
-        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
-        // 分页
-        sourceBuilder.from(pageNo);
-        sourceBuilder.size(pageSize);
-        // 精准匹配
-        TermQueryBuilder termQueryBuilder = QueryBuilders.termQuery("title", keyword);
-        sourceBuilder.query(termQueryBuilder);
-        sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
-        // 执行搜索
-        searchRequest.source(sourceBuilder);
-        SearchResponse search = client.search(searchRequest, RequestOptions.DEFAULT);
-
-        // 解析结果
-        ArrayList<Map<String, Object>> list = new ArrayList<>();
-        for (SearchHit hit : search.getHits().getHits()) {
-            System.out.println("hit = " + hit);
-            list.add(hit.getSourceAsMap());
-
-        }
-        return list;
-    }
-}
-
-```
-
-‍

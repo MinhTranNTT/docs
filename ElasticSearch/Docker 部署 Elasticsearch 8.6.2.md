@@ -1,6 +1,4 @@
-# elasticsearch 8.6.2
-
-## docker 部署 elasticsearch 8.6.2
+# Docker 部署 Elasticsearch 8.6.2
 
 ```bash
 docker pull elasticsearch:8.6.2
@@ -24,9 +22,7 @@ docker cp 240e18143687:/usr/share/elasticsearch/config/elasticsearch.yml ./elast
 docker cp ./elasticsearch.yml 240e18143687:/usr/share/elasticsearch/config/elasticsearch.yml
 ```
 
-‍
-
-## elasticsearch 配置参数说明
+## Elasticsearch 配置参数说明
 
 ```bash
 # 集群名称

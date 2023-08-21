@@ -1,15 +1,15 @@
-# elasticsearch curl 常用指令
+# Elasticsearch 常用指令
 
 ## 查询所有节点
 
-```shell
+```sh
 $ curl 'http://127.0.0.1:9200/_cat/nodes'
 192.168.31.127 49 61 0 2.16 2.11 2.03 dilmrt * node-1
 ```
 
 ## 查询集群状态
 
-```shell
+```sh
 $ curl -k 'http://127.0.0.1:9200/_cluster/health?pretty'
 {
   "cluster_name" : "docker-cluster",
@@ -32,7 +32,7 @@ $ curl -k 'http://127.0.0.1:9200/_cluster/health?pretty'
 
 ## 查询授权许可
 
-```shell
+```sh
 $ curl -XGET -u elastic:Z37ufZpU -k 'http://127.0.0.1:9200/_xpack/license'
 
 $ curl -k 'http://127.0.0.1:9200/_license'
@@ -54,7 +54,7 @@ $ curl -k 'http://127.0.0.1:9200/_license'
 
 ## 查询索引（集群转态ip 为真实ip）
 
-```shell
+```sh
 $ curl -k 'http://127.0.0.1:9200/_cat/indices'
 green open las-e-2022-08-01 P1hcLjCtRAmfumcUaTGnnA 1 0  57 0 134.1kb 134.1kb
 green open las-e-2022-07-11 CHqhzA7ERzi5eBZveJlQVA 1 0  11 0 143.6kb 143.6kb
@@ -69,7 +69,7 @@ green  open   las-e-2022-07-11 CHqhzA7ERzi5eBZveJlQVA   1   0         11        
 
 ## 查询指定 id
 
-```shell
+```sh
 参数：
 	# liuzonglin_jd1 文档索引（_index）
 	# _doc 文档类型（_type）
@@ -80,13 +80,13 @@ $ curl -XGET  'http://127.0.0.1:9200/liuzonglin_jd1/_doc/10/?pretty' -k
 
 ## 查询指定索引内容
 
-```shell
+```sh
 $ curl 'http://127.0.0.1:9200/las-e-2022-08-07/_search?pretty' -k	# ES查询指定索引内容
 ```
 
 ## POST 查询分页数据
 
-```shell
+```sh
 # from 开启，size 显示条数
 
 $ curl -XPOST http://127.0.0.1:9200/liuzonglin_jd1/_search?pretty -H 'content-Type:application/json' -d 
@@ -99,7 +99,7 @@ $ curl -XPOST http://127.0.0.1:9200/liuzonglin_jd1/_search?pretty -H 'content-Ty
 
 ## PUT 创建索引
 
-```shell
+```sh
 # liuzonglin 索引（index）
 
 $ curl -XPUT http://127.0.0.1:9200/liuzonglin?pretty
@@ -107,13 +107,13 @@ $ curl -XPUT http://127.0.0.1:9200/liuzonglin?pretty
 
 ## PUT 创建文档
 
-```shell
+```sh
 $ curl -XPUT http://127.0.0.1:9200/liuzonglin/_doc/2?pretty -H 'content-Type:application/json' -d '{"name":"liuzonglin","age":"26"}'
 ```
 
 ## 删除全部索引
 
-```shell
+```sh
 # las-e-* 全部索引名（index）
 
 $ curl -XDELETE 'http://127.0.0.1:9200/las-e-*/' -k	# ES删除索引
@@ -122,7 +122,7 @@ $ curl -XDELETE 'http://127.0.0.1:9200/las-e-*/' -k	# ES删除索引
 
 ## DELETE 删除指定索引 id
 
-```shell
+```sh
 $ curl -XDELETE 'http://127.0.0.1:9200/liuzonglin_jd1/_doc/10/?pretty' -k
 {
   "_index" : "liuzonglin_jd1",
