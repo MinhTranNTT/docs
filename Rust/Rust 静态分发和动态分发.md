@@ -1,8 +1,4 @@
-# 原文地址： https://zhuanlan.zhihu.com/p/163650432
-
-# Rust 静态分发和动态分发
-
-
+# [Rust 静态分发和动态分发](https://zhuanlan.zhihu.com/p/163650432)
 
 首先定义两个结构体 Dog 和 Cat 分别实现 Animal trait
 
