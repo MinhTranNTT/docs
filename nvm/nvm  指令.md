@@ -1,9 +1,5 @@
 # nvm  指令
 
----
-
-‍
-
 1. ​`nvm -v`​​，安装成功则显示版本号和列出了各种使用命令。
 
     ```
@@ -11,7 +7,6 @@
     1.1.10
     ```
 
-    ‍
 2. ​`nvm ls`​​列出所有已经安装的Node版本
 
     ```
@@ -21,11 +16,13 @@
         14.19.3
         10.16.3
     ```
+
 3. 安装最新版 Node
 
     ```
-    nvm install node
+    $ nvm install node
     ```
+
 4. ​`nvm list available`​​列出所有可以安装的Node版本号
 
     ```
@@ -56,6 +53,7 @@
 
     This is a partial list. For a complete list, visit https://nodejs.org/en/download/releases
     ```
+
 5. ​`nvm install <版本号>`​​安装指定版本号的Node
 
     ```
@@ -70,52 +68,24 @@
 
     nvm use 18.14.1
     ```
+
 6. ​`nvm use <版本号>`​​使用特定版本的Node
 
     ```
     $ nvm use 18.14.1
     Now using node v18.14.1 (64-bit)
     ```
+
 7. ​`nvm uninstall <版本号>`​​卸载版本号的Node
 
     ```
-    nvm uninstall 10.16.3
+    $ nvm uninstall 10.16.3
     ```
 
 8. 查看 node 版本
 
-    ```gradle
+    ```
     $ node -v
     v18.14.1
     ```
-
-## npm 基础使用配置淘宝镜像
-
-1. 查看 npm 配置文件
-
-    ```
-    npm config list
-    ```
-2. 配置 npm 使用淘宝镜像
-
-    ```
-    npm config set registry http://registry.npm.taobao.org/
-    ```
-3. 安装依赖
-
-    ```
-    npm install
-    ```
-
-    **注意**
-
-    1. 大家如果 npm install 安装依赖出现 chromedriver 之类问题，先在项目里运行下面命令  
-        ​`npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver`​ 然后再运行 `npm install`​
-    2. nvm 其他版本 `npm install`​ 过，建议删除 node_modules 在重新 `npm install`​ 避免其他版本影响项目无法正常启动
-4. 运行项目
-
-    ```
-    npm run dev
-    ```
-
-‍
+    
