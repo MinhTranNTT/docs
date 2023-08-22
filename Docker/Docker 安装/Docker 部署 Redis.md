@@ -8,25 +8,41 @@
 
 ### 拉取镜像
 
-```shell
+```sh
 docker pull redis:latest
 ```
 
 ### 创建数据卷
 
-```shell
-mkdir -p /home/zonglin/redis/data
+```sh
+# 创建本地映射目录
+mkdir -p /mydata/redis/data
+# 创建本地映射文件
+touch /mydata/redis/conf/redis.conf
 ```
+
+参数说明：
+- -p：多级目录创建
+
 
 ### 启动容器
 
-```shell
+```sh
 docker run --restart=always --log-opt max-size=100m --log-opt max-file=2 -p 6379:6379 --name lcloud-redis -v /home/zonglin/redis/redis.conf:/etc/redis/redis.conf -v /home/zonglin/redis/data:/data -d redis:latest redis-server /etc/redis/redis.conf --appendonly yes
 ```
 
+参数说明：
+- –p：端口映射，格式为：主机(宿主)端口:容器端口
+- --restart：开机自启
+- --name：指定容器的hostname
+- -v：映射数据卷，宿主机的目录地址，后者则是容器的目录地址
+- -d：分离模式: 在后台运行
+
+
+
 <details><summary><b>操作明细：</b></summary>
 
-```bash
+```sh
 [root@localhost ~]# docker pull redis:latest # 最新版本的镜像
 latest: Pulling from library/redis
 Digest: sha256:db485f2e245b5b3329fdc7eff4eb00f913e09d8feb9ca720788059fdc2ed8339

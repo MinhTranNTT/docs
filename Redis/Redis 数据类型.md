@@ -1,8 +1,9 @@
-# Redis数据类型
+# Redis 数据类型
 
-[Redis命令中心（Redis commands） -- Redis中国用户组（CRUG）](http://www.redis.cn/commands.html)
+参考文档：
 
-[redis基本操作命令 - 简书 (jianshu.com)](https://www.jianshu.com/p/32b9fe8c20e1)
+- [Redis命令中心（Redis commands） -- Redis中国用户组（CRUG）](http://www.redis.cn/commands.html)
+- [redis基本操作命令 - 简书 (jianshu.com)](https://www.jianshu.com/p/32b9fe8c20e1)
 
 ---
 
