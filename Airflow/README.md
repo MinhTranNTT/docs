@@ -10,13 +10,10 @@ Airflow是一个以编程方式编写，安排和监视工作流的平台。
 
 ## 1.2 名词
 
-（1）**Dynamic**：Airflow配置需要实用Python，允许动态生产管道。这允许编写可动态。这允许编写可动态实例化管道的代码。
-
-（2）**Extensible**：轻松定义自己的运算符，执行程序并扩展库，使其适合于您的环境。
-
-（3）**Elegant**：Airlfow是精简的，使用功能强大的Jinja模板引擎，将脚本参数化内置于Airflow的核心中。
-
-（4）**Scalable**：Airflow具有模板块架构，并使用消息队列来安排任意数量的工作任务。
+- **Dynamic**：Airflow配置需要实用Python，允许动态生产管道。这允许编写可动态。这允许编写可动态实例化管道的代码。
+- **Extensible**：轻松定义自己的运算符，执行程序并扩展库，使其适合于您的环境。
+- **Elegant**：Airlfow是精简的，使用功能强大的Jinja模板引擎，将脚本参数化内置于Airflow的核心中。
+- **Scalable**：Airflow具有模板块架构，并使用消息队列来安排任意数量的工作任务。
 
 # 第2章 Airflow安装
 
@@ -42,7 +39,9 @@ conda是一个开源的包、环境管理器，可以用于在同一个机器上
 
 （1）执行以下命令进行安装，并按照提示操作，直到安装完成。
 
-`[atguigu@hadoop102 lib]$ bash Miniconda3-latest-Linux-x86_64.sh`​
+```sh
+[atguigu@hadoop102 lib]$ bash Miniconda3-latest-Linux-x86_64.sh
+```
 
 （2）在安装过程中，出现以下提示时，可以指定安装路径
 
@@ -60,7 +59,9 @@ conda是一个开源的包、环境管理器，可以用于在同一个机器上
 
 Miniconda安装完成后，每次打开终端都会激活其默认的base环境，我们可通过以下命令，禁止激活默认base环境。
 
-`[atguigu@hadoop102 lib]$ conda config --set auto_activate_base false`​
+```sh
+[atguigu@hadoop102 lib]$ conda config --set auto_activate_base false
+```
 
 ### 2.2.2 创建Python3.8环境
 
@@ -70,26 +71,29 @@ Miniconda安装完成后，每次打开终端都会激活其默认的base环境�
 (base) [atguigu@hadoop102 ~]$ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
 (base) [atguigu@hadoop102 ~]$ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
 (base) [atguigu@hadoop102 ~]$ conda config --set show_channel_urls yes
-
 ```
 
 **2）创建Python3.8环境**
 
-`(base) [atguigu@hadoop102 ~]$ conda create --name airflow python=3.8`​
+```sh
+(base) [atguigu@hadoop102 ~]$ conda create --name airflow python=3.8
+```
 
 **说明：conda环境管理常用命令**
 
-**创建环境：**conda create -n env_name
-
-**查看所有环境：**conda info --envs
-
-**删除一个环境：**conda remove -n env_name --all
+```sh
+conda create -n env_name        # 创建环境
+conda info --envs               # 查看所有环境
+conda remove -n env_name --all  # 删除一个环境
+```
 
 **3）激活airflow环境**
 
-`(base) [atguigu@hadoop102 ~]$ conda activate airflow`​
+```sh
+(base) [atguigu@hadoop102 ~]$ conda activate airflow
+```
 
-        激活后效果如下图所示
+激活后效果如下图所示
 
 ```bash
 [atguigu@hadoop102 software]$ conda activate airflow

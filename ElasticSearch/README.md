@@ -14,8 +14,6 @@
 
 ## 1.2 如果用数据库做搜索会怎么样？
 
-​![image](assets/image-20230211193033-t8gvgf9.png)​
-
 用数据库来实现搜索，是不太靠谱的。通常来说，性能会很差的。
 
 ## 1.3 什么是全文检索和Lucene？
@@ -30,13 +28,9 @@
 
 ### 1.3.1 Lucene 倒排索引结构
 
-​![https://images2015.cnblogs.com/blog/434101/201605/434101-20160502154907357-189345550.jpg](assets/clip_image002-20230211193156-au655s3.jpg)​
-
 可以看到Lucene 为倒排索引(Term Dictionary)部分又增加一层Term Index结构，用于快速定位，而这Term Index是缓存在内存中的，但MySQL的B+tree不在内存中，所以整体来看ES速度更快，但同时也更消耗资源（内存、磁盘）。
 
 ### 1.3.2 B+Tree
-
-​![https://images2015.cnblogs.com/blog/434101/201605/434101-20160502154622232-2102383628.png](assets/clip_image001-20230211193307-8h0l700.png)​
 
 ## 1.4 什么是 ElasticSearch？
 
@@ -192,8 +186,6 @@ PUT student(index_name->database)
 |约束Schema|映射Mapping|
 
 ### 1.7.10 ElasticSearch存入数据和搜索数据机制
-
-​![image](assets/image-20230211193539-awvb5kk.png)​
 
 1）索引对象（blog）：存储数据的表结构，任何搜索数据，存放在索引对象上 。
 
